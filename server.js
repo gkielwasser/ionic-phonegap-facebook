@@ -25,7 +25,7 @@ app.configure('development', function(){
 
 app.configure('production', function(){
   app.set('views', __dirname + '/views');
-  app.use(express.favicon(path.join(__dirname, 'www', 'favicon.ico')));
+  //app.use(express.favicon(path.join(__dirname, 'www', 'favicon.ico')));
   app.use(express.static(path.join(__dirname, 'www')));
 
   // Angular Routes
