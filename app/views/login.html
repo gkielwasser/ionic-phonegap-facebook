@@ -1,0 +1,20 @@
+<view title="'Login'">
+    <content has-header="true" has-tabs="true" padding="true">
+
+        <div ng-show="!user.logged()">
+            <button class="button button-block" ng-class="{'button-positive':test,'button-energized':!test}" ng-click="login()">
+                Connexion
+            </button>
+            connecté:{{loggedIn}}
+            user: {{user}}
+            friends:{{friends}}
+            <button class="button" ng-click="toIntro()">Do Tutorial Again</button>
+        </div>
+        <div ng-show="user.logged()">
+            <button class="button button-block"  ng-click="logout()">
+                Déconnexion
+            </button>
+        </div>
+
+    </content>
+</view>
