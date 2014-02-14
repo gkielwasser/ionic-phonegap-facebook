@@ -61,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="383" column="0" selection-start="8884" selection-end="8884" vertical-scroll-proportion="-18.04" vertical-offset="6060" max-vertical-offset="6664">
+            <state line="384" column="63" selection-start="8948" selection-end="8948" vertical-scroll-proportion="0.77483445" vertical-offset="6060" max-vertical-offset="6664">
               <folding />
             </state>
           </provider>
@@ -79,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="36" selection-start="679" selection-end="679" vertical-scroll-proportion="0.3783784" vertical-offset="204" max-vertical-offset="1003">
+            <state line="26" column="36" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -139,8 +139,8 @@
         <option value="$PROJECT_DIR$/app/views/friends.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -432,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="383" column="0" selection-start="8884" selection-end="8884" vertical-scroll-proportion="-18.04" vertical-offset="6060" max-vertical-offset="6664">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
@@ -448,7 +441,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="36" selection-start="679" selection-end="679" vertical-scroll-proportion="0.3783784" vertical-offset="204" max-vertical-offset="1003">
+        <state line="26" column="36" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="384" column="63" selection-start="8948" selection-end="8948" vertical-scroll-proportion="0.77483445" vertical-offset="6060" max-vertical-offset="6664">
           <folding />
         </state>
       </provider>
