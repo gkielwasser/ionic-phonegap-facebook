@@ -29,9 +29,9 @@
             <i class="icon ion-chevron-left" ng-click="previousPage()"></i>
         </a>
 
-            <i style="color:#f0b840" class="button button-energized button-clear">{{currentPage+1}}</i>
-            /
-            <i style="color:#f0b840" class="button button-energized button-clear">{{numberOfPages()}}</i>
+            <i ng-show="numberOfPages() > 1" style="color:#f0b840" class="button button-energized button-clear">{{currentPage+1}}</i>
+            <i ng-show="numberOfPages() > 1">/</i>
+            <i ng-show="numberOfPages() > 1" style="color:#f0b840" class="button button-energized button-clear">{{numberOfPages()}}</i>
 
 
         <a class="tab-item" ng-show="numberOfPages() > 1">

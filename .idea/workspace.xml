@@ -82,10 +82,10 @@
       <file leaf-file-name="friends.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/friends.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="5" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.43312103" vertical-offset="102" max-vertical-offset="833">
+            <state line="32" column="50" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.606466" vertical-offset="0" max-vertical-offset="897">
               <folding>
                 <element signature="n#style#0;n#i#0;n#div#1;n#view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#2;n#div#1;n#view#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -285,10 +285,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27962577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27962577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -428,10 +428,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/friends.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.43312103" vertical-offset="102" max-vertical-offset="833">
+        <state line="32" column="50" selection-start="1646" selection-end="1646" vertical-scroll-proportion="0.606466" vertical-offset="0" max-vertical-offset="897">
           <folding>
             <element signature="n#style#0;n#i#0;n#div#1;n#view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#div#1;n#view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
