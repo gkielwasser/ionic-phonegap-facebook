@@ -17,7 +17,14 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
-
+    'heroku-deploy' : {
+      production : {
+        deployBranch : 'prod'
+      },
+      staging : {
+        deployBranch : 'staging'
+      }
+    },
     // Project settings
     yeoman: {
       // configurable paths
@@ -374,6 +381,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-//qsd
-  grunt.registerTask('heroku:production', 'build');
+
+  grunt.registerTask('heroku:production', ['build']);
 };
