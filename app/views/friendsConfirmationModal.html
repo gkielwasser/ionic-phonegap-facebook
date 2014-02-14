@@ -1,0 +1,22 @@
+<div class="modal">
+    <header class="bar bar-header bar-energized">
+        <h1 class="title">Confirmation</h1>
+        <button class="button button-energized" ng-click="closeModal()">Annuler</button>
+    </header>
+    <content has-header="true">
+        <div class="padding">
+            <div class="list">
+                <ul class="list" >
+                    <li class="item item-checkbox selectable" ng-repeat="friend in selectedFriends" ng-click="addFriend(friend,$event)">
+                        <label class="checkbox">
+                            <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
+                        </label>
+                        <img ng-src="{{friend.picture.data.url}}">
+                        {{friend.name}}
+                    </li>
+                </ul>
+                <button class="button button-full button-positive" ng-click="closeModal()">Inviter</button>
+            </div>
+        </div>
+    </content>
+</div>

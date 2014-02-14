@@ -18,31 +18,9 @@
     <nav-view name="adopt-tab"></nav-view>
   </tab>
 
-    <!-- list Tab -->
-    <tab title="List" icon="icon ion-drag" href="#/tab/friends">
-        <nav-view name="friends-tab"></nav-view>
-    </tab>
-
-
     <!-- swipe Tab -->
     <tab title="Swipe" icon="icon ion-beaker" href="#/tab/swipe">
         <nav-view name="swipe-tab"></nav-view>
     </tab>
-
-    <!-- déconnexion Tab -->
-    <tab ng-show="user.logged()" title="Déconnexion" icon="icon ion-power" href="#/login">
-
-    </tab>
-
-    <!-- connexion Tab -->
-    <tab ng-hide="user.logged()" title="Connexion" icon="icon ion-power" href="#/login">
-
-    </tab>
-
-  <!-- About Tab -->
-  <tab title="About" icon="icon ion-search" href="#/tab/about">
-    <nav-view name="about-tab"></nav-view>
-  </tab>
-
 
 </tabs>

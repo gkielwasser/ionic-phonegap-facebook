@@ -3,14 +3,14 @@ angular.module('starter.controllers', [])
 
 // A simple controller that fetches a list of data from a service
 .controller('PetIndexCtrl', function($scope, PetService) {
-  // "Pets" is a service returning mock data (services.js)
+  // 'Pets' is a service returning mock data (services.js)
   $scope.pets = PetService.all();
 })
 
 
 // A simple controller that shows a tapped item's data
 .controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  // "Pets" is a service returning mock data (services.js)
+  // 'Pets' is a service returning mock data (services.js)
   $scope.pet = PetService.get($stateParams.petId);
 })
 
@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
 
     // Called to navigate to the main app
     var startApp = function() {
-      $state.go('tab.pet-index');
+      $state.go('menu.about');
 
       // Set a flag that we finished the tutorial
       window.localStorage['didTutorial'] = true;
@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
 
     //No this is silly
     // Check if the user already did the tutorial and skip it if so
-    if(window.localStorage['didTutorial'] === "true") {
+    if(window.localStorage['didTutorial'] === 'true') {
      console.log('Skip intro');
      startApp();
      }
@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
     var rightButtons = [
       {
         content: 'Suivant',
-        type: 'button-positive ion ion-ionic',
+        type: 'button-positive ion ',
         tap: function(e) {
           // Go to the next slide on tap
           $scope.next();
@@ -91,7 +91,7 @@ angular.module('starter.controllers', [])
       if(index == 2) {
         $scope.rightButtons = [
           {
-            content: 'Start using MyApp',
+            content: 'Commencer',
             type: 'button-positive',
             tap: function(e) {
               startApp();
@@ -104,13 +104,114 @@ angular.module('starter.controllers', [])
       }
     };
   })
+  .controller('ModalCtrl', ['$scope','$ionicModal',function($scope, $ionicModal) {
+
+    // Load the modal from the given template URL
+    $ionicModal.fromTemplateUrl('views/friendsConfirmationModal.html', function(modal) {
+      $scope.modal = modal;
+    }, {
+      // Use our scope for the scope of the modal to keep it simple
+      scope: $scope,
+      // The animation we want to use for the modal entrance
+      animation: 'slide-in-up'
+    });
+
+    // Test data
+    $scope.contacts = [
+      { name: 'Gordon Freeman' },
+      { name: 'Barney Calhoun' },
+      { name: 'Lamarr the Headcrab' }
+    ];
+
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+  }])
+
+  .controller('FriendsCtrl', ['$scope','UserService','$ionicLoading','$timeout','$q','$filter',function($scope,UserService,$ionicLoading,$timeout,$q,$filter) {
+
+    /*début loading*/
+    // Trigger the loading indicator
+    $scope.showLoading = function() {
+
+      // Show the loading overlay and text
+      $scope.loading = $ionicLoading.show({
+
+        // The text to display in the loading indicator
+        content: 'Chargement',
+
+        // The animation to use
+        animation: 'fade-in',
+
+        // Will a dark overlay or backdrop cover the entire view
+        showBackdrop: true,
+
+        // The maximum width of the loading indicator
+        // Text will be wrapped if longer than maxWidth
+        maxWidth: 200,
+
+        // The delay in showing the indicator
+        showDelay: 500
+      });
+    };
+
+    // Hide the loading indicator
+    $scope.hideLoading = function(){
+      $scope.loading.hide();
+    };
+
+    $scope.showLoading();
+
+    /*Fin*/
+
+    $scope.$watch(UserService.friends, function(friends){
+      if(friends){
+        console.log('friends!',friends)
+        $scope.initFriendsCtrl(friends);
+        $scope.hideLoading();
+      }
+    })
+
+    $scope.initFriendsCtrl = function(friends){
+      $scope.initFriendsPartial(friends);
+    }
 
 
-  .controller('FriendsCtrl', ["$scope","UserService",function($scope,UserService) {
-    $scope.friends = UserService.friends();
+    $scope.initFriendsPartial = function(friends){
+      $scope.friends = friends;
+      // Pagination in controller
+      $scope.currentPage = 0;
+      $scope.pageSize = 15;
+
+      $scope.numberOfPages = function() {
+        return Math.ceil($filter('filter')($scope.friends,$scope.search).length/ $scope.pageSize);
+      };
+    }
+
+    $scope.setCurrentPage = function(currentPage) {
+      $scope.currentPage = currentPage;
+    }
+    $scope.nextPage = function(){
+      $scope.currentPage ++;
+    }
+    $scope.previousPage = function(){
+      $scope.currentPage --;
+    }
+
+    $scope.getNumberAsArray = function (num) {
+      return new Array(num);
+    };
+
+
+
+
+
     $scope.selectedFriends = [];
     $scope.addFriend=function(friend,event){
-      if(event.target.className[0] != "n"){
+      if(event.target.className[0] != 'n'){
         if($scope.selectedFriends.indexOf(friend) == -1){
           $scope.selectedFriends.push(friend);
         }
@@ -130,25 +231,37 @@ angular.module('starter.controllers', [])
         }
       }
     };
+
+
+
+
   }])
-  .controller('leftMenuCtrl', ["$scope","UserService","$state","Facebook",function($scope,UserService,$state,Facebook) {
+
+  .controller('leftMenuCtrl', ['$scope','UserService','$state','Facebook',function($scope,UserService,$state,Facebook) {
+    // CloseMenu
+    $scope.closeMenu = function() {
+      $scope.sideMenuController.close();
+    };
+
     $scope.logout = function() {
       UserService.logout(function() {
-        $state.go("login");
+        $state.go('login');
       });
     }
     $scope.login = function() {
       Facebook.login(function(response) {
         // Do something with response. Don't forget here you are on Facebook scope so use $scope.$apply
-        console.log("response fb",response)
+        console.log('response fb',response)
       });
     };
   }])
 
-  .controller('MainCtrl', ["$scope","$state","Facebook","UserService",function($scope, $state,Facebook,UserService) {
+  .controller('MainCtrl', ['$scope','$state','Facebook','UserService',function($scope, $state,Facebook,UserService) {
+
+
 
     $scope.$watch(UserService.logged, function(data){
-      console.log("logged cahnge",data)
+      console.log('logged cahnge',data)
       $scope.user = data;
     })
 
@@ -161,12 +274,12 @@ angular.module('starter.controllers', [])
     });
 
     $scope.$on('Facebook:load', function(e,data){
-      console.log("Facebook:load",data);
+      console.log('Facebook:load',data);
     })
 
     $scope.toIntro = function(){
-      window.localStorage['didTutorial'] = "false";
-      $state.go('intro');
+      window.localStorage['didTutorial'] = 'false';
+      $state.go('menu.intro');
     }
   }])
 
@@ -175,7 +288,7 @@ angular.module('starter.controllers', [])
     $scope.login = function() {
       Facebook.login(function(response) {
         // Do something with response. Don't forget here you are on Facebook scope so use $scope.$apply
-        console.log("response fb",response)
+        console.log('response fb',response)
       });
     };
 

@@ -1,33 +1,32 @@
-<div class="list" ng-controller="leftMenuCtrl">
-    <div class="item item-divider">
-        {{user.username}}
-    </div>
+<div ng-controller="leftMenuCtrl">
+    <header class="bar bar-header bar-assertive">
+        <div class="title">{{user.username}}</div>
+    </header>
+    <content has-header="true">
+        <ul class="list" ng-click="closeMenu()">
+            <a ng-hide="user.username" class="item item-icon-left" ng-click="login()">
+                <i class="icon ion-locked"></i>
+                Connexion
+            </a>
 
-    <a ng-hide="user.username" class="item item-icon-left" ng-click="login()">
-        <i class="icon ion-locked"></i>
-        Connexion
-    </a>
+            <a class="item item-icon-left" href="#/about">
+                <i class="icon ion-help-buoy"></i>
+                About
+            </a>
 
-    <a class="item item-icon-left" href="#/tab/about">
-        <i class="icon ion-help-buoy"></i>
-        About
-        <nav-view name="about-tab"></nav-view>
-    </a>
+            <a ng-show="user.username" class="item item-icon-left" href="#/friends">
+                <i class="icon ion-person-stalker"></i>
+                Friends
+                <span class="badge badge-assertive"></span>
 
-
-
-    <a ng-show="user.username" class="item item-icon-left" href="#/tab/friends">
-        <i class="icon ion-person-stalker"></i>
-        Friends
-        <span class="badge badge-assertive">0</span>
-        <nav-view name="friends-tab"></nav-view>
-    </a>
+            </a>
 
 
 
-    <a ng-show="user.username" class="item item-icon-left" href="#" ng-click="logout()">
-        <i class="icon ion-power"></i>
-        Déconnexion
-    </a>
-
+            <a ng-show="user.username" class="item item-icon-left" href="#" ng-click="logout()">
+                <i class="icon ion-power"></i>
+                Déconnexion
+            </a>
+        </ul>
+    </content>
 </div>

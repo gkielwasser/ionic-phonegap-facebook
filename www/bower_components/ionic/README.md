@@ -6,14 +6,16 @@ Note: __Ionic is Alpha software__ and currently best supports iOS 6+ and Android
 
 # What is Ionic?
 
-Ionic is the open source HTML5 Mobile Framework for building amazing, cross-platform hybrid native apps with HTML, JavaScript, and CSS.
+Ionic is the open source HTML5 Mobile Framework for building amazing, cross-platform hybrid native apps with HTML, JavaScript, and CSS. Just like this one:
+
+![Weather Demo](http://ionicframework.com/img/weather1x.png)
 
 We built Ionic because we wanted a framework that focused on building hybrid native apps, rather than mobile websites. We wanted this framework to be obsessive about great design and performance. A framework that left the past behind and focused on the future where mobile devices could make HTML5 feel native.
 
 It's important to realize that Ionic is not a replacement for frameworks used for building mobile web apps. There are a lot
 of great solutions that work well for websites, like [jQuery Mobile](http://jquerymobile.com/).
 
-Ionic is also not a good solution if you need to support older generation devices. Our [compatibility](http://ionicframework.com/docs/#browser-support) *starts* at iOS 6 and Android 4.1. We will never support versions earlier than those. This is a framework for the future. Learn more, [Where does the Ionic Framework fit in?](http://ionicframework.com/blog/where-does-the-ionic-framework-fit-in/)
+Ionic is also not a good solution if you need to support older generation devices. Our [compatibility](http://ionicframework.com/docs/#browser-support) *starts* at iOS 6 and Android 4.1. We will never support versions earlier than those. This is a framework for the future. Learn more: [Where does the Ionic Framework fit in?](http://ionicframework.com/blog/where-does-the-ionic-framework-fit-in/)
 
 
 ## Quick Start
@@ -35,36 +37,20 @@ $ ionic start myproject
 
 - Download the latest **stable** release from:
   * The release folder of this repository
-  * The Ionic CDN: http://code.ionicframework.com
+  * The Ionic CDN: [Latest Release](http://code.ionicframework.com/)
   * `bower install ionic` 
 - Download the **bleeding edge just-from-master release** from:
-  * The Ionic CDN: http://code.ionicframework.com. Select nightly.
-  * Look in the [bower-ionic Repository][3] for the latest version, and do for example `bower install driftyco/bower-ionic#0.9.23-alpha-652` (`bower install ionic` will have the latest available soon)
+  * The Ionic CDN: [Nightly Build](http://code.ionicframework.com/#nightly)
+  * Look in the [ionic-bower Repository](https://github.com/driftyco/ionic-bower) for the latest version, and do for example `bower install driftyco/ionic-bower#0.9.23-alpha-652` (`bower install ionic` will have the latest available soon)
   
 Once you have a release, use `js/ionic.js`, `js/ionic-angular.js`, and `css/ionic.css`.
 
 For most cases, you'll need AngularJS as well.  This is bundled in `js/angular/` and `js/angular-ui-router/`.
 
 
-## Running examples
+## Demos
 
-You will first have to install dependencies by running:
-
-    npm install
-
-Make sure that you have [npm](https://github.com/isaacs/npm) already installed.
-
-Ionic comes with many interesting examples showing the power of the framework. To
-check them out, navigate into the source folder, and start a web server. The easiest
-way is to use Python:
-
-    python -m SimpleHTTPServer 8000
-
-    node_modules/grunt-cli/bin/grunt watch
-
-    http://localhost:8000/examples/starters/
-
-    http://localhost:8000/test/
+ - [Ionic Codepen.io Demos](http://codepen.io/ionic/public-list)
 
 
 ## Community

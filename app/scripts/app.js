@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
     // Continue with the update and state transition if logic allows
     if (meetsRequirement) $urlRouter.sync();
-    else $state.go('intro');
+    else $state.go('menu.intro');
   });
 
 
@@ -31,7 +31,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
   .config(['$stateProvider', '$urlRouterProvider','FacebookProvider',function($stateProvider, $urlRouterProvider,FacebookProvider) {
 
     $stateProvider
-
+/*
       // setup an abstract state for the tabs directive
       .state('tab', {
         url: "/tab",
@@ -77,21 +77,27 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
           }
         }
       })
+*/
+      .state('menu', {
+        url: "",
+        abstract: true,
+        templateUrl: "views/menu.html"
+      })
 
-      .state('tab.friends', {
+      .state('menu.friends', {
         url: '/friends',
         views: {
-          'friends-tab': {
-            templateUrl: 'views/list.html',
+          'menuContent': {
+            templateUrl: 'views/friends.html',
             controller: 'FriendsCtrl'
           }
         }
       })
 
-      .state('tab.about', {
+      .state('menu.about', {
         url: '/about',
         views: {
-          'about-tab': {
+          'menuContent': {
             templateUrl: 'views/about.html'
           }
         }
@@ -103,16 +109,20 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
         controller: 'LoginCtrl'
       })
 
-      .state('intro', {
+      .state('menu.intro', {
         url: '/intro',
-        templateUrl: 'views/intro.html',
-        controller: 'IntroCtrl'
+        views: {
+          'menuContent': {
+            templateUrl: 'views/intro.html',
+            controller: 'IntroCtrl'
+          }
+        }
       })
 
 
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/about');
+    $urlRouterProvider.otherwise('/about');
 
     // Here you could set your appId throug the setAppId method and then initialize
     // or use the shortcut in the initialize method directly.
@@ -120,8 +130,8 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
   }]).filter('startFrom', function() {
     return function(input, start) {
-      start = +start; //parse to int
-      return input.slice(start);
-    }
+      return (input) ? input.slice(start) : false;
+    };
   });
+
 
