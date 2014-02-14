@@ -88,19 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="7" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="45" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.94361526" vertical-offset="111" max-vertical-offset="1598">
+            <state line="4" column="17" selection-start="83" selection-end="83" vertical-scroll-proportion="0.112769485" vertical-offset="0" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
@@ -690,7 +681,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="45" selection-start="1361" selection-end="1361" vertical-scroll-proportion="0.94361526" vertical-offset="111" max-vertical-offset="1598">
+        <state line="4" column="17" selection-start="83" selection-end="83" vertical-scroll-proportion="0.112769485" vertical-offset="0" max-vertical-offset="1411">
           <folding />
         </state>
       </provider>
