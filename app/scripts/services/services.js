@@ -32,7 +32,41 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('UserService', ['$rootScope','Facebook', function($rootScope,Facebook) {
+.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', function($rootScope,Facebook,$ionicLoading,$q) {
+
+    /*début loading*/
+    // Trigger the loading indicator
+    $rootScope.showLoading = function() {
+
+      // Show the loading overlay and text
+      $rootScope.loading = $ionicLoading.show({
+
+        // The text to display in the loading indicator
+        content: 'Chargement',
+
+        // The animation to use
+        animation: 'fade-in',
+
+        // Will a dark overlay or backdrop cover the entire view
+        showBackdrop: true,
+
+        // The maximum width of the loading indicator
+        // Text will be wrapped if longer than maxWidth
+        maxWidth: 200,
+
+        // The delay in showing the indicator
+        showDelay: 1
+      });
+    };
+
+    // Hide the loading indicator
+    $rootScope.hideLoading = function(){
+      $rootScope.loading.hide();
+    };
+
+
+
+
   var user = {};
 
   $rootScope.$on('Facebook:login', function(e,data){
@@ -71,8 +105,14 @@ angular.module('starter.services', [])
   })
 
   var init = function(){
+   $rootScope.showLoading();
+    var defered = $q.defer();
     me();
-    friends();
+    friends().then(function(){
+      defered.resolve();
+      $rootScope.hideLoading();
+    });
+    return defered.promise;
   }
 
   var reset = function(){
@@ -80,12 +120,15 @@ angular.module('starter.services', [])
   }
 
   var friends = function() {
+    var defered = $q.defer();
     Facebook.api('/me/friends?fields=name,first_name,picture', function(response) {
       $rootScope.$apply(function() {
         user.friends = response.data;
         console.log(response.data)
+        defered.resolve();
       });
     });
+    return defered.promise;
   };
 
   var me = function() {

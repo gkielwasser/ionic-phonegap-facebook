@@ -2114,8 +2114,8 @@ window.ionic = {
     if( isRecentTap(e) ) {
       // a tap has already happened at these coordinates recently, ignore this event
       console.debug('preventGhostClick', 'isRecentTap', e.target.tagName);
-      e.stopPropagation();
-      e.preventDefault();
+      //e.stopPropagation();
+      //e.preventDefault();
       return false;
     }
 

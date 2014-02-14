@@ -131,39 +131,8 @@ angular.module('starter.controllers', [])
     };
   }])
 
-  .controller('FriendsCtrl', ['$scope','UserService','$ionicLoading','$timeout','$q','$filter',function($scope,UserService,$ionicLoading,$timeout,$q,$filter) {
+  .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
 
-    /*début loading*/
-    // Trigger the loading indicator
-    $scope.showLoading = function() {
-
-      // Show the loading overlay and text
-      $scope.loading = $ionicLoading.show({
-
-        // The text to display in the loading indicator
-        content: 'Chargement',
-
-        // The animation to use
-        animation: 'fade-in',
-
-        // Will a dark overlay or backdrop cover the entire view
-        showBackdrop: true,
-
-        // The maximum width of the loading indicator
-        // Text will be wrapped if longer than maxWidth
-        maxWidth: 200,
-
-        // The delay in showing the indicator
-        showDelay: 500
-      });
-    };
-
-    // Hide the loading indicator
-    $scope.hideLoading = function(){
-      $scope.loading.hide();
-    };
-
-    $scope.showLoading();
 
     /*Fin*/
 
@@ -171,7 +140,7 @@ angular.module('starter.controllers', [])
       if(friends){
         console.log('friends!',friends)
         $scope.initFriendsCtrl(friends);
-        $scope.hideLoading();
+
       }
     })
 
@@ -239,8 +208,9 @@ angular.module('starter.controllers', [])
 
   .controller('leftMenuCtrl', ['$scope','UserService','$state','Facebook',function($scope,UserService,$state,Facebook) {
     // CloseMenu
-    $scope.closeMenu = function() {
+    $scope.closeMenu = function(st) {
       $scope.sideMenuController.close();
+      $state.go(st);
     };
 
     $scope.logout = function() {
