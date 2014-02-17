@@ -7,12 +7,17 @@
         <div class="padding">
             <div class="list">
                 <ul class="list">
-                    <li class="item item-checkbox selectable" ng-repeat="friend in selectedFriends" ng-click="addFriend(friend,$event)">
-                        <label class="checkbox">
+
+                    <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in selectedFriends" ng-click="addFriend(friend,$event)">
+
+
+                        <img ng-src="{{friend.picture.data.url}}">
+                        <h2>{{friend.first_name}}</h2>
+                        <h4>{{friend.name}}</h4>
+                        <label class="checkbox icon">
                             <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
                         </label>
-                        <img ng-src="{{friend.picture.data.url}}">
-                        {{friend.name}}
+
                     </li>
                 </ul>
                 <button class="button button-full button-positive" ng-click="closeModal()">Inviter</button>

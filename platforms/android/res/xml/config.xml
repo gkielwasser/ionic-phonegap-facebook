@@ -14,8 +14,7 @@
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="orientation" value="default" />
-    <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="false" />
+    <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />

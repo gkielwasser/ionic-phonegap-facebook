@@ -4,7 +4,9 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     //Start Fastclick
     FastClick.attach(document.body);
 
-  $rootScope.$on('$locationChangeSuccess', function(evt) {
+
+  $rootScope.$on('$stateChangeSuccess', function(evt,toSate) {
+
     // Halt state change from even starting
     evt.preventDefault();
 
@@ -12,12 +14,14 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     var meetsRequirement;
 
     if(window.localStorage['didTutorial'] === "true") {
-      console.log('Skip intro');
+      console.log('Skip intro',toSate);
       meetsRequirement = true;
+      $rootScope.enableSideMenu = true;
     }
     else{
-      console.log('Do intro');
+      console.log('Do intro',toSate);
       meetsRequirement = false;
+      $rootScope.enableSideMenu = false;
     }
 
     // Continue with the update and state transition if logic allows
@@ -31,53 +35,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
   .config(['$stateProvider', '$urlRouterProvider','FacebookProvider',function($stateProvider, $urlRouterProvider,FacebookProvider) {
 
     $stateProvider
-/*
-      // setup an abstract state for the tabs directive
-      .state('tab', {
-        url: "/tab",
-        abstract: true,
-        templateUrl: "views/tabs.html"
-      })
 
-      // the pet tab has its own child nav-view and history
-      .state('tab.pet-index', {
-        url: '/pets',
-        views: {
-          'pets-tab': {
-            templateUrl: 'views/pet-index.html',
-            controller: 'PetIndexCtrl'
-          }
-        }
-      })
-
-      .state('tab.pet-detail', {
-        url: '/pet/:petId',
-        views: {
-          'pets-tab': {
-            templateUrl: 'views/pet-detail.html',
-            controller: 'PetDetailCtrl'
-          }
-        }
-      })
-
-      .state('tab.adopt', {
-        url: '/adopt',
-        views: {
-          'adopt-tab': {
-            templateUrl: 'views/adopt.html'
-          }
-        }
-      })
-
-      .state('tab.swipe', {
-        url: '/swipe',
-        views: {
-          'swipe-tab': {
-            templateUrl: 'views/swipe.html'
-          }
-        }
-      })
-*/
       .state('menu', {
         url: "",
         abstract: true,
@@ -118,7 +76,6 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
           }
         }
       })
-
 
 
     // if none of the above states are matched, use this as the fallback

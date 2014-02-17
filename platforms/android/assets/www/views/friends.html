@@ -1,35 +1,43 @@
-<view title="'Amis: ' + friends.length">
+<view data-title="'Amis: ' + friends.length" left-buttons="leftButtons">
     <div class="bar bar-subheader">
-        <label class="item item-input">
+        <label class="item item-input item-input-wrapper">
             <i class="icon ion-search placeholder-icon"></i>
             <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="currentPage = 0">
             <button class="button button-clear" ng-click="search=''">X</button>
         </label>
-
     </div>
     <content has-header="true" has-tabs="true" style="top:100px">
         <ul class="list">
-            <li class="item item-checkbox selectable" ng-repeat="friend in friends | filter: {'name':search,'first_name':search} | startFrom: currentPage * pageSize  | limitTo:pageSize" ng-click="addFriend(friend,$event)">
+            <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends | filter: {'name':search,'first_name':search} | startFrom: currentPage * pageSize  | limitTo:pageSize" ng-click="addFriend(friend,$event)">
 
-                <label class="checkbox">
+
+                <img ng-src="{{friend.picture.data.url}}">
+               <h2>{{friend.first_name}}</h2>
+                <h4>{{friend.name}}</h4>
+                <label class="checkbox icon">
                     <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
                 </label>
-                <img ng-src="{{friend.picture.data.url}}">
-                {{friend.name}}
+
             </li>
         </ul>
     </content>
     <div class="tabs tabs-icon-left">
-        <a ng-controller="ModalCtrl" class="tab-item" data-ng-click="openModal()" ng-show="selectedFriends.length > 0">
+        <a ng-controller="ModalCtrl" class="tab-item selectable" data-ng-click="openModal()" ng-show="selectedFriends.length > 0">
             <i class="icon ion-at"></i>
             Inviter ({{selectedFriends.length}})
         </a>
-        <a class="tab-item" ng-show="numberOfPages() > 1">
-            <i class="icon ion-chevron-left" ng-click="previousPage()"></i>
-            <button class="button button-energized button-clear">{{currentPage+1}}</button>
-            /
-            <button class="button button-energized button-clear">{{numberOfPages()}}</button>
-            <i class="icon ion-chevron-right" ng-click="nextPage()"></i>
+
+        <a class="tab-item" ng-show="numberOfPages() > 1" style="max-width: 52px">
+            <i class="ion-chevron-left button" style="border-top:0;border-bottom: 0" ng-click="previousPage()"></i>
+        </a>
+
+            <i ng-show="numberOfPages() > 1" style="color:#f0b840;min-width: inherit" class="button button-energized button-clear">{{currentPage+1}}</i>
+            <i ng-show="numberOfPages() > 1">/</i>
+            <i ng-show="numberOfPages() > 1" style="color:#f0b840;min-width: inherit" class="button button-energized button-clear">{{numberOfPages()}}</i>
+
+
+        <a class="tab-item" ng-show="numberOfPages() > 1" style="max-width: 52px">
+            <i class="ion-chevron-right button" style="border-top:0;border-bottom: 0" ng-click="nextPage()"></i>
         </a>
 
     </div>

@@ -1,13 +1,16 @@
 <side-menus>
     <!-- Center content -->
-    <pane side-menu-content="">
-        <nav-bar type="bar-positive" animation="nav-title-slide-ios7" back-button-type="button-icon" back-button-icon="ion-ios7-arrow-back"></nav-bar>
-        <nav-view name="menuContent" ></nav-view>
+    <pane side-menu-content="" drag-content="enableSideMenu">
+
+        <nav-bar type="bar-positive" animation="nav-title-slide-ios7" back-button-type="button-icon"></nav-bar>
+
+        <nav-view name="menuContent" animation="slide-right-left"></nav-view>
     </pane>
 
     <!-- Left menu -->
-    <side-menu side="left">
-        <ng-include src="'/views/leftMenu.html'"></ng-include>
+    <side-menu side="left" id="menu-left">
+      <ng-include src="'views/leftMenu.html'"></ng-include>
+
     </side-menu>
 
 </side-menus>

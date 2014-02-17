@@ -1,19 +1,5 @@
 angular.module('starter.controllers', [])
 
-
-// A simple controller that fetches a list of data from a service
-.controller('PetIndexCtrl', function($scope, PetService) {
-  // 'Pets' is a service returning mock data (services.js)
-  $scope.pets = PetService.all();
-})
-
-
-// A simple controller that shows a tapped item's data
-.controller('PetDetailCtrl', function($scope, $stateParams, PetService) {
-  // 'Pets' is a service returning mock data (services.js)
-  $scope.pet = PetService.get($stateParams.petId);
-})
-
   .controller('IntroCtrl', function($scope, $state) {
 
     // Called to navigate to the main app
@@ -39,7 +25,7 @@ angular.module('starter.controllers', [])
     // Our initial right buttons
     var rightButtons = [
       {
-        content: 'Suivant',
+        content: '<i class="icon ion-chevron-right"></i>',
         type: 'button-positive ion ',
         tap: function(e) {
           // Go to the next slide on tap
@@ -73,7 +59,7 @@ angular.module('starter.controllers', [])
         // If this is not the first slide, give it a back button
         $scope.leftButtons = [
           {
-            content: 'Précédent',
+            content: '<i class="icon ion-chevron-left"></i>',
             type: 'button-positive',
             tap: function(e) {
               // Move to the previous slide
@@ -91,8 +77,8 @@ angular.module('starter.controllers', [])
       if(index == 2) {
         $scope.rightButtons = [
           {
-            content: 'Commencer',
-            type: 'button-positive',
+            content: 'J\'ai tout compris !',
+            type: 'button-balanced button',
             tap: function(e) {
               startApp();
             }
@@ -133,14 +119,9 @@ angular.module('starter.controllers', [])
 
   .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
 
-
-    /*Fin*/
-
     $scope.$watch(UserService.friends, function(friends){
       if(friends){
-        console.log('friends!',friends)
         $scope.initFriendsCtrl(friends);
-
       }
     })
 
@@ -180,13 +161,17 @@ angular.module('starter.controllers', [])
 
     $scope.selectedFriends = [];
     $scope.addFriend=function(friend,event){
-      if(event.target.className[0] != 'n'){
+      console.log("s",event)
+      if(event.target.tagName != 'INPUT'){
         if($scope.selectedFriends.indexOf(friend) == -1){
           $scope.selectedFriends.push(friend);
         }
         else  {
           $scope.selectedFriends.splice($scope.selectedFriends.indexOf(friend),1);
         }
+      }
+      else{
+        console.log("ignore")
       }
     }
 
@@ -206,7 +191,11 @@ angular.module('starter.controllers', [])
 
   }])
 
-  .controller('leftMenuCtrl', ['$scope','UserService','$state','Facebook',function($scope,UserService,$state,Facebook) {
+  .controller('leftMenuCtrl', ['$scope','UserService','$state',function($scope,UserService,$state) {
+    $scope.$on('openSideMenu',function(){
+      $scope.sideMenuController.toggleLeft();
+    })
+
     // CloseMenu
     $scope.closeMenu = function(st) {
       $scope.sideMenuController.close();
@@ -218,53 +207,30 @@ angular.module('starter.controllers', [])
         $state.go('login');
       });
     }
+
     $scope.login = function() {
-      Facebook.login(function(response) {
-        // Do something with response. Don't forget here you are on Facebook scope so use $scope.$apply
-        console.log('response fb',response)
-      });
+      UserService.login();
     };
   }])
 
-  .controller('MainCtrl', ['$scope','$state','Facebook','UserService',function($scope, $state,Facebook,UserService) {
+  .controller('MainCtrl', ['$scope','$state','UserService',function($scope, $state,UserService) {
 
+    $scope.leftButtons = [{
+      type: 'button-clear',
+      content: '<i class="icon ion-navicon">',
+      tap: function (e) {
+        $scope.$broadcast('openSideMenu');
+      }
+    }];
 
 
     $scope.$watch(UserService.logged, function(data){
-      console.log('logged cahnge',data)
       $scope.user = data;
-    })
-
-
-    // Here, usually you should watch for when Facebook is ready and loaded
-    $scope.$watch(function() {
-      return Facebook.isReady(); // This is for convenience, to notify if Facebook is loaded and ready to go.
-    }, function(newVal) {
-      $scope.facebookReady = true; // You might want to use this to disable/show/hide buttons and else
-    });
-
-    $scope.$on('Facebook:load', function(e,data){
-      console.log('Facebook:load',data);
     })
 
     $scope.toIntro = function(){
       window.localStorage['didTutorial'] = 'false';
+      $scope.$broadcast('openSideMenu');
       $state.go('menu.intro');
     }
-  }])
-
-  .controller('LoginCtrl', ['$scope','UserService','Facebook', function($scope,UserService,Facebook) {
-    $scope.user = UserService;
-    $scope.login = function() {
-      Facebook.login(function(response) {
-        // Do something with response. Don't forget here you are on Facebook scope so use $scope.$apply
-        console.log('response fb',response)
-      });
-    };
-
-    $scope.logout = function() {
-      Facebook.logout(function() {});
-    }
-}]);
-
-
+  }]);
