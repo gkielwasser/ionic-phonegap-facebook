@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-bower-install');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
     'heroku-deploy' : {
@@ -30,6 +32,21 @@ module.exports = function (grunt) {
       // configurable paths
       app: require('./bower.json').appPath || 'app',
       dist: 'www'
+    },
+
+    'bowerInstall': {
+      app: {
+        src: ['<%= yeoman.app %>/index.html'],
+        ignorePath: '<%= yeoman.app %>/',
+        fileTypes: {
+          html: {
+            replace: {
+              js: '<script src="/{{filePath}}"></script>',
+              css: '<link rel="stylesheet" href="/{{filePath}}" />'
+            }
+          }
+        }
+      }
     },
 
     // Watches files for changes and runs tasks based on the changed files
@@ -256,7 +273,10 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
             'fonts/*',
-            'config.xml'
+            'config.xml',
+            'cdv-plugin-fb-connect.js',
+            'facebook-js-sdk.js',
+            'cordova.js'
           ]
         }, {
           expand: true,
@@ -381,4 +401,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
 };

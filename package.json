@@ -4,7 +4,8 @@
   "dependencies": {
     "express": "~3.4.8",
     "ejs": "~0.8.4",
-    "gzippo": "~0.2.0"
+    "gzippo": "~0.2.0",
+    "wiredep": "~1.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -43,7 +44,8 @@
     "karma-requirejs": "~0.2.1",
     "karma-phantomjs-launcher": "~0.1.2",
     "karma": "~0.10.9",
-    "karma-ng-html2js-preprocessor": "~0.1.0"
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "grunt-bower-install": "~1.0.0"
   },
   "engines": {
     "node": ">=0.8.0"

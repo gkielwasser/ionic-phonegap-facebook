@@ -21,7 +21,6 @@
 
          Properties related to the SDK location or the project target should
          be updated using the 'android' tool with the 'update' action.
-
          This file is an integral part of the build system for your
          application and should be checked into Version Control Systems.
 

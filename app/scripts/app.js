@@ -1,3 +1,26 @@
+(function (window, document) {
+
+  function onWindowLoad() {
+    if (!(!window.cordova && !window.PhoneGap && !window.phonegap)) {
+      // on device add ready listener
+      document.addEventListener('deviceready', onDeviceReady, false);
+    } else {
+      // on browser trigger onDeviceReady
+      onDeviceReady();
+    }
+    window.removeEventListener('load', onWindowLoad, false);
+  }
+  window.addEventListener('load', onWindowLoad, false);
+
+  function onDeviceReady() {
+    // bootstrap app
+    angular.element(document).ready(function () {
+      angular.bootstrap(document, ['starter']);
+    });
+    document.removeEventListener('deviceready', onDeviceReady, false);
+  }
+})(window, document);
+
 angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.controllers','starter.directives','facebook','checklist-model'])
 
   .run(["$rootScope","$state","$urlRouter",function($rootScope,$state,$urlRouter) {
@@ -83,7 +106,13 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
     // Here you could set your appId throug the setAppId method and then initialize
     // or use the shortcut in the initialize method directly.
-    FacebookProvider.init('711009162272801');
+    //  FacebookProvider.init('711009162272801');
+    var config = {
+      appId: '711009162272801',
+      'oauth': true,
+      'localSDK': 'facebook-js-sdk.js'
+    }
+   FacebookProvider.init(config, false);
 
   }]).filter('startFrom', function() {
     return function(input, start) {

@@ -8,9 +8,17 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <feature name="App">
-        <param name="android-package" value="org.apache.cordova.App" />
+
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+
+    <gap:plugin name="com.phonegap.plugins.facebookconnect">
+        <param name="APP_ID" value="711009162272801" />
+        <param name="APP_NAME" value="meet_us_app" />
+    </gap:plugin>
+
+    <access origin="*" />
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="orientation" value="default" />

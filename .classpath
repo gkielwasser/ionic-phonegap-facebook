@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="platforms/android/gen"/>
+	<classpathentry kind="src" path="platforms/android/src"/>
+	<classpathentry kind="lib" path="node_modules/heroku/node_modules/jasmine-node/node_modules/jasmine-reporters/ext/jline.jar"/>
+	<classpathentry kind="lib" path="node_modules/heroku/node_modules/jasmine-node/node_modules/jasmine-reporters/ext/js.jar"/>
+	<classpathentry kind="lib" path="platforms/android/cordova/appinfo.jar"/>
+	<classpathentry kind="lib" path="platforms/android/libs/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="platforms/android/libs/cordova-3.0.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="platforms/android/bin/classes"/>
+</classpath>

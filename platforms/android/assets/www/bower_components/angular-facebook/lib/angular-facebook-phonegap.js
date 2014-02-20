@@ -41,11 +41,15 @@ provides: [angular-facebook-phonegap]
         
         // Phonegap deviceready event fired!, now load Facebook SDK
         function onReady() {
+          console.log("onReady")
           if (!angular.isString(localSDKSrc)) {
+            console.log("Missing localSDK")
+
             throw 'Missing localSDK setting pointing to the local javascript file with the Facebook SDK';
             return false;
           }
-          
+          console.log("onReady")
+
           var src           = localSDKSrc,
               script        = document.createElement('script');
               script.id     = 'facebook-jssdk';
@@ -60,6 +64,7 @@ provides: [angular-facebook-phonegap]
         };
         
         document.addEventListener("deviceready", onReady, false);
+         console.log("add event listener")
        } 
       ])
       ;

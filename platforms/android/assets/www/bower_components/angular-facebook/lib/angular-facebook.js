@@ -496,6 +496,9 @@ provides: [facebook]
             }, function(mapped, name) {
               FB.Event.subscribe(name, function(response) {
                 $timeout(function() {
+                  console.log("EVENT")
+                  console.log(mapped)
+                  console.log(response)
                   $rootScope.$broadcast('Facebook:' + mapped, response);
                 });
               });

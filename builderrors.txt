@@ -1,0 +1,532 @@
+cordova library for "android" already exists. No need to download. Continuing.
+Wrote out Android application name to "Phonegap"
+Wrote out Android package name to "com.example.app"
+Calling plugman.prepare for platform "android"
+Preparing android project...
+Processing configuration changes for plugins.
+Iterating over installed plugins: [ 'org.apache.cordova.device' ]
+Writing out cordova_plugins.js...
+Ensuring plugin "org.apache.cordova.device" is installed correctly...
+Plugin "org.apache.cordova.device" is good to go.
+Compiling platform "android" with command ""C:\Users\Gab\workspace\phonegap\platforms\android\cordova\build"" (output to follow)...
+Cleaning project...
+WARNING: [ --debug | --release | --nobuild ] not specified, defaulting to --debug.
+Buildfile: C:\Users\Gab\workspace\phonegap\platforms\android\build.xml
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 22.3.0
+ [checkenv] Installed at C:\adt-bundle-windows-x86_64-20130522\sdk
+
+-setup:
+     [echo] Project Name: Phonegap
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 19.0.1
+     [echo] Resolving Build Target for Phonegap...
+[gettarget] Project Target:   Google APIs
+[gettarget] Vendor:           Google Inc.
+[gettarget] Platform Version: 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin\res
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin\rsObj
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin\rsLibs
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\gen
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin\classes
+    [mkdir] Created dir: C:\Users\Gab\workspace\phonegap\platforms\android\bin\dexedLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for Phonegap...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+   [subant] No sub-builds to iterate on
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 89 source files to C:\Users\Gab\workspace\phonegap\platforms\android\bin\classes
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\AuthorizationClient.java:214: error: cannot find symbol
+    [javac]             String errorType = context.getString(R.string.com_facebook_internet_permission_error_title);
+    [javac]                                                          ^
+    [javac]   symbol:   variable com_facebook_internet_permission_error_title
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\AuthorizationClient.java:215: error: cannot find symbol
+    [javac]             String errorDescription = context.getString(R.string.com_facebook_internet_permission_error_message);
+    [javac]                                                                 ^
+    [javac]   symbol:   variable com_facebook_internet_permission_error_message
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\WebDialog.java:203: error: package R does not exist
+    [javac]         spinner.setMessage(getContext().getString(R.string.com_facebook_loading));
+    [javac]                                                    ^
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\WebDialog.java:324: error: package R does not exist
+    [javac]         Drawable crossDrawable = getContext().getResources().getDrawable(R.drawable.com_facebook_close);
+    [javac]                                                                           ^
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\FacebookRequestError.java:144: error: cannot find symbol
+    [javac]                 messageId = R.string.com_facebook_requesterror_permissions;
+    [javac]                                     ^
+    [javac]   symbol:   variable com_facebook_requesterror_permissions
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\FacebookRequestError.java:148: error: cannot find symbol
+    [javac]                     messageId = R.string.com_facebook_requesterror_web_login;
+    [javac]                                         ^
+    [javac]   symbol:   variable com_facebook_requesterror_web_login
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\FacebookRequestError.java:154: error: cannot find symbol
+    [javac]                         messageId = R.string.com_facebook_requesterror_relogin;
+    [javac]                                             ^
+    [javac]   symbol:   variable com_facebook_requesterror_relogin
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\FacebookRequestError.java:156: error: cannot find symbol
+    [javac]                         messageId = R.string.com_facebook_requesterror_password_changed;
+    [javac]                                             ^
+    [javac]   symbol:   variable com_facebook_requesterror_password_changed
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\FacebookRequestError.java:158: error: cannot find symbol
+    [javac]                         messageId = R.string.com_facebook_requesterror_reconnect;
+    [javac]                                             ^
+    [javac]   symbol:   variable com_facebook_requesterror_reconnect
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\LoginActivity.java:57: error: cannot find symbol
+    [javac]         setContentView(R.layout.com_facebook_login_activity_layout);
+    [javac]                                ^
+    [javac]   symbol:   variable com_facebook_login_activity_layout
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\LoginActivity.java:78: error: cannot find symbol
+    [javac]                 findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(View.VISIBLE);
+    [javac]                               ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\LoginActivity.java:83: error: cannot find symbol
+    [javac]                 findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(View.GONE);
+    [javac]                               ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\LoginActivity.java:125: error: cannot find symbol
+    [javac]         findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(View.GONE);
+    [javac]                       ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:130: error: cannot find symbol
+    [javac]         TypedArray a = activity.obtainStyledAttributes(attrs, R.styleable.com_facebook_picker_fragment);
+    [javac]                                                                ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:132: error: cannot find symbol
+    [javac]         setShowPictures(a.getBoolean(R.styleable.com_facebook_picker_fragment_show_pictures, showPictures));
+    [javac]                                       ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:133: error: cannot find symbol
+    [javac]         String extraFieldsString = a.getString(R.styleable.com_facebook_picker_fragment_extra_fields);
+    [javac]                                                 ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:139: error: cannot find symbol
+    [javac]         showTitleBar = a.getBoolean(R.styleable.com_facebook_picker_fragment_show_title_bar, showTitleBar);
+    [javac]                                      ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:140: error: cannot find symbol
+    [javac]         titleText = a.getString(R.styleable.com_facebook_picker_fragment_title_text);
+    [javac]                                  ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:141: error: cannot find symbol
+    [javac]         doneButtonText = a.getString(R.styleable.com_facebook_picker_fragment_done_button_text);
+    [javac]                                       ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:142: error: cannot find symbol
+    [javac]         titleBarBackground = a.getDrawable(R.styleable.com_facebook_picker_fragment_title_bar_background);
+    [javac]                                             ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:143: error: cannot find symbol
+    [javac]         doneButtonBackground = a.getDrawable(R.styleable.com_facebook_picker_fragment_done_button_background);
+    [javac]                                               ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:152: error: cannot find symbol
+    [javac]         listView = (ListView) view.findViewById(R.id.com_facebook_picker_list_view);
+    [javac]                                                  ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:170: error: cannot find symbol
+    [javac]         activityCircle = (ProgressBar) view.findViewById(R.id.com_facebook_picker_activity_circle);
+    [javac]                                                           ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:552: error: cannot find symbol
+    [javac]         return getString(R.string.com_facebook_picker_done_button_text);
+    [javac]                                  ^
+    [javac]   symbol:   variable com_facebook_picker_done_button_text
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:627: error: cannot find symbol
+    [javac]         ViewStub stub = (ViewStub) view.findViewById(R.id.com_facebook_picker_title_bar_stub);
+    [javac]                                                       ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:634: error: cannot find symbol
+    [javac]             layoutParams.addRule(RelativeLayout.BELOW, R.id.com_facebook_picker_title_bar);
+    [javac]                                                         ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:641: error: cannot find symbol
+    [javac]             doneButton = (Button) view.findViewById(R.id.com_facebook_picker_done_button);
+    [javac]                                                      ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PickerFragment.java:664: error: cannot find symbol
+    [javac]             titleTextView = (TextView) view.findViewById(R.id.com_facebook_picker_title);
+    [javac]                                                           ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:288: error: cannot find symbol
+    [javac]             result = (TextView) inflater.inflate(R.layout.com_facebook_picker_list_section_header, null);
+    [javac]                                                          ^
+    [javac]   symbol:   variable com_facebook_picker_list_section_header
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:311: error: cannot find symbol
+    [javac]             result = inflater.inflate(R.layout.com_facebook_picker_activity_circle_row, null);
+    [javac]                                               ^
+    [javac]   symbol:   variable com_facebook_picker_activity_circle_row
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:313: error: cannot find symbol
+    [javac]         ProgressBar activityCircle = (ProgressBar) result.findViewById(R.id.com_facebook_picker_row_activity_circle);
+    [javac]                                                                         ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:320: error: cannot find symbol
+    [javac]         return R.layout.com_facebook_picker_list_row;
+    [javac]                        ^
+    [javac]   symbol:   variable com_facebook_picker_list_row
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:324: error: cannot find symbol
+    [javac]         return R.drawable.com_facebook_profile_default_icon;
+    [javac]                          ^
+    [javac]   symbol:   variable com_facebook_profile_default_icon
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:330: error: cannot find symbol
+    [javac]         ViewStub checkboxStub = (ViewStub) result.findViewById(R.id.com_facebook_picker_checkbox_stub);
+    [javac]                                                                 ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:340: error: cannot find symbol
+    [javac]         ViewStub profilePicStub = (ViewStub) result.findViewById(R.id.com_facebook_picker_profile_pic_stub);
+    [javac]                                                                   ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:356: error: cannot find symbol
+    [javac]         TextView titleView = (TextView) view.findViewById(R.id.com_facebook_picker_title);
+    [javac]                                                            ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:362: error: cannot find symbol
+    [javac]         TextView subtitleView = (TextView) view.findViewById(R.id.picker_subtitle);
+    [javac]                                                               ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:373: error: cannot find symbol
+    [javac]             CheckBox checkBox = (CheckBox) view.findViewById(R.id.com_facebook_picker_checkbox);
+    [javac]                                                               ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:381: error: cannot find symbol
+    [javac]                 ImageView profilePic = (ImageView) view.findViewById(R.id.com_facebook_picker_image);
+    [javac]                                                                       ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\GraphObjectAdapter.java:431: error: cannot find symbol
+    [javac]         ImageView picture = (ImageView) view.findViewById(R.id.com_facebook_picker_image);
+    [javac]                                                            ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:74: error: cannot find symbol
+    [javac]         super(GraphUser.class, R.layout.com_facebook_friendpickerfragment, args);
+    [javac]                                        ^
+    [javac]   symbol:   variable com_facebook_friendpickerfragment
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:162: error: cannot find symbol
+    [javac]         TypedArray a = activity.obtainStyledAttributes(attrs, R.styleable.com_facebook_friend_picker_fragment);
+    [javac]                                                                ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:164: error: cannot find symbol
+    [javac]         setMultiSelect(a.getBoolean(R.styleable.com_facebook_friend_picker_fragment_multi_select, multiSelect));
+    [javac]                                      ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:188: error: cannot find symbol
+    [javac]                 return R.layout.com_facebook_picker_list_row;
+    [javac]                                ^
+    [javac]   symbol:   variable com_facebook_picker_list_row
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:193: error: cannot find symbol
+    [javac]                 return R.drawable.com_facebook_profile_default_icon;
+    [javac]                                  ^
+    [javac]   symbol:   variable com_facebook_profile_default_icon
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\FriendPickerFragment.java:227: error: cannot find symbol
+    [javac]         return getString(R.string.com_facebook_choose_friends);
+    [javac]                                  ^
+    [javac]   symbol:   variable com_facebook_choose_friends
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:210: error: cannot find symbol
+    [javac]             this.setTextColor(getResources().getColor(R.color.com_facebook_loginview_text_color));
+    [javac]                                                        ^
+    [javac]   symbol:   variable color
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:212: error: cannot find symbol
+    [javac]                     getResources().getDimension(R.dimen.com_facebook_loginview_text_size));
+    [javac]                                                  ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:217: error: cannot find symbol
+    [javac]                 this.setBackgroundColor(getResources().getColor(R.color.com_facebook_blue));
+    [javac]                                                                  ^
+    [javac]   symbol:   variable color
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:221: error: cannot find symbol
+    [javac]                 this.setBackgroundResource(R.drawable.com_facebook_button_blue);
+    [javac]                                                      ^
+    [javac]   symbol:   variable com_facebook_button_blue
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:222: error: cannot find symbol
+    [javac]                 this.setCompoundDrawablesWithIntrinsicBounds(R.drawable.com_facebook_inverse_icon, 0, 0, 0);
+    [javac]                                                                        ^
+    [javac]   symbol:   variable com_facebook_inverse_icon
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:224: error: cannot find symbol
+    [javac]                         getResources().getDimensionPixelSize(R.dimen.com_facebook_loginview_compound_drawable_padding));
+    [javac]                                                               ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:225: error: cannot find symbol
+    [javac]                 this.setPadding(getResources().getDimensionPixelSize(R.dimen.com_facebook_loginview_padding_left),
+    [javac]                                                                       ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:226: error: cannot find symbol
+    [javac]                         getResources().getDimensionPixelSize(R.dimen.com_facebook_loginview_padding_top),
+    [javac]                                                               ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:227: error: cannot find symbol
+    [javac]                         getResources().getDimensionPixelSize(R.dimen.com_facebook_loginview_padding_right),
+    [javac]                                                               ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:228: error: cannot find symbol
+    [javac]                         getResources().getDimensionPixelSize(R.dimen.com_facebook_loginview_padding_bottom));
+    [javac]                                                               ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:582: error: cannot find symbol
+    [javac]         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.com_facebook_login_view);
+    [javac]                                                                    ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:583: error: cannot find symbol
+    [javac]         confirmLogout = a.getBoolean(R.styleable.com_facebook_login_view_confirm_logout, true);
+    [javac]                                       ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:584: error: cannot find symbol
+    [javac]         fetchUserInfo = a.getBoolean(R.styleable.com_facebook_login_view_fetch_user_info, true);
+    [javac]                                       ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:585: error: cannot find symbol
+    [javac]         loginText = a.getString(R.styleable.com_facebook_login_view_login_text);
+    [javac]                                  ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:586: error: cannot find symbol
+    [javac]         logoutText = a.getString(R.styleable.com_facebook_login_view_logout_text);
+    [javac]                                   ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:593: error: cannot find symbol
+    [javac]                     getResources().getString(R.string.com_facebook_loginview_log_out_button));
+    [javac]                                                      ^
+    [javac]   symbol:   variable com_facebook_loginview_log_out_button
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:596: error: cannot find symbol
+    [javac]                     getResources().getString(R.string.com_facebook_loginview_log_in_button));
+    [javac]                                                      ^
+    [javac]   symbol:   variable com_facebook_loginview_log_in_button
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:660: error: cannot find symbol
+    [javac]                     String logout = getResources().getString(R.string.com_facebook_loginview_log_out_action);
+    [javac]                                                                      ^
+    [javac]   symbol:   variable com_facebook_loginview_log_out_action
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:661: error: cannot find symbol
+    [javac]                     String cancel = getResources().getString(R.string.com_facebook_loginview_cancel_action);
+    [javac]                                                                      ^
+    [javac]   symbol:   variable com_facebook_loginview_cancel_action
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:664: error: cannot find symbol
+    [javac]                         message = String.format(getResources().getString(R.string.com_facebook_loginview_logged_in_as), user.getName());
+    [javac]                                                                                  ^
+    [javac]   symbol:   variable com_facebook_loginview_logged_in_as
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\LoginButton.java:666: error: cannot find symbol
+    [javac]                         message = getResources().getString(R.string.com_facebook_loginview_logged_in_using_facebook);
+    [javac]                                                                    ^
+    [javac]   symbol:   variable com_facebook_loginview_logged_in_using_facebook
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:112: error: cannot find symbol
+    [javac]         super(GraphPlace.class, R.layout.com_facebook_placepickerfragment, args);
+    [javac]                                         ^
+    [javac]   symbol:   variable com_facebook_placepickerfragment
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:247: error: cannot find symbol
+    [javac]         TypedArray a = activity.obtainStyledAttributes(attrs, R.styleable.com_facebook_place_picker_fragment);
+    [javac]                                                                ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:249: error: cannot find symbol
+    [javac]         setRadiusInMeters(a.getInt(R.styleable.com_facebook_place_picker_fragment_radius_in_meters, radiusInMeters));
+    [javac]                                     ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:250: error: cannot find symbol
+    [javac]         setResultsLimit(a.getInt(R.styleable.com_facebook_place_picker_fragment_results_limit, resultsLimit));
+    [javac]                                   ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:251: error: cannot find symbol
+    [javac]         if (a.hasValue(R.styleable.com_facebook_place_picker_fragment_results_limit)) {
+    [javac]                         ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:252: error: cannot find symbol
+    [javac]             setSearchText(a.getString(R.styleable.com_facebook_place_picker_fragment_search_text));
+    [javac]                                        ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:254: error: cannot find symbol
+    [javac]         showSearchBox = a.getBoolean(R.styleable.com_facebook_place_picker_fragment_show_search_box, showSearchBox);
+    [javac]                                       ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:262: error: cannot find symbol
+    [javac]             ListView listView = (ListView) view.findViewById(R.id.com_facebook_picker_list_view);
+    [javac]                                                               ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:265: error: cannot find symbol
+    [javac]                     R.layout.com_facebook_picker_search_box, listView, false);
+    [javac]                             ^
+    [javac]   symbol:   variable com_facebook_picker_search_box
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:269: error: cannot find symbol
+    [javac]             searchBox = (EditText) view.findViewById(R.id.com_facebook_picker_search_text);
+    [javac]                                                       ^
+    [javac]   symbol:   variable id
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:320: error: cannot find symbol
+    [javac]         return getString(R.string.com_facebook_nearby);
+    [javac]                                  ^
+    [javac]   symbol:   variable com_facebook_nearby
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:350: error: cannot find symbol
+    [javac]                     result = getString(R.string.com_facebook_placepicker_subtitle_format, category, wereHereCount);
+    [javac]                                                ^
+    [javac]   symbol:   variable com_facebook_placepicker_subtitle_format
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:352: error: cannot find symbol
+    [javac]                     result = getString(R.string.com_facebook_placepicker_subtitle_were_here_only_format, wereHereCount);
+    [javac]                                                ^
+    [javac]   symbol:   variable com_facebook_placepicker_subtitle_were_here_only_format
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:354: error: cannot find symbol
+    [javac]                     result = getString(R.string.com_facebook_placepicker_subtitle_catetory_only_format, category);
+    [javac]                                                ^
+    [javac]   symbol:   variable com_facebook_placepicker_subtitle_catetory_only_format
+    [javac]   location: class string
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:361: error: cannot find symbol
+    [javac]                 return R.layout.com_facebook_placepickerfragment_list_row;
+    [javac]                                ^
+    [javac]   symbol:   variable com_facebook_placepickerfragment_list_row
+    [javac]   location: class layout
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\PlacePickerFragment.java:366: error: cannot find symbol
+    [javac]                 return R.drawable.com_facebook_place_default_icon;
+    [javac]                                  ^
+    [javac]   symbol:   variable com_facebook_place_default_icon
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:385: error: cannot find symbol
+    [javac]         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.com_facebook_profile_picture_view);
+    [javac]                                                                    ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:386: error: cannot find symbol
+    [javac]         setPresetSize(a.getInt(R.styleable.com_facebook_profile_picture_view_preset_size, CUSTOM));
+    [javac]                                 ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:387: error: cannot find symbol
+    [javac]         isCropped = a.getBoolean(R.styleable.com_facebook_profile_picture_view_is_cropped, IS_CROPPED_DEFAULT_VALUE);
+    [javac]                                   ^
+    [javac]   symbol:   variable styleable
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:407: error: cannot find symbol
+    [javac]                   R.drawable.com_facebook_profile_picture_blank_square :
+    [javac]                             ^
+    [javac]   symbol:   variable com_facebook_profile_picture_blank_square
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:408: error: cannot find symbol
+    [javac]                   R.drawable.com_facebook_profile_picture_blank_portrait;
+    [javac]                             ^
+    [javac]   symbol:   variable com_facebook_profile_picture_blank_portrait
+    [javac]   location: class drawable
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:517: error: cannot find symbol
+    [javac]                 dimensionId = R.dimen.com_facebook_profilepictureview_preset_size_small;
+    [javac]                                ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:520: error: cannot find symbol
+    [javac]                 dimensionId = R.dimen.com_facebook_profilepictureview_preset_size_normal;
+    [javac]                                ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:523: error: cannot find symbol
+    [javac]                 dimensionId = R.dimen.com_facebook_profilepictureview_preset_size_large;
+    [javac]                                ^
+    [javac]   symbol:   variable dimen
+    [javac]   location: class R
+    [javac] C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\widget\ProfilePictureView.java:529: error: cannot find symbol
+    [javac]                     dimensionId = R.dimen.com_facebook_profilepictureview_preset_size_normal;
+
+Platform "android" compiled successfully.

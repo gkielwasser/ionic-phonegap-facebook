@@ -7,13 +7,15 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         Gab
     </author>
-    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
     <preference name="orientation" value="default" />
 
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="UIWebViewBounce" value="false" />
-
+    <access origin="*" />
 
 </widget>

@@ -91,6 +91,11 @@ angular.module('starter.controllers', [])
     };
   })
   .controller('ModalCtrl', ['$scope','$ionicModal',function($scope, $ionicModal) {
+    $scope.$watch("selectedFriends",function(value){
+      if($scope.modal && value && value.length == 0){
+        $scope.closeModal();
+      }
+    },true);
 
     // Load the modal from the given template URL
     $ionicModal.fromTemplateUrl('views/friendsConfirmationModal.html', function(modal) {
@@ -102,19 +107,13 @@ angular.module('starter.controllers', [])
       animation: 'slide-in-up'
     });
 
-    // Test data
-    $scope.contacts = [
-      { name: 'Gordon Freeman' },
-      { name: 'Barney Calhoun' },
-      { name: 'Lamarr the Headcrab' }
-    ];
-
     $scope.openModal = function() {
       $scope.modal.show();
     };
     $scope.closeModal = function() {
       $scope.modal.hide();
     };
+
   }])
 
   .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
@@ -124,6 +123,7 @@ angular.module('starter.controllers', [])
         $scope.initFriendsCtrl(friends);
       }
     })
+
 
     $scope.initFriendsCtrl = function(friends){
       $scope.initFriendsPartial(friends);
@@ -146,9 +146,11 @@ angular.module('starter.controllers', [])
     }
     $scope.nextPage = function(){
       $scope.currentPage ++;
+      $scope.$broadcast('scroll.scrollTop');
     }
     $scope.previousPage = function(){
       $scope.currentPage --;
+      $scope.$broadcast('scroll.scrollTop');
     }
 
     $scope.getNumberAsArray = function (num) {
@@ -156,12 +158,25 @@ angular.module('starter.controllers', [])
     };
 
 
-
+    $scope.currentEnd =
+    $scope.loadMore = function(done) {
+      $timeout(function() {
+        //$scope.movies.push({});
+        console.log("loadmore")
+        done();
+      }, 500);
+    }
 
 
     $scope.selectedFriends = [];
+
+    $scope.$watch("selectedFriends",function(value){
+      console.log("val",value,value && value.length == 0)
+      if($scope.modal && value && value.length == 0){
+        $scope.closeModal();
+      }
+    },true)
     $scope.addFriend=function(friend,event){
-      console.log("s",event)
       if(event.target.tagName != 'INPUT'){
         if($scope.selectedFriends.indexOf(friend) == -1){
           $scope.selectedFriends.push(friend);
@@ -186,14 +201,15 @@ angular.module('starter.controllers', [])
       }
     };
 
-
-
-
   }])
 
   .controller('leftMenuCtrl', ['$scope','UserService','$state',function($scope,UserService,$state) {
-    $scope.$on('openSideMenu',function(){
+    $scope.$on('toggleSideMenu',function(){
       $scope.sideMenuController.toggleLeft();
+    })
+
+    $scope.$on('closeSideMenu',function(){
+      $scope.sideMenuController.close();
     })
 
     // CloseMenu
@@ -219,7 +235,7 @@ angular.module('starter.controllers', [])
       type: 'button-clear',
       content: '<i class="icon ion-navicon">',
       tap: function (e) {
-        $scope.$broadcast('openSideMenu');
+        $scope.$broadcast('toggleSideMenu');
       }
     }];
 
@@ -230,7 +246,7 @@ angular.module('starter.controllers', [])
 
     $scope.toIntro = function(){
       window.localStorage['didTutorial'] = 'false';
-      $scope.$broadcast('openSideMenu');
+      $scope.$broadcast('closeSideMenu');
       $state.go('menu.intro');
     }
   }]);

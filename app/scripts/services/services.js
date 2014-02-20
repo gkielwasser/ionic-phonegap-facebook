@@ -44,11 +44,11 @@ angular.module('starter.services', [])
   var initFB = false;
   $rootScope.$on('Facebook:login', function(e,data){
     $rootScope.$apply(function() {
-    //console.log("Facebook:login",data);
+    console.log("Facebook:login",data);
     if (data.status == 'connected' && !initFB) {
       console.log('Connexion de',data)
       init();
-      initFB = true;
+     // initFB = true;
     }
     else{
       reset();
@@ -115,8 +115,12 @@ angular.module('starter.services', [])
   };
 
   var login = function(){
+    console.log("try login")
     var defered = $q.defer();
     Facebook.login(function(response) {
+      console.log(response)
+      console.log("success login...",response)
+      init();
       defered.resolve();
     });
     return defered.promise;
