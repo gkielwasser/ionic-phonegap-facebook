@@ -66,7 +66,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="25" selection-start="834" selection-end="834" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1258">
+            <state line="39" column="0" selection-start="1549" selection-end="1549" vertical-scroll-proportion="-11.615385" vertical-offset="361" max-vertical-offset="1258">
               <folding />
             </state>
           </provider>
@@ -93,7 +93,7 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="0" selection-start="4790" selection-end="4790" vertical-scroll-proportion="27.48" vertical-offset="3730" max-vertical-offset="4641">
+            <state line="251" column="27" selection-start="6654" selection-end="6670" vertical-scroll-proportion="-18.08" vertical-offset="3815" max-vertical-offset="4743">
               <folding />
             </state>
           </provider>
@@ -102,16 +102,25 @@
       <file leaf-file-name="friendsConfirmationModal.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="113" selection-start="1053" selection-end="1065" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="595">
+            <state line="7" column="50" selection-start="269" selection-end="269" vertical-scroll-proportion="-3.7307692" vertical-offset="22" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friends.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="subscribedFriends.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/subscribedFriends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="66" selection-start="173" selection-end="173" vertical-scroll-proportion="0.01868132" vertical-offset="0" max-vertical-offset="910">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friends.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/friends.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="563" selection-end="563" vertical-scroll-proportion="0.20549451" vertical-offset="0" max-vertical-offset="969">
+            <state line="9" column="86" selection-start="537" selection-end="537" vertical-scroll-proportion="-1.0" vertical-offset="77" max-vertical-offset="884">
               <folding>
                 <element signature="n#style#0;n#content#0;n#view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
@@ -128,7 +137,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="62" selection-start="3417" selection-end="3417" vertical-scroll-proportion="0.0" vertical-offset="1824" max-vertical-offset="3213">
+            <state line="67" column="43" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-29.64" vertical-offset="398" max-vertical-offset="3196">
               <folding />
             </state>
           </provider>
@@ -137,7 +146,7 @@
       <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="200" column="55" selection-start="5178" selection-end="5178" vertical-scroll-proportion="0.0" vertical-offset="2737" max-vertical-offset="3774">
+            <state line="2" column="163" selection-start="203" selection-end="203" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="3774">
               <folding />
             </state>
           </provider>
@@ -146,18 +155,9 @@
       <file leaf-file-name="app_Config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app_Config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requests.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/example/HackBook/js/requests.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="535" selection-end="793" vertical-scroll-proportion="-9.56" vertical-offset="84" max-vertical-offset="1020">
+            <state line="7" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <marker date="1393268474298" expanded="true" signature="455:783" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -178,17 +178,17 @@
         <option value="$PROJECT_DIR$/app/cdv-plugin-fb-connect.js" />
         <option value="$PROJECT_DIR$/platforms/android/src/com/example/app/Phonegap.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/views/subscribedFriends.html" />
         <option value="$PROJECT_DIR$/app/views/about.html" />
         <option value="$PROJECT_DIR$/app/views/leftMenu.html" />
-        <option value="$PROJECT_DIR$/app/views/friendsConfirmationModal.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/services.js" />
-        <option value="$PROJECT_DIR$/app/scripts/app_Config.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/controllers.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/menu.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/controllers.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/services.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/app_Config.js" />
         <option value="$PROJECT_DIR$/app/views/friends.html" />
+        <option value="$PROJECT_DIR$/app/views/friendsConfirmationModal.html" />
+        <option value="$PROJECT_DIR$/app/views/subscribedFriends.html" />
       </list>
     </option>
   </component>
@@ -271,6 +271,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,10 +435,10 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12681913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64425164" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64345115" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.159375" sideWeight="0.3557484" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.159375" sideWeight="0.35654885" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22885032" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -436,15 +476,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/example/HackBook/js/_config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="1" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/example/HackBook/js/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="12" selection-start="898" selection-end="898" vertical-scroll-proportion="0.0" vertical-offset="1416" max-vertical-offset="2312">
@@ -467,7 +498,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -483,63 +514,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="535" selection-end="793" vertical-scroll-proportion="-9.56" vertical-offset="84" max-vertical-offset="1020">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="113" selection-start="1053" selection-end="1065" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="62" selection-start="3417" selection-end="3417" vertical-scroll-proportion="0.0" vertical-offset="1824" max-vertical-offset="3213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="55" selection-start="5178" selection-end="5178" vertical-scroll-proportion="0.0" vertical-offset="2737" max-vertical-offset="3774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app_Config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/applications.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="252" column="23" selection-start="5908" selection-end="5908" vertical-scroll-proportion="0.16183035" vertical-offset="4139" max-vertical-offset="6290">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="0" selection-start="4790" selection-end="4790" vertical-scroll-proportion="27.48" vertical-offset="3730" max-vertical-offset="4641">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="25" selection-start="834" selection-end="834" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1258">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/leftMenu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
           <folding />
         </state>
       </provider>
@@ -551,9 +533,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/leftMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="1549" selection-end="1549" vertical-scroll-proportion="-11.615385" vertical-offset="361" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="163" selection-start="203" selection-end="203" vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="3774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="43" selection-start="2240" selection-end="2240" vertical-scroll-proportion="-29.64" vertical-offset="398" max-vertical-offset="3196">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app_Config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <folding>
+            <marker date="1393268474298" expanded="true" signature="455:783" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="27" selection-start="6654" selection-end="6670" vertical-scroll-proportion="-18.08" vertical-offset="3815" max-vertical-offset="4743">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/friends.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="563" selection-end="563" vertical-scroll-proportion="0.20549451" vertical-offset="0" max-vertical-offset="969">
+        <state line="9" column="86" selection-start="537" selection-end="537" vertical-scroll-proportion="-1.0" vertical-offset="77" max-vertical-offset="884">
           <folding>
             <element signature="n#style#0;n#content#0;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
@@ -563,6 +589,20 @@
             <element signature="n#style#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="50" selection-start="269" selection-end="269" vertical-scroll-proportion="-3.7307692" vertical-offset="22" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/subscribedFriends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="66" selection-start="173" selection-end="173" vertical-scroll-proportion="0.01868132" vertical-offset="0" max-vertical-offset="910">
+          <folding />
         </state>
       </provider>
     </entry>

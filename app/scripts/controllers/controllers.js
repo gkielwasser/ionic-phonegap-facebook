@@ -148,7 +148,7 @@ angular.module('starter.controllers', [])
       $scope.pageSize = 15;
 
       $scope.numberOfPages = function() {
-        return Math.ceil($filter('filter')($scope.friends,$scope.search).length/ $scope.pageSize);
+        return Math.ceil($filter('filter')($scope.friends,{name:$scope.search}).length/ $scope.pageSize);
       };
     }
 
@@ -162,6 +162,11 @@ angular.module('starter.controllers', [])
     $scope.previousPage = function(){
       $scope.currentPage --;
       $scope.$broadcast('scroll.scrollTop');
+    }
+
+    $scope.searching = function(){
+      $scope.$broadcast('scroll.scrollTop');
+      $scope.currentPage = 0
     }
 
     $scope.getNumberAsArray = function (num) {
@@ -243,8 +248,9 @@ angular.module('starter.controllers', [])
     };
   }])
 
-  .controller('MainCtrl', ['$scope','$state','UserService',function($scope, $state,UserService) {
-
+  .controller('MainCtrl', ['$scope','$state','UserService','application_conf',function($scope, $state,UserService,application_conf) {
+    $scope.application_conf = application_conf;
+    console.log("CONFIGURATION",application_conf)
     $scope.leftButtons = [{
       type: 'button-clear',
       content: '<i class="icon ion-navicon">',

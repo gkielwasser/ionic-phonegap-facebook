@@ -25,7 +25,9 @@
 
 angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.controllers','starter.directives','facebook','checklist-model'])
 
-  .run(["$rootScope","$state","$urlRouter",function($rootScope,$state,$urlRouter) {
+  .run(["$rootScope","$state","$urlRouter","application_conf","application_conf_web","application_conf_mobile",
+    function($rootScope,$state,$urlRouter,application_conf,application_conf_web,application_conf_mobile) {
+
     //Start Fastclick
     FastClick.attach(document.body);
 
@@ -55,9 +57,20 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
   });
 
 
+    if (cordova ) {
+      angular.extend(application_conf.facebook,application_conf_mobile.facebook);
+      angular.extend(application_conf,application_conf_mobile);
+     // application_conf = application_conf_mobile;
+     // application_conf.facebook.init = application_conf_mobile.init;
+    }
+    else{
+      angular.extend(application_conf.facebook,application_conf_web.facebook);
+      angular.extend(application_conf.general,application_conf_web.general);
+    }
+
 }])
 
-  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider','facebookConfiguration',function($stateProvider, $urlRouterProvider,FacebookProvider,facebookConfiguration) {
+  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider','application_conf_web','application_conf_mobile',function($stateProvider, $urlRouterProvider,FacebookProvider,application_conf_web,application_conf_mobile) {
 
     $stateProvider
 
@@ -121,9 +134,8 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     //  FacebookProvider.init('711009162272801');
 
     if (cordova ) {
-      console.log("CORDOVA ENABLED");
-
-      FacebookProvider.init(facebookConfiguration.cordova_conf,false);
+      console.log("CORDOVA ENABLED",application_conf.facebook.init);
+      FacebookProvider.init(application_conf_mobile.facebook.init,false);
       /*
       document.addEventListener('deviceready', function () {
         FB.init({
@@ -137,9 +149,8 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
       }, false);
       */
     } else {
-      console.log("CORDOVA DISABLED")
-
-       FacebookProvider.init(facebookConfiguration.web_conf);
+      console.log("CORDOVA DISABLED",application_conf_web.facebook.init)
+      FacebookProvider.init(application_conf_web.facebook.init);
 
       /*
       window.fbAsyncInit = function() {
@@ -162,18 +173,6 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
       }(document, 'script', 'facebook-jssdk'));
       */
     }
-/*
-    if(typeof CDV != 'undefined'){
-      console.log("CDV IS DEFINED !!!!!!!!!!!!!!")
-
-
-
-    }
-    else{
-      console.log("CDV IS NOT DEFINED !!!!!!!!!!!!!!")
-    }
-
-*/
   }]).filter('startFrom', function() {
     return function(input, start) {
       return (input) ? input.slice(start) : false;

@@ -2,16 +2,13 @@
     <div class="bar bar-subheader">
         <label class="item item-input item-input-wrapper">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="currentPage = 0">
+            <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching()">
             <button class="button button-clear" ng-click="search=''">X</button>
         </label>
     </div>
-    <content has-header="true" has-tabs="true" style="top:100px">
-
+    <content has-header="true" has-tabs="true" style="top:100px" overflow-scroll="{{application_conf.general.overflowScroll}}">
         <ul class="list fade-in-not-out">
-            <!--ng-click="addFriend(friend,$event)"-->
-
-            <li class="item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends| filter: {name:search,first_name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
+            <li ng-click="addFriend(friend,$event)" class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends| filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
                 <img ng-src="{{friend.picture.data.url}}">
                 <h2>{{friend.first_name}}</h2>
                 <h4>{{friend.name}}</h4>
@@ -20,9 +17,7 @@
                     <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
                 </label>
             </li>
-
         </ul>
-
     </content>
 
     <div class="tabs tabs-icon-left">

@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'facebookConfiguration', '$filter',function($rootScope,Facebook,$ionicLoading,$q,facebookConfiguration,$filter) {
+.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'application_conf', '$filter',function($rootScope,Facebook,$ionicLoading,$q,application_conf,$filter) {
     var initiated = false;
 
 
@@ -117,7 +117,7 @@ angular.module('starter.services', [])
 
   var friends = function() {
     var defered = $q.defer();
-    Facebook.api('/me/friends?fields=' + facebookConfiguration.friends_fields, function(response) {
+    Facebook.api('/me/friends?fields=' + application_conf.facebook.friends_fields, function(response) {
       $rootScope.$apply(function() {
         user.friends = response.data;
         console.log("friends",user.friends)
@@ -143,7 +143,7 @@ angular.module('starter.services', [])
       console.log("success login...",response)
       init();
       defered.resolve();
-    },{scope: facebookConfiguration.permissions});
+    },{scope: application_conf.facebook.permissions});
     return defered.promise;
   }
 
