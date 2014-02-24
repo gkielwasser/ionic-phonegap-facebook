@@ -57,7 +57,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
 }])
 
-  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider',function($stateProvider, $urlRouterProvider,FacebookProvider) {
+  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider','facebookConfiguration',function($stateProvider, $urlRouterProvider,FacebookProvider,facebookConfiguration) {
 
     $stateProvider
 
@@ -122,16 +122,8 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
     if (cordova ) {
       console.log("CORDOVA ENABLED");
-      var config = {
-        appId: "711009162272801",
-        //'oauth': true,
-        'localSDK': 'facebook-js-sdk.js',
-        'nativeInterface': CDV.FB,
-        //status: true,
-        //frictionlessRequests: true,
-        useCachedDialogs: false
-      }
-      FacebookProvider.init(config,false);
+
+      FacebookProvider.init(facebookConfiguration.cordova_conf,false);
       /*
       document.addEventListener('deviceready', function () {
         FB.init({
@@ -147,7 +139,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     } else {
       console.log("CORDOVA DISABLED")
 
-       FacebookProvider.init("711009162272801");
+       FacebookProvider.init(facebookConfiguration.web_conf);
 
       /*
       window.fbAsyncInit = function() {

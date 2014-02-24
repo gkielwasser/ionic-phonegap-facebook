@@ -125,7 +125,6 @@ angular.module('starter.controllers', [])
         }
       })
     }
-
   }])
 
   .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
@@ -170,7 +169,7 @@ angular.module('starter.controllers', [])
     };
 
 
-    $scope.currentEnd =
+
     $scope.loadMore = function(done) {
       $timeout(function() {
         //$scope.movies.push({});
@@ -213,6 +212,9 @@ angular.module('starter.controllers', [])
       }
     };
 
+    $scope.sendFriendsInvitation = function(){
+      UserService.sendFriendsInvitation($scope.selectedFriends);
+    }
   }])
 
   .controller('leftMenuCtrl', ['$scope','UserService','$state',function($scope,UserService,$state) {

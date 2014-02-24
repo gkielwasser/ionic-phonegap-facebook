@@ -239,7 +239,7 @@ C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\images\cef4c36d.ion
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
-C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\2e6202e3.scripts.js \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\74e384f0.scripts.js \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\9e85e8fa.vendor.js \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\styles\41993d40.main.css \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\404.html \
@@ -250,4 +250,5 @@ C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\intro.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\leftMenu.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\login.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\menu.html \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\subscribedFriends.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\AndroidManifest.xml \

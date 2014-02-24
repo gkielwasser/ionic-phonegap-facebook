@@ -6,20 +6,21 @@
             <button class="button button-clear" ng-click="search=''">X</button>
         </label>
     </div>
-
     <content has-header="true" has-tabs="true" style="top:100px">
 
-        <ul class="list">
+        <ul class="list fade-in-not-out">
             <!--ng-click="addFriend(friend,$event)"-->
-            <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends | filter: {'name':search,'first_name':search} | startFrom: currentPage * pageSize  | limitTo:pageSize">
+
+            <li class="item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends| filter: {name:search,first_name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
                 <img ng-src="{{friend.picture.data.url}}">
-               <h2>{{friend.first_name}}</h2>
+                <h2>{{friend.first_name}}</h2>
                 <h4>{{friend.name}}</h4>
                 <i class="icon ion-heart" ng-show="friends.installed"></i>
                 <label class="checkbox icon">
                     <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
                 </label>
             </li>
+
         </ul>
 
     </content>

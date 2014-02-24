@@ -1,6 +1,8 @@
 angular.module('starter.services', [])
 
-.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'facebookConfiguration', function($rootScope,Facebook,$ionicLoading,$q,facebookConfiguration) {
+.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'facebookConfiguration', '$filter',function($rootScope,Facebook,$ionicLoading,$q,facebookConfiguration,$filter) {
+    var initiated = false;
+
 
     /*début loading*/
     // Trigger the loading indicator
@@ -93,15 +95,19 @@ angular.module('starter.services', [])
       //console.log("Facebook:load",data);
     })
 
-  var init = function(){
-   $rootScope.showLoading();
-    var defered = $q.defer();
-    me();
-    friends().then(function(){
-      defered.resolve();
-      $rootScope.hideLoading();
-    });
-    return defered.promise;
+  var init = function(force){
+   if(!force && !initiated){
+     $rootScope.showLoading();
+      var defered = $q.defer();
+      me();
+      friends().then(function(){
+        defered.resolve();
+        $rootScope.hideLoading();
+      });
+
+     initiated = true;
+      return defered.promise;
+   }
   }
 
   var reset = function(){
@@ -163,6 +169,7 @@ angular.module('starter.services', [])
   }
 
   return {
+
     getLoginStatus: function(){
       return getLoginStatus();
     },
@@ -187,6 +194,23 @@ angular.module('starter.services', [])
     logout: function(){
       console.log("logout")
       return Facebook.logout(function() {});
+    },
+
+    sendFriendsInvitation: function(selectedFriends){
+      var nonInvitedId = [];
+      angular.forEach($filter('filter')(selectedFriends), function (value){
+        console.log("ITEM",value)
+        nonInvitedId.push(value.id);
+      })
+    console.log("Try send Invitations to", nonInvitedId)
+        FB.ui({
+          method: 'apprequests',
+          to:nonInvitedId ,
+          message: 'Essayez !'
+        }, function(response) {
+          console.log('sendRequestInvite UI response: ', response);
+        });
+
     }
   }
 }]);
