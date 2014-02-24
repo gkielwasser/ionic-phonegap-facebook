@@ -1,0 +1,18 @@
+<view data-title="'Amis: ' + friends.length" left-buttons="leftButtons" ng-init="initSubscribedFriends()">
+    <content has-header="true" has-tabs="true">
+
+        <ul class="list">
+            <li class="item item item-thumbnail-left item-icon-right" ng-repeat="friend in friends">
+                <img ng-src="{{friend.picture.data.url}}">
+                <h2>{{friend.first_name}}</h2>
+                <h4>{{friend.name}}</h4>
+            </li>
+        </ul>
+
+    </content>
+
+    <div class="tabs tabs-icon-left">
+
+
+    </div>
+</view>

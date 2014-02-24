@@ -63,29 +63,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="38" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+            <state line="84" column="46" selection-start="2368" selection-end="2389" vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="3349">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="31" selection-start="645" selection-end="645" vertical-scroll-proportion="0.2905983" vertical-offset="0" max-vertical-offset="936">
+            <state line="238" column="31" selection-start="6250" selection-end="6250" vertical-scroll-proportion="-16.24" vertical-offset="3234" max-vertical-offset="4607">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
+      <file leaf-file-name="about.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="340">
+            <state line="3" column="87" selection-start="254" selection-end="254" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="221">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="11" selection-start="2381" selection-end="2381" vertical-scroll-proportion="-14.44" vertical-offset="982" max-vertical-offset="3366">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app_Config.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/app_Config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="54" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscribedFriends.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/subscribedFriends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="38" selection-start="518" selection-end="518" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="391">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leftMenu.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/leftMenu.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="100" selection-start="890" selection-end="890" vertical-scroll-proportion="0.37558138" vertical-offset="0" max-vertical-offset="860">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friends.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/friends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="44" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="952">
+              <folding>
+                <element signature="n#style#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,22 +152,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/AuthorizationClient.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/FacebookRequestError.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/FriendPickerFragment.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/GraphObjectAdapter.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/LoginButton.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/PickerFragment.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/PlacePickerFragment.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/ProfilePictureView.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/widget/UserSettingsFragment.java" />
-        <option value="$PROJECT_DIR$/builderrors.txt" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/Settings.java" />
-        <option value="$PROJECT_DIR$/platforms/android/src/com/facebook/internal/Utility.java" />
-        <option value="$PROJECT_DIR$/platforms/android/gen/com/example/app/R.java" />
-        <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/config.xml" />
         <option value="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
+        <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/plugins/com.phonegap.plugins.facebookconnect/www/cdv-plugin-fb-connect.js" />
+        <option value="$PROJECT_DIR$/app/cdv-plugin-fb-connect.js" />
+        <option value="$PROJECT_DIR$/platforms/android/src/com/example/app/Phonegap.java" />
+        <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/views/subscribedFriends.html" />
+        <option value="$PROJECT_DIR$/app/scripts/app_Config.js" />
+        <option value="$PROJECT_DIR$/app/views/about.html" />
+        <option value="$PROJECT_DIR$/app/views/friends.html" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/controllers.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/services.js" />
+        <option value="$PROJECT_DIR$/app/views/leftMenu.html" />
       </list>
     </option>
   </component>
@@ -179,11 +231,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -197,15 +245,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,19 +263,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,15 +281,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="platforms" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="phonegap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -310,21 +368,39 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gab\workspace" />
-      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src\com" />
+      <recent name="C:\Users\Gab\workspace\phonegap\plugins\com.phonegap.plugins.facebookconnect" />
+      <recent name="C:\Users\Gab\workspace\phonegap\app" />
+      <recent name="C:\Users\Gab\workspace\phonegap" />
+      <recent name="C:\Users\Gab\workspace\phonegap\plugins\com.phonegap.plugins.facebookconnect\www" />
       <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src\org\apache\cordova" />
-      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src" />
-      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gab\workspace\phonegap\plugins" />
+      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src\org\apache" />
       <recent name="C:\Users\Gab\workspace\phonegap\libraries" />
       <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\libs" />
       <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src\com" />
-      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts" />
-      <recent name="C:\Users\Gab\workspace\phonegap\platforms\android\src\com\facebook\android" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -358,11 +434,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2099792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12681913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29375" sideWeight="0.6561822" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.159375" sideWeight="0.7190889" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22885032" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -377,10 +453,10 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3438178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28091106" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -401,82 +477,123 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/platforms/android/src/com/example/app/Phonegap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="38" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="40" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="578">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="340">
+        <state line="15" column="54" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="118" max-vertical-offset="1190">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="38" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+        <state line="16" column="0" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="90" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="578">
+        <state line="278" column="20" selection-start="6790" selection-end="6797" vertical-scroll-proportion="-11.6" vertical-offset="4436" max-vertical-offset="6987">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-facebook/lib/angular-facebook.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="340">
+        <state line="481" column="27" selection-start="14193" selection-end="14199" vertical-scroll-proportion="-11.6" vertical-offset="7887" max-vertical-offset="9758">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1043" selection-end="1043" vertical-scroll-proportion="-9.0" vertical-offset="242" max-vertical-offset="1258">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/builderrors.txt">
+    <entry file="file://$PROJECT_DIR$/app/cdv-plugin-fb-connect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="19" selection-start="2191" selection-end="2191" vertical-scroll-proportion="0.0" vertical-offset="685" max-vertical-offset="9146" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/gen/com/example/app/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="230" selection-end="230" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.4093264" vertical-offset="816" max-vertical-offset="1649">
+        <state line="35" column="10" selection-start="1614" selection-end="1620" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/project.properties">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+        <state line="2" column="8" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/views/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="38" selection-start="1321" selection-end="1321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="31" selection-start="645" selection-end="645" vertical-scroll-proportion="0.2905983" vertical-offset="0" max-vertical-offset="936">
+        <state line="84" column="46" selection-start="2368" selection-end="2389" vertical-scroll-proportion="0.0" vertical-offset="1042" max-vertical-offset="3349">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app_Config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="54" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="87" selection-start="254" selection-end="254" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="44" selection-start="1012" selection-end="1012" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="952">
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#2;n#div#1;n#view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/subscribedFriends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="38" selection-start="518" selection-end="518" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="238" column="31" selection-start="6250" selection-end="6250" vertical-scroll-proportion="-16.24" vertical-offset="3234" max-vertical-offset="4607">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="11" selection-start="2381" selection-end="2381" vertical-scroll-proportion="-14.44" vertical-offset="982" max-vertical-offset="3366">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/leftMenu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="100" selection-start="890" selection-end="890" vertical-scroll-proportion="0.37558138" vertical-offset="0" max-vertical-offset="860">
           <folding />
         </state>
       </provider>

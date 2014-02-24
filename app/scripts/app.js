@@ -15,11 +15,13 @@
   function onDeviceReady() {
     // bootstrap app
     angular.element(document).ready(function () {
+      console.log("ANGULAR WILL BOOTSTRAP")
       angular.bootstrap(document, ['starter']);
     });
     document.removeEventListener('deviceready', onDeviceReady, false);
   }
 })(window, document);
+
 
 angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.controllers','starter.directives','facebook','checklist-model'])
 
@@ -75,6 +77,16 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
         }
       })
 
+      .state('menu.subscribedFriends', {
+        url: '/subscribedFriends',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/subscribedFriends.html',
+            controller: 'SubscribedFriendsCtrl'
+          }
+        }
+      })
+
       .state('menu.about', {
         url: '/about',
         views: {
@@ -107,13 +119,69 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     // Here you could set your appId throug the setAppId method and then initialize
     // or use the shortcut in the initialize method directly.
     //  FacebookProvider.init('711009162272801');
-    var config = {
-      appId: '711009162272801',
-      'oauth': true,
-      'localSDK': 'facebook-js-sdk.js'
-    }
-   FacebookProvider.init(config, false);
 
+    if (cordova ) {
+      console.log("CORDOVA ENABLED");
+      var config = {
+        appId: "711009162272801",
+        //'oauth': true,
+        'localSDK': 'facebook-js-sdk.js',
+        'nativeInterface': CDV.FB,
+        //status: true,
+        //frictionlessRequests: true,
+        useCachedDialogs: false
+      }
+      FacebookProvider.init(config,false);
+      /*
+      document.addEventListener('deviceready', function () {
+        FB.init({
+          appId: FBAPPID,                 // App ID from the app dashboard
+          channelUrl: '//localhost/channel.html',        // Channel file for x-domain comms
+          nativeInterface: CDV.FB,
+          status: true,
+          frictionlessRequests: true,
+          useCachedDialogs: false
+        });
+      }, false);
+      */
+    } else {
+      console.log("CORDOVA DISABLED")
+
+       FacebookProvider.init("711009162272801");
+
+      /*
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: FBAPPID,                        // App ID from the app dashboard
+          channelUrl: 'http://localhost/channel.html', // Channel file for x-domain comms
+          status: true,                                 // Check Facebook Login status
+          frictionlessRequests: true,
+          useCachedDialogs: false
+        });
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      */
+    }
+/*
+    if(typeof CDV != 'undefined'){
+      console.log("CDV IS DEFINED !!!!!!!!!!!!!!")
+
+
+
+    }
+    else{
+      console.log("CDV IS NOT DEFINED !!!!!!!!!!!!!!")
+    }
+
+*/
   }]).filter('startFrom', function() {
     return function(input, start) {
       return (input) ? input.slice(start) : false;

@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:7
+-keep class com.example.app.Phonegap { <init>(...); }
+
+# view AndroidManifest.xml #generated:13
+-keep class com.facebook.LoginActivity { <init>(...); }
+

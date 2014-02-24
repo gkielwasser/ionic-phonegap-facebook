@@ -1,19 +1,23 @@
 <div ng-controller="leftMenuCtrl">
     <header class="bar bar-header bar-assertive">
-        <div class="title">{{user.username}}</div>
+        <div class="title">{{user.me.username}}</div>
     </header>
     <content has-header="true">
         <ul class="list selectable">
-            <a ng-hide="user.username" class="item item-icon-left" ng-click="login()">
+            <a ng-hide="user.logged" class="item item-icon-left" ng-click="login()">
                 <i class="icon ion-locked"></i>
                 Connexion
             </a>
 
-            <a ng-show="user.username" class="item item-icon-left" ng-click="closeMenu('menu.friends')">
+            <a ng-show="user.logged" class="item item-icon-left" ng-click="closeMenu('menu.friends')">
                 <i class="icon ion-person-stalker"></i>
                 Mes amis
-                <span class="badge badge-assertive"></span>
+            </a>
 
+            <a ng-show="user.logged" class="item item-icon-left" ng-click="closeMenu('menu.subscribedFriends')">
+                <i class="icon ion-heart"></i>
+                Déjà conquis
+                <span class="badge badge-balanced">{{(user.friends | filter:{installed:true}).length }}</span>
             </a>
 
             <a class="item item-icon-left" ng-click="closeMenu('menu.about')">
@@ -21,7 +25,7 @@
                 À propos
             </a>
 
-            <a ng-show="user.username" class="item item-icon-left" href="#" ng-click="logout()">
+            <a ng-show="user.logged" class="item item-icon-left" href="#" ng-click="logout()">
                 <i class="icon ion-power"></i>
                 Déconnexion
             </a>

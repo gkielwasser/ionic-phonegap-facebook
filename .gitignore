@@ -1,7 +1,9 @@
 node_modules
 dist
+.cordova
 .tmp
 .sass-cache
+.idea
 app/bower_components
 'www/' 
 'npm-debug.log'  

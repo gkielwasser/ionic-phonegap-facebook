@@ -21,6 +21,16 @@ package com.example.app;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+/*
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
+import android.util.Base64;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import android.util.Log;
+*/
 
 public class Phonegap extends DroidGap
 {
@@ -31,6 +41,24 @@ public class Phonegap extends DroidGap
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
+
+        // Add code to print out the key hash
+        /*
+            try {
+                PackageInfo info = getPackageManager().getPackageInfo(
+                        "com.example.app",
+                        PackageManager.GET_SIGNATURES);
+                for (Signature signature : info.signatures) {
+                    MessageDigest md = MessageDigest.getInstance("SHA");
+                    md.update(signature.toByteArray());
+                    Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                    }
+            } catch (NameNotFoundException e) {
+
+            } catch (NoSuchAlgorithmException e) {
+
+            }
+            */
     }
 }
 

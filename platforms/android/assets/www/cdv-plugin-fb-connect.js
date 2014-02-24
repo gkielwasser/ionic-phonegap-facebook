@@ -1,4 +1,3 @@
-
 CDV = ( typeof CDV == 'undefined' ? {} : CDV );
 var cordova = window.cordova || window.Cordova;
 CDV.FB = {
@@ -31,6 +30,9 @@ CDV.FB = {
     }, (fail?fail:null), 'org.apache.cordova.facebook.Connect', 'init', [apiKey]);
   },
   login: function(params, cb, fail) {
+    console.log("params")
+    console.log(params)
+    console.log(typeof params)
     params = params || { scope: '' };
     cordova.exec(function(e) { // login
         if (e.authResponse && e.authResponse.expiresIn) {

@@ -1,0 +1,210 @@
+Running build task...
+Building platform android
+Generating config.xml from defaults for platform "android"
+Preparing android project
+[Error: No Java files found which extend CordovaActivity.]
+Running command: cmd args=["/c","C:\\Users\\Gab\\workspace\\phonegap\\platforms\\android\\cordova\\build"]
+Buildfile: C:\Users\Gab\workspace\phonegap\platforms\android\build.xml
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 22.3.0
+ [checkenv] Installed at C:\adt-bundle-windows-x86_64-20130522\sdk
+
+-setup:
+     [echo] Project Name: Phonegap
+  [gettype] Project Type: Application
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 19.0.1
+     [echo] Resolving Build Target for Phonegap...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+     [echo] ----------
+     [echo] Resolving Dependencies for Phonegap...
+[dependency] Library dependencies:
+[dependency] 
+[dependency] ------------------
+[dependency] Ordered libraries:
+[dependency] 
+[dependency] ------------------
+     [echo] ----------
+     [echo] Building Libraries with 'debug'...
+
+nodeps:
+
+-set-mode-check:
+
+-set-debug-files:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 22.3.0
+ [checkenv] Installed at C:\adt-bundle-windows-x86_64-20130522\sdk
+
+-setup:
+     [echo] Project Name: CordovaLib
+  [gettype] Project Type: Android Library
+
+-set-debug-mode:
+
+-debug-obfuscation-check:
+
+-pre-build:
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 19.0.1
+     [echo] Resolving Build Target for CordovaLib...
+[gettarget] Project Target:   Android 4.4.2
+[gettarget] API level:        19
+     [echo] ----------
+     [echo] Creating output directories if needed...
+     [echo] ----------
+     [echo] Resolving Dependencies for CordovaLib...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found new input file
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] No need to generate new BuildConfig.
+
+-pre-compile:
+
+-compile:
+     [echo] Creating library output jar file...
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+     [echo] Library project: do not convert bytecode...
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\res
+   [crunch] To destination dir: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [echo] Library project: do not package resources...
+
+-package:
+     [echo] Library project: do not package apk...
+
+-post-package:
+
+-do-debug:
+     [echo] Library project: do not create apk...
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\build.prop
+
+-post-build:
+
+debug:
+
+-code-gen:
+[mergemanifest] Found Deleted Target File
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Found Deleted Target File
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] No need to generate new BuildConfig.
+
+-pre-compile:
+     [echo] Set jars path to: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\classes.jar
+
+-compile:
+    [javac] Compiling 8 source files to C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes
+    [javac] Note: Some input files use or override a deprecated API.
+    [javac] Note: Recompile with -Xlint:deprecation for details.
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+      [dex] input: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes
+      [dex] input: C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\classes.jar
+      [dex] Using Pre-Dexed classes-f0af0c3de1db8521622d7c767ef6a1be.jar <- C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build\classes.jar
+      [dex] Found Deleted Target File
+      [dex] Converting compiled files and external libraries into C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes.dex...
+       [dx] Merged dex A (32 defs/45,5KiB) with dex B (205 defs/312,8KiB). Result is 237 defs/434,4KiB. Took 0,7s
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: C:\Users\Gab\workspace\phonegap\platforms\android\res
+   [crunch] To destination dir: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+     [aapt] Found Deleted Target File
+     [aapt] Creating full resource package...
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.gitignore' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.travis.yml' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+     [aapt]     (skipping file '.bower.json' due to ANDROID_AAPT_IGNORE pattern '.*')
+
+-package:
+[apkbuilder] Found Deleted Target File
+[apkbuilder] Creating Phonegap-debug-unaligned.apk and signing it with a debug key...
+
+-post-package:
+
+-do-debug:
+ [zipalign] Running zip align on final apk...
+     [echo] Debug Package: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\Phonegap-debug.apk
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\build.prop
+[propertyfile] Updating property file: C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\build.prop
+
+-post-build:
+     [move] Moving 1 file to C:\Users\Gab\workspace\phonegap\platforms\android\ant-build
+     [move] Moving 1 file to C:\Users\Gab\workspace\phonegap\platforms\android\CordovaLib\ant-build
+
+debug:
+
+BUILD SUCCESSFUL
+Total time: 13 seconds

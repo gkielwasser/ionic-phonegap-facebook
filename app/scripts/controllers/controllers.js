@@ -116,6 +116,18 @@ angular.module('starter.controllers', [])
 
   }])
 
+  .controller('SubscribedFriendsCtrl', ['$scope','UserService','$filter', function($scope, UserService,$filter){
+
+    $scope.initSubscribedFriends = function(){
+      $scope.$watch(UserService.friends, function(friends){
+        if(friends){
+          $scope.friends = $filter('filter')(friends,{installed:true});
+        }
+      })
+    }
+
+  }])
+
   .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
 
     $scope.$watch(UserService.friends, function(friends){
@@ -240,9 +252,11 @@ angular.module('starter.controllers', [])
     }];
 
 
-    $scope.$watch(UserService.logged, function(data){
+    $scope.$watch(UserService.user, function(data){
+      console.log("user change",data)
       $scope.user = data;
-    })
+    },true)
+
 
     $scope.toIntro = function(){
       window.localStorage['didTutorial'] = 'false';

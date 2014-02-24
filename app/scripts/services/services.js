@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', function($rootScope,Facebook,$ionicLoading,$q) {
+.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'facebookConfiguration', function($rootScope,Facebook,$ionicLoading,$q,facebookConfiguration) {
 
     /*début loading*/
     // Trigger the loading indicator
@@ -77,7 +77,21 @@ angular.module('starter.services', [])
   })
   $rootScope.$on('Facebook:authResponseChange', function(e,data){
     //console.log("Facebook:authResponseChange",data);
+    if(data.status == 'connected') {
+      $rootScope.$apply(function() {
+        user.logged = true;
+      });
+    }
+    else {
+      $rootScope.$apply(function() {
+        user.logged = false;
+      });
+    }
   })
+
+    $rootScope.$on('Facebook:load', function(e,data){
+      //console.log("Facebook:load",data);
+    })
 
   var init = function(){
    $rootScope.showLoading();
@@ -97,9 +111,10 @@ angular.module('starter.services', [])
 
   var friends = function() {
     var defered = $q.defer();
-    Facebook.api('/me/friends?fields=name,first_name,picture', function(response) {
+    Facebook.api('/me/friends?fields=' + facebookConfiguration.friends_fields, function(response) {
       $rootScope.$apply(function() {
         user.friends = response.data;
+        console.log("friends",user.friends)
         defered.resolve();
       });
     });
@@ -122,7 +137,7 @@ angular.module('starter.services', [])
       console.log("success login...",response)
       init();
       defered.resolve();
-    });
+    },{scope: facebookConfiguration.permissions});
     return defered.promise;
   }
 
@@ -132,12 +147,14 @@ angular.module('starter.services', [])
       if(response.status == 'connected') {
         $rootScope.$apply(function() {
           $rootScope.loggedIn = true;
+          user.logged = true;
           defered.resolve("connected");
         });
       }
       else {
         $rootScope.$apply(function() {
           $rootScope.loggedIn = false;
+          user.logged = false;
           defered.resolve();
         });
       }
@@ -150,7 +167,10 @@ angular.module('starter.services', [])
       return getLoginStatus();
     },
     logged: function(){
-      return (user.me) ? user.me : false;
+      return (user.logged) ? user : false;
+    },
+    user: function(){
+      return user;
     },
     login: function(){
       return login();
@@ -160,6 +180,9 @@ angular.module('starter.services', [])
     },
     friends: function() {
       return user.friends;
+    },
+    subscribedFriends: function(){
+      return user.subscribedFriends;
     },
     logout: function(){
       console.log("logout")

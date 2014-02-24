@@ -237,6 +237,9 @@ provides: [facebook]
           if (angular.isDefined(_loadSDK)) {
             settings.loadSDK = !!_loadSDK;
           }
+
+          if(settings.loadSDK)  console.log("SDK must load auto")
+          else console.log("SDK must not load auto")
         };
 
         /**
@@ -329,6 +332,7 @@ provides: [facebook]
               $timeout(function() {
                 // Call when loadDeferred be resolved, meaning Service is ready to be used
                 loadDeferred.promise.then(function() {
+                  console.log("loadDeferred:XFBML")
                   $window.FB.parse();
                   d.resolve();
                 }, function() {
@@ -379,6 +383,7 @@ provides: [facebook]
               $timeout(function() {
                 // Call when loadDeferred be resolved, meaning Service is ready to be used
                 loadDeferred.promise.then(function() {
+                  console.log("loadDeferred:subscribe")
                   $window.FB.Event.subscribe.apply(FB, args);
                 }, function() {
                   throw 'Facebook API could not be initialized properly';
@@ -429,6 +434,7 @@ provides: [facebook]
                 // Call when loadDeferred be resolved, meaning Service is ready to be used
                 loadDeferred.promise.then(
                   function() {
+                    console.log("loadDeferred:unsubscribe")
                     $window.FB.Event.unsubscribe.apply(FB, args);
                   },
                   function() {
@@ -456,16 +462,20 @@ provides: [facebook]
       '$window',
       '$timeout',
       function($rootScope, $q, $window, $timeout) {
+        console.log("RUN from angular-facebook")
+
         // Define global loadDeffered to notify when Service callbacks are safe to use
         loadDeferred = $q.defer();
         
         var loadSDK = settings.loadSDK;
         delete(settings['loadSDK']); // Remove loadSDK from settings since this isn't part from Facebook API.
-        
+
         /**
          * Define fbAsyncInit required by Facebook API
          */
         $window.fbAsyncInit = function() {
+          console.log("FBASYNC INIT")
+
           // Initialize our Facebook app
           $timeout(function() {
             if (!settings.appId) {
@@ -476,7 +486,7 @@ provides: [facebook]
 
             // Set ready global flag
             flags.ready = true;
-          
+
 
             /**
              * Subscribe to Facebook API events and broadcast through app.
@@ -508,7 +518,7 @@ provides: [facebook]
             $rootScope.$broadcast('Facebook:load');
 
             loadDeferred.resolve(FB);
-            
+
           });
         };
 
@@ -531,6 +541,9 @@ provides: [facebook]
          * SDK script injecting
          */
         loadSDK && (function injectScript() {
+
+          console.log("load the sdk async from angular-facebook")
+
           var src           = '//connect.facebook.net/' + settings.locale + '/all.js',
               script        = document.createElement('script');
               script.id     = 'facebook-jssdk';
@@ -547,6 +560,7 @@ provides: [facebook]
           };
 
           document.getElementsByTagName('head')[0].appendChild(script); // // Fix for IE < 9, and yet supported by lattest browsers
+
         })();
         
       }
