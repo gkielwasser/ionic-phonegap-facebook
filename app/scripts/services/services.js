@@ -1,18 +1,15 @@
 angular.module('starter.services', [])
 
-.factory('UserService', ['$rootScope','Facebook','$ionicLoading','$q', 'application_conf', '$filter',function($rootScope,Facebook,$ionicLoading,$q,application_conf,$filter) {
-    var initiated = false;
 
-
-    /*début loading*/
-    // Trigger the loading indicator
-    $rootScope.showLoading = function() {
+  .service('ConnectService',['$ionicLoading','$window', function($ionicLoading,$window){
+    var disconnection;
+    var showDisconnection = function() {
 
       // Show the loading overlay and text
-      $rootScope.loading = $ionicLoading.show({
+        disconnection = $ionicLoading.show({
 
         // The text to display in the loading indicator
-        content: '<i class=" ion-loading-c"></i> Chargement',
+        content: '<i class=" ion-alert-circled"></i> Une connexion Internet est nécessaire',
 
         // The animation to use
         animation: 'fade-in',
@@ -30,10 +27,62 @@ angular.module('starter.services', [])
     };
 
     // Hide the loading indicator
-    $rootScope.hideLoading = function(){
-      $rootScope.loading.hide();
+    var hideDisconnection = function(){
+      if(disconnection)disconnection.hide();
     };
 
+    var online = function(){
+      console.log("Status online")
+      hideDisconnection();
+    }
+
+    var offline= function(){
+      console.log("Status offline")
+      showDisconnection();
+    }
+
+
+
+    var onlineStatus = {};
+
+    onlineStatus.onLine = $window.navigator.onLine;
+    if( $window.navigator.onLine){
+      online()
+    } else{
+      offline();
+    }
+
+
+    onlineStatus.isOnline = function() {
+      return onlineStatus.onLine;
+    }
+
+    $window.addEventListener("online", function () {
+      onlineStatus.onLine = true;
+      online();
+      $rootScope.$digest();
+    }, true);
+
+    $window.addEventListener("offline", function () {
+      onlineStatus.onLine = false;
+      offline();
+      $rootScope.$digest();
+    }, true);
+
+    return {
+      offline:function(){
+        offline();
+      },
+      online:function(){
+       online();
+      }
+    };
+  }])
+
+
+
+.factory('UserService', ['$rootScope','Facebook','$q', 'application_conf', '$filter',function($rootScope,Facebook,$q,application_conf,$filter) {
+    var initiated = false;
 
     // Here, usually you should watch for when Facebook is ready and loaded
     $rootScope.$watch(function() {
@@ -196,7 +245,7 @@ angular.module('starter.services', [])
       return Facebook.logout(function() {});
     },
 
-    sendFriendsInvitation: function(selectedFriends){
+    sendFriendsInvitation: function(selectedFriends,message){
       var nonInvitedId = [];
       angular.forEach($filter('filter')(selectedFriends), function (value){
         console.log("ITEM",value)
@@ -206,7 +255,7 @@ angular.module('starter.services', [])
         FB.ui({
           method: 'apprequests',
           to:nonInvitedId ,
-          message: 'Essayez !'
+          message: message || "Voilà une super application pour ..."
         }, function(response) {
           console.log('sendRequestInvite UI response: ', response);
         });

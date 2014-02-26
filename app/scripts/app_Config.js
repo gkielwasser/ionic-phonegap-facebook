@@ -5,11 +5,14 @@ angular.module('starter')
       permissions: "basic_info",
       friends_fields: "id,name,first_name,picture,installed"
     },
-    general:{}
+    general:{
+
+    }
   })
 .constant('application_conf_web', {
     general: {
-      overflowScroll : true
+      overflowScroll : true,
+      application_path : "192.168.0.45:9000/"
     },
     facebook: {
       init: {

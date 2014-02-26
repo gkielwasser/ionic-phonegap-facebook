@@ -31,4 +31,6 @@ C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\c
 C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin$AuthorizeListener.class \
 C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin$UIDialogListener.class \
 C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\cordova\facebook\ConnectPlugin.class \
+C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
+C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
 C:\Users\Gab\workspace\phonegap\platforms\android\ant-build\dexedLibs\classes-f0af0c3de1db8521622d7c767ef6a1be.jar \

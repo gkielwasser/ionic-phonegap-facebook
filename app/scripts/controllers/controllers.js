@@ -91,7 +91,7 @@ angular.module('starter.controllers', [])
     };
   })
   .controller('ModalCtrl', ['$scope','$ionicModal',function($scope, $ionicModal) {
-    $scope.$watch("selectedFriends",function(value){
+    $scope.$watch("getSelectedFriend()",function(value){
       if($scope.modal && value && value.length == 0){
         $scope.closeModal();
       }
@@ -183,22 +183,25 @@ angular.module('starter.controllers', [])
       }, 500);
     }
 
-
-    $scope.selectedFriends = [];
-
-    $scope.$watch("selectedFriends",function(value){
-      console.log("val",value,value && value.length == 0)
-      if($scope.modal && value && value.length == 0){
+    $scope.$watch("friends",function(value){
+      if($scope.modal && value && $scope.getSelectedFriend().length == 0){
         $scope.closeModal();
       }
     },true)
+
+    $scope.reset= function(){
+      angular.forEach($scope.friends, function(value){
+        value.enabled = false;
+      })
+    }
+
     $scope.addFriend=function(friend,event){
       if(event.target.tagName != 'INPUT'){
-        if($scope.selectedFriends.indexOf(friend) == -1){
-          $scope.selectedFriends.push(friend);
+        if(friend.enabled){
+          friend.enabled = false;
         }
-        else  {
-          $scope.selectedFriends.splice($scope.selectedFriends.indexOf(friend),1);
+        else{
+          friend.enabled = true;
         }
       }
       else{
@@ -217,8 +220,12 @@ angular.module('starter.controllers', [])
       }
     };
 
-    $scope.sendFriendsInvitation = function(){
-      UserService.sendFriendsInvitation($scope.selectedFriends);
+    $scope.getSelectedFriend = function(){
+      return $filter('filter')($scope.friends,{enabled:true});
+    }
+
+    $scope.sendFriendsInvitation = function(message){
+      UserService.sendFriendsInvitation($scope.getSelectedFriend(),message);
     }
   }])
 
@@ -248,7 +255,8 @@ angular.module('starter.controllers', [])
     };
   }])
 
-  .controller('MainCtrl', ['$scope','$state','UserService','application_conf',function($scope, $state,UserService,application_conf) {
+  .controller('MainCtrl', ['$scope','$state','UserService','application_conf','$rootScope','$ionicLoading',"ConnectService",
+    function($scope, $state,UserService,application_conf,$rootScope,$ionicLoading,ConnectService) {
     $scope.application_conf = application_conf;
     console.log("CONFIGURATION",application_conf)
     $scope.leftButtons = [{
@@ -258,6 +266,10 @@ angular.module('starter.controllers', [])
         $scope.$broadcast('toggleSideMenu');
       }
     }];
+
+    $scope.closeMenu = function(){
+      //$scope.$broadcast('closeSideMenu');
+    }
 
 
     $scope.$watch(UserService.user, function(data){
@@ -271,4 +283,37 @@ angular.module('starter.controllers', [])
       $scope.$broadcast('closeSideMenu');
       $state.go('menu.intro');
     }
+
+    /*début loading*/
+    // Trigger the loading indicator
+    $rootScope.showLoading = function() {
+
+      // Show the loading overlay and text
+      $rootScope.loading = $ionicLoading.show({
+
+        // The text to display in the loading indicator
+        content: '<i class=" ion-loading-c"></i> Chargement',
+
+        // The animation to use
+        animation: 'fade-in',
+
+        // Will a dark overlay or backdrop cover the entire view
+        showBackdrop: true,
+
+        // The maximum width of the loading indicator
+        // Text will be wrapped if longer than maxWidth
+        maxWidth: 200,
+
+        // The delay in showing the indicator
+        showDelay: 0
+      });
+    };
+
+    // Hide the loading indicator
+    $rootScope.hideLoading = function(){
+      $rootScope.loading.hide();
+    };
+
+
+
   }]);

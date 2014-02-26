@@ -1,29 +1,31 @@
 <div class="modal">
 
     <header class="bar bar-header bar-energized">
-        <h1 class="title">Confirmation</h1>
+        <h1 class="title">Confirmation des invitations</h1>
         <button class="button button-energized" ng-click="closeModal()">Annuler</button>
     </header>
 
     <content has-header="true" overflow-scroll="{{application_conf.general.overflowScroll}}">
 
-        <div class="padding">
-            <div class="list">
-
-                <ul class="list">
-                    <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in selectedFriends" ng-click="addFriend(friend,$event)">
-                        <img ng-src="{{friend.picture.data.url}}">
-                        <h2>{{friend.first_name}}</h2>
-                        <h4>{{friend.name}}</h4>
-                        <label class="checkbox icon">
-                            <input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">
-                        </label>
-                    </li>
-                </ul>
-
-                <button class="button button-full button-positive" ng-click="sendFriendsInvitation();closeModal()">Inviter ({{selectedFriends.length}})</button>
-
+        <div class="list">
+            <ul class="list">
+                <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends|filter:{enabled:true}" ng-click="addFriend(friend,$event)">
+                    <img ng-src="{{friend.picture.data.url}}">
+                    <h2>{{friend.first_name}}</h2>
+                    <h4>{{friend.name}}</h4>
+                    <label class="checkbox icon">
+                        <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
+                    </label>
+                </li>
+            </ul>
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Votre message d'invitation</span>
+                    <input type="text" ng-model="message" placeholder="ex: Voilà une super application pour ...">
+                </label>
             </div>
+
+            <button class="button button-full button-positive" ng-click="sendFriendsInvitation(message);closeModal()">Inviter ({{(friends|filter:{enabled:true}).length}})</button>
         </div>
 
     </content>

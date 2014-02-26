@@ -1,10 +1,12 @@
 (function (window, document) {
 
   function onWindowLoad() {
-    if (!(!window.cordova && !window.PhoneGap && !window.phonegap)) {
+    if (window.cordova){
+      console.log("we are on mobile")
       // on device add ready listener
       document.addEventListener('deviceready', onDeviceReady, false);
     } else {
+      console.log("we are on browser")
       // on browser trigger onDeviceReady
       onDeviceReady();
     }
@@ -13,11 +15,72 @@
   window.addEventListener('load', onWindowLoad, false);
 
   function onDeviceReady() {
-    // bootstrap app
-    angular.element(document).ready(function () {
-      console.log("ANGULAR WILL BOOTSTRAP")
+    function checkConnection() {
+      console.log(navigator.connection);
+      if(navigator.connection==undefined) {
+        window.localStorage.setItem("internetAccessFlag","false");
+      } else {
+        var networkState = navigator.connection.type;
+        var states = {};
+        states[Connection.UNKNOWN]  = 'Unknown connection';
+        states[Connection.ETHERNET] = 'Ethernet connection';
+        states[Connection.WIFI]     = 'WiFi connection';
+        states[Connection.CELL_2G]  = 'Cell 2G connection';
+        states[Connection.CELL_3G]  = 'Cell 3G connection';
+        states[Connection.CELL_4G]  = 'Cell 4G connection';
+        states[Connection.NONE]     = 'No network connection';
+
+        if(networkState==Connection.UNKNOWN || networkState==Connection.NONE) {
+          window.localStorage.setItem("internetAccessFlag","false");
+        } else {
+          window.localStorage.setItem("internetAccessFlag","true");
+        }
+        //alert(window.localStorage.getItem("internetAccessFlag"));
+      }
+    }
+
+    function bootstrapApplication(removeListeners){
       angular.bootstrap(document, ['starter']);
-    });
+
+      if(removeListeners){
+        document.removeEventListener('online',false);
+        document.removeEventListener('resume',false);
+      }
+    }
+
+    if(!window.cordova){
+      console.log("brower check")
+      if(navigator.onLine){
+        window.localStorage.setItem("internetAccessFlag","true");
+      }
+      else{
+        window.localStorage.setItem("internetAccessFlag","false");
+      }
+    }
+    else{
+      console.log("mobile check")
+      checkConnection();
+    }
+    if(true){
+    //if(window.localStorage.getItem("internetAccessFlag") == "true"){
+      // bootstrap app
+      angular.element(document).ready(function () {
+        console.log("ANGULAR WILL BOOTSTRAP")
+        bootstrapApplication();
+      });
+    }
+    else{
+      alert("Vous devez être connecté à Internet");
+      document.addEventListener("resume", function() {
+        console.log("ONLINE")
+        bootstrapApplication();
+      }, false);
+      document.addEventListener("online", function() {
+          console.log("ONLINE")
+          bootstrapApplication();
+      }, false);
+    }
+
     document.removeEventListener('deviceready', onDeviceReady, false);
   }
 })(window, document);
@@ -59,9 +122,7 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
     if (cordova ) {
       angular.extend(application_conf.facebook,application_conf_mobile.facebook);
-      angular.extend(application_conf,application_conf_mobile);
-     // application_conf = application_conf_mobile;
-     // application_conf.facebook.init = application_conf_mobile.init;
+      angular.extend(application_conf.general,application_conf_mobile.general);
     }
     else{
       angular.extend(application_conf.facebook,application_conf_web.facebook);
@@ -70,7 +131,8 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
 
 }])
 
-  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider','application_conf_web','application_conf_mobile',function($stateProvider, $urlRouterProvider,FacebookProvider,application_conf_web,application_conf_mobile) {
+  .config(['$stateProvider', '$urlRouterProvider','FacebookProvider','application_conf_web','application_conf_mobile',
+    function($stateProvider, $urlRouterProvider,FacebookProvider,application_conf_web,application_conf_mobile) {
 
     $stateProvider
 
@@ -129,12 +191,11 @@ angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.cont
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/about');
 
-    // Here you could set your appId throug the setAppId method and then initialize
-    // or use the shortcut in the initialize method directly.
-    //  FacebookProvider.init('711009162272801');
+
+
 
     if (cordova ) {
-      console.log("CORDOVA ENABLED",application_conf.facebook.init);
+      console.log("CORDOVA ENABLED");
       FacebookProvider.init(application_conf_mobile.facebook.init,false);
       /*
       document.addEventListener('deviceready', function () {

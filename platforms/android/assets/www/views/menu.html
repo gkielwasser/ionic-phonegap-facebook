@@ -1,7 +1,6 @@
 <side-menus>
     <!-- Center content -->
-    <pane side-menu-content="" drag-content="enableSideMenu">
-
+    <pane side-menu-content="" drag-content="enableSideMenu" ng-click="closeMenu()">
         <nav-bar type="bar-positive" animation="nav-title-slide-ios7"></nav-bar>
 
         <nav-view name="menuContent" animation="slide-right-left"></nav-view>
@@ -9,8 +8,7 @@
 
     <!-- Left menu -->
     <side-menu side="left" id="menu-left">
-      <ng-include src="'views/leftMenu.html'"></ng-include>
-
+        <ng-include src="'views/leftMenu.html'"></ng-include>
     </side-menu>
 
 </side-menus>

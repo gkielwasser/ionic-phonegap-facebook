@@ -41,7 +41,7 @@ angular.module('starter.directives', [])
             $scope.$apply(function(){
               fn($scope)
             })
-          });
+          },false);
           break;
         case 'disconnect':
           $scope.disconnect = fn;
@@ -50,7 +50,7 @@ angular.module('starter.directives', [])
             $scope.$apply(function(){
               fn($scope)
             })
-          });
+          },false);
 
        }
     })
@@ -65,5 +65,23 @@ angular.module('starter.directives', [])
       $scope.disconnect($scope);
     }
     }
-}]);
+}])
+
+
+
+
+  .directive('postRepeatDirective',
+    ['$timeout',
+      function($timeout) {
+        return function(scope) {
+          if (scope.$first)
+            window.a = new Date();   // window.a can be updated anywhere if to reset counter at some action if ng-repeat is not getting started from $first
+          if (scope.$last)
+            $timeout(function(){
+              console.log("## DOM rendering list took: " + (new Date() - window.a) + " ms");
+            });
+        };
+      }
+    ]);
+
 

@@ -1,6 +1,6 @@
 {
   "name": "ionic",
-  "version": "0.9.24",
+  "version": "0.9.25",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -54,13 +54,14 @@
     "angular-sanitize": "1.2.10",
     "angular-ui-router": "0.2.7"
   },
-  "_release": "0.9.24",
+  "_release": "0.9.25",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.24",
-    "commit": "2a0cf66b271ac6af8e46e43c02bd0f3f950bfe54"
+    "tag": "v0.9.25",
+    "commit": "3a96dd2e830cac42ea049be59e39fd140130e65e"
   },
   "_source": "git://github.com/driftyco/ionic.git",
-  "_target": "~0.9.24",
-  "_originalSource": "ionic"
+  "_target": "0.9.25",
+  "_originalSource": "ionic",
+  "_direct": true
 }
