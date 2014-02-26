@@ -1,11 +1,11 @@
 <div class="modal">
 
-    <header class="bar bar-header bar-energized">
+    <ion-header class="bar bar-header bar-energized">
         <h1 class="title">Confirmation des invitations</h1>
         <button class="button button-energized" ng-click="closeModal()">Annuler</button>
-    </header>
+    </ion-header>
 
-    <content has-header="true" overflow-scroll="{{application_conf.general.overflowScroll}}">
+    <ion-content has-header="true" overflow-scroll="{{application_conf.general.overflowScroll}}">
 
         <div class="list">
             <ul class="list">
@@ -25,8 +25,8 @@
                 </label>
             </div>
 
-            <button class="button button-full button-positive" ng-click="sendFriendsInvitation(message);closeModal()">Inviter ({{(friends|filter:{enabled:true}).length}})</button>
+            <button class="button button-full button-positive" ng-click="sendFriendsInvitation(message);closeModal()">Inviter <span style="position:relative;top:0;right:0" class="badge badge-balanced">{{(friends|filter:{enabled:true}).length}}</span></button>
         </div>
 
-    </content>
+    </ion-content>
 </div>

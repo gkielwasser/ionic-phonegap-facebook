@@ -6,6 +6,7 @@
 
 .bar {
   @include display-flex();
+  @include translate3d(0,0,0);
   @include user-select(none);
   position: absolute;
   right: 0;
@@ -170,6 +171,11 @@
         font-size: $button-large-icon-size;
         line-height: $button-bar-button-height;
       }
+    }
+
+    &.back-button:active,
+    &.back-button.active {
+      opacity: 1;
     }
   }
 

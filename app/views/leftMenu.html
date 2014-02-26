@@ -1,8 +1,8 @@
 <div ng-controller="leftMenuCtrl">
-    <header class="bar bar-header bar-assertive">
+    <ion-header class="bar bar-header bar-assertive">
         <div class="title">{{user.me.username}}</div>
-    </header>
-    <content has-header="true">
+    </ion-header>
+    <ion-content has-header="true">
         <ul class="list selectable">
             <a ng-hide="user.logged" class="item item-icon-left" ng-click="login()">
                 <i class="icon ion-locked"></i>
@@ -30,5 +30,5 @@
                 Déconnexion
             </a>
         </ul>
-    </content>
+    </ion-content>
 </div>

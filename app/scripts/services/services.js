@@ -98,8 +98,7 @@ angular.module('starter.services', [])
     console.log("Facebook:login",data);
     if (data.status == 'connected' && !initFB) {
       console.log('Connexion de',data)
-      init();
-     // initFB = true;
+      //init("Facebook:login");
     }
     else{
       reset();
@@ -108,26 +107,26 @@ angular.module('starter.services', [])
   })
   $rootScope.$on('Facebook:logout', function(e,data){
     $rootScope.$apply(function() {
-    console.log("Facebook:logout",data);
+    console.log("Facebook:logout");
     reset();
     })
   })
     $rootScope.$on('Facebook:prompt', function(e,data){
-      console.log("Facebook:prompt",data);
+      console.log("Facebook:prompt");
     })
   $rootScope.$on('Facebook:sessionChange', function(e,data){
-    console.log("Facebook:sessionChange",data);
+    console.log("Facebook:sessionChange");
   })
   $rootScope.$on('Facebook:statusChange', function(e,data){
     if (data.status == 'connected') {
-      //init();
+      init();
     }
     else{
       reset();
     }
   })
   $rootScope.$on('Facebook:authResponseChange', function(e,data){
-    //console.log("Facebook:authResponseChange",data);
+    console.log("Facebook:authResponseChange");
     if(data.status == 'connected') {
       $rootScope.$apply(function() {
         user.logged = true;
@@ -144,18 +143,28 @@ angular.module('starter.services', [])
       //console.log("Facebook:load",data);
     })
 
-  var init = function(force){
+  var init = function(location,force){
    if(!force && !initiated){
+     console.log("*********INIT**********", initiated, location)
+     var defered = $q.defer();
      $rootScope.showLoading();
-      var defered = $q.defer();
-      me();
-      friends().then(function(){
-        defered.resolve();
-        $rootScope.hideLoading();
-      });
+     var promises = [];
 
-     initiated = true;
-      return defered.promise;
+     promises.push(me());
+     promises.push(friends());
+
+     function lastTask(){
+       $rootScope.hideLoading();
+       initiated = true;
+       defered.resolve()
+     }
+
+     $q.all(promises).then(lastTask);
+
+     return defered;
+   }
+    else{
+     console.log("*********IGNORE INIT**********")
    }
   }
 
@@ -165,11 +174,15 @@ angular.module('starter.services', [])
   }
 
   var friends = function() {
+    console.log("FB:ask friends")
     var defered = $q.defer();
     Facebook.api('/me/friends?fields=' + application_conf.facebook.friends_fields, function(response) {
+      console.log("FB:get friends")
+      console.log(response)
       $rootScope.$apply(function() {
         user.friends = response.data;
-        console.log("friends",user.friends)
+        console.log("friends",user.friends.length)
+        console.log(user.friends.length)
         defered.resolve();
       });
     });
@@ -177,7 +190,9 @@ angular.module('starter.services', [])
   };
 
   var me = function() {
+    console.log("FB:ask me")
     Facebook.api('/me', function(response) {
+      console.log("FB:get me")
       $rootScope.$apply(function() {
         user.me = response;
       });
@@ -190,23 +205,27 @@ angular.module('starter.services', [])
     Facebook.login(function(response) {
       console.log(response)
       console.log("success login...",response)
-      init();
+      init("login");
       defered.resolve();
     },{scope: application_conf.facebook.permissions});
     return defered.promise;
   }
 
   var getLoginStatus = function() {
+    console.log("getloginstatus")
     var defered = $q.defer();
     Facebook.getLoginStatus(function(response) {
       if(response.status == 'connected') {
+        console.log("USER IS CONNECTED")
         $rootScope.$apply(function() {
           $rootScope.loggedIn = true;
           user.logged = true;
           defered.resolve("connected");
+          init("getLoginStatus");
         });
       }
       else {
+        console.log("USER IS NOT CONNECTED")
         $rootScope.$apply(function() {
           $rootScope.loggedIn = false;
           user.logged = false;
@@ -216,6 +235,8 @@ angular.module('starter.services', [])
     })
     return defered.promise;
   }
+
+  getLoginStatus();
 
   return {
 

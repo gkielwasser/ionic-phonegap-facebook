@@ -1,14 +1,14 @@
-<side-menus>
+<ion-side-menus>
     <!-- Center content -->
-    <pane side-menu-content="" drag-content="enableSideMenu" ng-click="closeMenu()">
-        <nav-bar type="bar-positive" animation="nav-title-slide-ios7"></nav-bar>
+    <ion-pane ion-side-menu-content="" drag-content="enableSideMenu" ng-click="closeMenu()">
+        <ion-nav-bar type="bar-positive" animation="nav-title-slide-ios7"></ion-nav-bar>
 
-        <nav-view name="menuContent" animation="slide-right-left"></nav-view>
-    </pane>
+        <ion-nav-view name="menuContent" animation="slide-right-left"></ion-nav-view>
+    </ion-pane>
 
     <!-- Left menu -->
-    <side-menu side="left" id="menu-left">
+    <ion-side-menu side="left" id="menu-left">
         <ng-include src="'views/leftMenu.html'"></ng-include>
-    </side-menu>
+    </ion-side-menu>
 
-</side-menus>
+</ion-side-menus>

@@ -29,12 +29,12 @@ angular.module('starter')
     facebook:{
       init: {
         appId: "711009162272801",
-        //'oauth': true,
+        oauth: true,
         'localSDK': 'facebook-js-sdk.js',
-        'nativeInterface': CDV.FB
-        //status: true,
-        //frictionlessRequests: true,
-        //useCachedDialogs: false
+        'nativeInterface': CDV.FB,
+        status: true,
+        frictionlessRequests: true,
+        useCachedDialogs: false
       }
     }
 })

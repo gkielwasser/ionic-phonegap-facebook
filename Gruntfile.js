@@ -276,7 +276,8 @@ module.exports = function (grunt) {
             'config.xml',
             'cdv-plugin-fb-connect.js',
             'facebook-js-sdk.js',
-            'cordova.js'
+            'cordova.js',
+            'res/**/*'
           ]
         }, {
           expand: true,
@@ -288,7 +289,7 @@ module.exports = function (grunt) {
         },
           {
             expand: true,
-            cwd: '<%= yeoman.app %>/bower_components/ionic/release',
+            cwd: '<%= yeoman.app %>/bower_components/ionic',
             dest: '<%= yeoman.dist %>',
             src: ['fonts/*']
           }

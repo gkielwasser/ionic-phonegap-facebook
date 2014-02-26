@@ -1,0 +1,39 @@
+{
+  "name": "angular-ui-table-view",
+  "version": "0.0.2",
+  "authors": [
+    "Jamie Sutherland <jamie@mallzee.com>"
+  ],
+  "description": "Angular UITableView component",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-animate": "~1.2.0",
+    "angular-sanitize": "~1.2.0",
+    "angular-touch": "~1.2.0",
+    "angular-route": "~1.2.0",
+    "angular-mocks": "~1.2.0"
+  },
+  "devDependencies": {
+    "lodash": "~2.4.1"
+  },
+  "homepage": "https://github.com/mallzee/angular-ui-table-view",
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "bdc13f2928f71d95f469d9697ed30fad49e10410"
+  },
+  "_source": "git://github.com/mallzee/angular-ui-table-view.git",
+  "_target": "~0.0.2",
+  "_originalSource": "angular-ui-table-view",
+  "_direct": true
+}

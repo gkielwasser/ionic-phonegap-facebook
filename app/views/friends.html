@@ -1,36 +1,39 @@
 
-<view data-title="'Amis: ' + friends.length" left-buttons='leftButtons'>
-    <div class="bar bar-subheader" style="top:42px;padding:0;">
+<ion-view data-title="'Amis: ' + friends.length" left-buttons='leftButtons' right-buttons="rightButtons">
+    <div class="bar bar-subheader" style="top:45;padding:0;">
         <div class="item item-input-inset" style="padding:6px;">
-            <label class="item item-input item-input-wrapper">
+            <label class="item item-input item-input-wrapper" style="padding-top:0;padding-bottom: 0;">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching()">
+                <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching()" style="line-height: 24px;height:34px;">
                 <button class="button button-clear" ng-click="search=''">X</button>
             </label>
-            <button class="button button-clear" ng-click="reset()">Annuler</button>
+           <!-- <button class="button button-clear" ng-click="reset()">Annuler</button>-->
         </div>
     </div>
-    <content has-header="true" has-tabs="true"  style="top:100px;" overflow-scroll="{{application_conf.general.overflowScroll}}">
+    <ion-content has-header="true" has-tabs="true"  style="top:92px;" overflow-scroll="{{application_conf.general.overflowScroll}}">
         <ul class="list fade-in-not-out">
-            <li post-repeat-directive class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends| filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
-                <img ng-src="{{friend.picture.data.url}}">
-                <h2>{{friend.first_name}}</h2>
-                <h4>{{friend.name}}</h4>
-                <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
+            <!-- -->
+          <!--  <mlz-ui-table-view list="list" row-height="100" view-buffer="20">-->
+                <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends | filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
+                    <img ng-src="{{friend.picture.data.url}}">
+                    <h2>{{friend.first_name}}</h2>
+                    <h4>{{friend.name}}</h4>
+                    <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
 
-                <label class="checkbox icon">
-                    <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
-                    <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
-                </label>
-            </li>
+                    <label class="checkbox icon">
+                        <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
+                        <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
+                    </label>
+                </li>
+       <!--    </mlz-ui-table-view>-->
         </ul>
-    </content>
+    </ion-content>
 
     <div class="tabs tabs-icon-left" >
 
         <a  ng-controller="ModalCtrl" class="tab-item selectable" data-ng-click="openModal()" ng-show="getSelectedFriend().length > 0 ">
             <i class="icon ion-email" ></i>
-            Inviter {{(friends|filter:{enabled:true}).length}}
+            Inviter <span style="position:relative;top:0;right:0 " class="badge badge-balanced">{{(friends|filter:{enabled:true}).length}}</span>
         </a>
 
         <a class="tab-item" ng-show="numberOfPages() > 1 && currentPage != 0" style="max-width: 52px" ng-click="previousPage()">
@@ -47,5 +50,4 @@
         </a>
 
     </div>
-</view>
-
+</ion-view>

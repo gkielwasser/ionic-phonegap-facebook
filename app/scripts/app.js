@@ -61,8 +61,8 @@
       console.log("mobile check")
       checkConnection();
     }
-    if(true){
-    //if(window.localStorage.getItem("internetAccessFlag") == "true"){
+    //if(true){
+    if(window.localStorage.getItem("internetAccessFlag") == "true"){
       // bootstrap app
       angular.element(document).ready(function () {
         console.log("ANGULAR WILL BOOTSTRAP")
@@ -86,7 +86,7 @@
 })(window, document);
 
 
-angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.controllers','starter.directives','facebook','checklist-model'])
+angular.module('starter', ['ionic', 'ngTouch', 'starter.services', 'starter.controllers','starter.directives','facebook','mallzee.ui-table-view'])
 
   .run(["$rootScope","$state","$urlRouter","application_conf","application_conf_web","application_conf_mobile",
     function($rootScope,$state,$urlRouter,application_conf,application_conf_web,application_conf_mobile) {

@@ -118,6 +118,7 @@ angular.module('starter.controllers', [])
 
   .controller('SubscribedFriendsCtrl', ['$scope','UserService','$filter', function($scope, UserService,$filter){
 
+
     $scope.initSubscribedFriends = function(){
       $scope.$watch(UserService.friends, function(friends){
         if(friends){
@@ -128,6 +129,23 @@ angular.module('starter.controllers', [])
   }])
 
   .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
+    var rightButtons = [
+      {
+        content: 'Annuler',
+        tap: function(e) {
+          $scope.reset();
+        }
+      }
+    ];
+
+    var enableCancelButton = function(enable){
+      if(enable){
+        $scope.rightButtons = rightButtons;
+      }
+      else{
+        delete $scope.rightButtons;
+      }
+    }
 
     $scope.$watch(UserService.friends, function(friends){
       if(friends){
@@ -139,8 +157,17 @@ angular.module('starter.controllers', [])
     $scope.initFriendsCtrl = function(friends){
       $scope.initFriendsPartial(friends);
     }
+    $scope.list = [];
 
+    for (var i = 0; i < 1000; i++) {
+      $scope.list.push({
+        id: i,
+        name: 'Name ' + i,
+        detail: 'Detail ' + i
+      });
+    }
 
+    //$scope.friends=[];
     $scope.initFriendsPartial = function(friends){
       $scope.friends = friends;
       // Pagination in controller
@@ -187,6 +214,12 @@ angular.module('starter.controllers', [])
       if($scope.modal && value && $scope.getSelectedFriend().length == 0){
         $scope.closeModal();
       }
+
+      //Masquer bouton Annuler
+      if($scope.getSelectedFriend() && $scope.getSelectedFriend().length == 0){
+        enableCancelButton(false);
+      }
+      else if (!$scope.rightButtons && $scope.getSelectedFriend() && $scope.getSelectedFriend().length > 0)  enableCancelButton(true);
     },true)
 
     $scope.reset= function(){
