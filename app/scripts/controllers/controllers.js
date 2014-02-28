@@ -319,13 +319,14 @@ angular.module('starter.controllers', [])
 
     /*début loading*/
     // Trigger the loading indicator
-    $rootScope.showLoading = function() {
+    $rootScope.showLoading = function(message) {
+      message = message || "Chargement";
 
       // Show the loading overlay and text
       $rootScope.loading = $ionicLoading.show({
 
         // The text to display in the loading indicator
-        content: '<i class=" ion-loading-c"></i> Chargement',
+        content: '<i class=" ion-loading-c"></i> '+ message,
 
         // The animation to use
         animation: 'fade-in',

@@ -3,7 +3,8 @@ angular.module('starter')
 .value('application_conf', {
     facebook : {
       permissions: "basic_info",
-      friends_fields: "id,name,first_name,picture,installed"
+      friends_fields: "id,name,first_name,last_name,picture,installed",
+      me_fields: "username,picture"
     },
     general:{
 
@@ -24,17 +25,18 @@ angular.module('starter')
 })
 .constant('application_conf_mobile', {
     general: {
-      overflowScroll : false
+      overflowScroll : true
     },
     facebook:{
       init: {
         appId: "711009162272801",
-        oauth: true,
+       oauth: true,
         'localSDK': 'facebook-js-sdk.js',
         'nativeInterface': CDV.FB,
-        status: true,
-        frictionlessRequests: true,
-        useCachedDialogs: false
+        status: false,
+       frictionlessRequests: true,
+        useCachedDialogs: false,
+       cookies:true
       }
     }
 })

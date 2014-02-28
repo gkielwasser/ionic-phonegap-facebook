@@ -1,5 +1,6 @@
 <div ng-controller="leftMenuCtrl">
     <ion-header class="bar bar-header bar-assertive">
+        <img ng-src="{{user.me.picture.data.url}}">
         <div class="title">{{user.me.username}}</div>
     </ion-header>
     <ion-content has-header="true">

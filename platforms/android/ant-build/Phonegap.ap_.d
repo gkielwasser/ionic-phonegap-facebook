@@ -292,8 +292,8 @@ C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-hdpi\f
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-ldpi\close.png \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-ldpi\facebook_icon.png \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-xhdpi\close.png \
-C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\4286fc92.scripts.js \
-C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\875c8b9a.vendor.js \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\37b8dd82.vendor.js \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\5939ff68.scripts.js \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\styles\d2e535d5.main.css \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\404.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\about.html \

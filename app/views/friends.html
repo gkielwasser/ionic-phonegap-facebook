@@ -12,20 +12,25 @@
     </div>
     <ion-content has-header="true" has-tabs="true"  style="top:92px;" overflow-scroll="{{application_conf.general.overflowScroll}}">
         <ul class="list fade-in-not-out">
-            <!-- -->
-          <!--  <mlz-ui-table-view list="list" row-height="100" view-buffer="20">-->
-                <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends | filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
-                    <img ng-src="{{friend.picture.data.url}}">
-                    <h2>{{friend.first_name}}</h2>
-                    <h4>{{friend.name}}</h4>
-                    <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
 
-                    <label class="checkbox icon">
-                        <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
-                        <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
-                    </label>
+            <!-- <mlz-ui-table-view list="friends" row-height="100" view-buffer="20" style="height: 455px; ">
+                 <label id="{{item.$$position}}" ng-repeat="item in items track by item.$$position">
+                     <dt ng-bind="item.name"></dt>
+                 </label>-->
+
+                   <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends | filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
+                       <img ng-src="{{friend.picture.data.url}}">
+                       <h2>{{friend.first_name}}</h2>
+                       <h4>{{friend.name}}</h4>
+                       <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
+
+                       <label class="checkbox icon">
+                           <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
+                           <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
+                   </label>
                 </li>
-       <!--    </mlz-ui-table-view>-->
+
+            <!--    </mlz-ui-table-view> -->
         </ul>
     </ion-content>
 

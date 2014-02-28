@@ -297,6 +297,7 @@ provides: [facebook]
                   args.splice(userFnIndex, 1, function(response) {
                     $timeout(function() {
                       if (angular.isUndefined(response.error)) {
+                        console.log("response from angular-facebook:"+ JSON.stringify(response))
                         d.resolve(response);
                       } else {
                         d.reject(response);
@@ -506,9 +507,7 @@ provides: [facebook]
             }, function(mapped, name) {
               FB.Event.subscribe(name, function(response) {
                 $timeout(function() {
-                  console.log("EVENT")
-                  console.log(mapped)
-                  console.log(response)
+                  console.log("EVENT:"+mapped+":"+response)
                   $rootScope.$broadcast('Facebook:' + mapped, response);
                 });
               });

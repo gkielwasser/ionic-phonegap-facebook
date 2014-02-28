@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 
-  .service('ConnectService',['$ionicLoading','$window', function($ionicLoading,$window){
+  .service('ConnectService',['$ionicLoading','$window', "$rootScope",function($ionicLoading,$window,$rootScope){
     var disconnection;
     var showDisconnection = function() {
 
@@ -82,18 +82,19 @@ angular.module('starter.services', [])
 
 
 .factory('UserService', ['$rootScope','Facebook','$q', 'application_conf', '$filter',function($rootScope,Facebook,$q,application_conf,$filter) {
-    var initiated = false;
+  var initiated = false;
 
-    // Here, usually you should watch for when Facebook is ready and loaded
-    $rootScope.$watch(function() {
-      return Facebook.isReady(); // This is for convenience, to notify if Facebook is loaded and ready to go.
-    }, function(newVal) {
-      $rootScope.facebookReady = true; // You might want to use this to disable/show/hide buttons and else
-    });
+  // Here, usually you should watch for when Facebook is ready and loaded
+  $rootScope.$watch(function() {
+    return Facebook.isReady(); // This is for convenience, to notify if Facebook is loaded and ready to go.
+  }, function(newVal) {
+    $rootScope.facebookReady = true; // You might want to use this to disable/show/hide buttons and else
+  });
 
   var user = {};
   var initFB = false;
   $rootScope.$on('Facebook:login', function(e,data){
+    /*
     $rootScope.$apply(function() {
     console.log("Facebook:login",data);
     if (data.status == 'connected' && !initFB) {
@@ -104,32 +105,45 @@ angular.module('starter.services', [])
       reset();
     }
     })
+    */
   })
   $rootScope.$on('Facebook:logout', function(e,data){
+    /*
     $rootScope.$apply(function() {
     console.log("Facebook:logout");
     reset();
     })
+    */
   })
-    $rootScope.$on('Facebook:prompt', function(e,data){
+  $rootScope.$on('Facebook:prompt', function(e,data){
       console.log("Facebook:prompt");
     })
   $rootScope.$on('Facebook:sessionChange', function(e,data){
-    console.log("Facebook:sessionChange");
+    //console.log("Facebook:sessionChange");
   })
   $rootScope.$on('Facebook:statusChange', function(e,data){
+    handleStatusChange(data,"statusChange");
+    /*
+    console.log("!!!!!statusChange")
     if (data.status == 'connected') {
-      init();
+      init("statuschange");
     }
     else{
       reset();
     }
+    */
   })
+
+
+
   $rootScope.$on('Facebook:authResponseChange', function(e,data){
     console.log("Facebook:authResponseChange");
+    //handleStatusChange(data,"authResponseChange");
+    /*
     if(data.status == 'connected') {
       $rootScope.$apply(function() {
         user.logged = true;
+        init();
       });
     }
     else {
@@ -137,11 +151,8 @@ angular.module('starter.services', [])
         user.logged = false;
       });
     }
+    */
   })
-
-    $rootScope.$on('Facebook:load', function(e,data){
-      //console.log("Facebook:load",data);
-    })
 
   var init = function(location,force){
    if(!force && !initiated){
@@ -155,6 +166,7 @@ angular.module('starter.services', [])
 
      function lastTask(){
        $rootScope.hideLoading();
+       user.logged = true;
        initiated = true;
        defered.resolve()
      }
@@ -168,44 +180,102 @@ angular.module('starter.services', [])
    }
   }
 
+  var handleResponse = function(response){
+    if (!response.error) {
+      console.log("The user is connected")
+      $rootScope.$apply(function() {
+        user.me = response;
+      });
+    } else {
+      console.log("The user is NOT connected (1)")
+      console.log('Error getting user info: ' + JSON.stringify(response.error));
+      // Check for errors due to app being unininstalled
+      if (response.error.error_subcode && response.error.error_subcode == "458") {
+        setTimeout(function() {
+          alert("The app was removed. Please log in again.");
+        }, 0);
+      }
+      logout();
+    }
+
+    reset();
+  }
+
+  var handleStatusChange = function(session,from){
+    console.log(from)
+    console.log('Got the user\'s session: ' + JSON.stringify(session));
+
+    if (session.authResponse && session.authResponse.accessToken) {
+      console.log('Got the user\'s session: ' + JSON.stringify(session.authResponse.accessToken));
+      init(from);
+    }
+    else  {
+      console.log("The user is NOT connected (2)")
+      reset();
+    }
+  }
+
   var reset = function(){
     user = {};
     initFB = false;
+    user.logged = false;
+    initiated = false;
+  }
+
+  var logout = function(){
+    return Facebook.logout(function() {});
   }
 
   var friends = function() {
     console.log("FB:ask friends")
     var defered = $q.defer();
     Facebook.api('/me/friends?fields=' + application_conf.facebook.friends_fields, function(response) {
-      console.log("FB:get friends")
-      console.log(response)
-      $rootScope.$apply(function() {
-        user.friends = response.data;
-        console.log("friends",user.friends.length)
-        console.log(user.friends.length)
-        defered.resolve();
-      });
+      console.log("FB:get friends:" + JSON.stringify(response))
+      if (!response.error) {
+        console.log(response)
+        $rootScope.$apply(function() {
+          user.friends = response.data;
+          defered.resolve();
+        });
+      }
+      else{
+        console.log("error:" + JSON.stringify(response.error))
+      }
     });
     return defered.promise;
   };
 
   var me = function() {
     console.log("FB:ask me")
-    Facebook.api('/me', function(response) {
-      console.log("FB:get me")
-      $rootScope.$apply(function() {
-        user.me = response;
-      });
+    Facebook.api('/me?fields=' + application_conf.facebook.me_fields, function(response) {
+      console.log("FB:get me",JSON.stringify(response))
+      if (!response.error) {
+        $rootScope.$apply(function() {
+          user.me = response;
+        });
+      }
+      else{
+        console.log("error",JSON.stringify(response.error))
+      }
     });
   };
 
   var login = function(){
     console.log("try login")
+    $rootScope.showLoading("Connexion Facebook");
     var defered = $q.defer();
     Facebook.login(function(response) {
       console.log(response)
-      console.log("success login...",response)
-      init("login");
+      if(response.authResponse && response.status == "connected"){
+        console.log("success login...",response)
+        //init("login");
+      }
+      else{
+        console.log("Echec login");
+      }
+
+      $rootScope.hideLoading();
+
       defered.resolve();
     },{scope: application_conf.facebook.permissions});
     return defered.promise;
@@ -215,25 +285,10 @@ angular.module('starter.services', [])
     console.log("getloginstatus")
     var defered = $q.defer();
     Facebook.getLoginStatus(function(response) {
-      if(response.status == 'connected') {
-        console.log("USER IS CONNECTED")
-        $rootScope.$apply(function() {
-          $rootScope.loggedIn = true;
-          user.logged = true;
-          defered.resolve("connected");
-          init("getLoginStatus");
-        });
-      }
-      else {
-        console.log("USER IS NOT CONNECTED")
-        $rootScope.$apply(function() {
-          $rootScope.loggedIn = false;
-          user.logged = false;
-          defered.resolve();
-        });
-      }
+      handleStatusChange(response, "getLoginStatus")
     })
     return defered.promise;
+
   }
 
   getLoginStatus();
@@ -262,8 +317,7 @@ angular.module('starter.services', [])
       return user.subscribedFriends;
     },
     logout: function(){
-      console.log("logout")
-      return Facebook.logout(function() {});
+      return logout();
     },
 
     sendFriendsInvitation: function(selectedFriends,message){

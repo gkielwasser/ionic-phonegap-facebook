@@ -9,23 +9,33 @@ CDV.FB = {
       document.body.appendChild(elem);
     }
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload=function(){console.log("Endpoint saved "+ this.responseText);}
+    xmlhttp.onload=function(){
+      //console.log("Endpoint saved "+ this.responseText);
+    }
     xmlhttp.open("POST", "https://www.facebook.com/impression.php", true);
     xmlhttp.send('plugin=featured_resources&payload={"resource": "adobe_phonegap", "appid": "'+apiKey+'", "version": "3.0.0" }');
-    
+
     cordova.exec(function() {
     var authResponse = JSON.parse(localStorage.getItem('cdv_fb_session') || '{"expiresIn":0}');
-    if (authResponse && authResponse.expirationTime) { 
+    console.log("Auth response:" + JSON.stringify(authResponse))
+    if (authResponse && authResponse.expirationTime) {
       var nowTime = (new Date()).getTime();
-      if (authResponse.expirationTime > nowTime) { 
+      if (authResponse.expirationTime > nowTime) {
         // Update expires in information
         updatedExpiresIn = Math.floor((authResponse.expirationTime - nowTime) / 1000);
         authResponse.expiresIn = updatedExpiresIn;
-                 
+
         localStorage.setItem('cdv_fb_session', JSON.stringify(authResponse));
         FB.Auth.setAuthResponse(authResponse, 'connected');
        }
+      else{
+        console.log("session expired!");
       }
+      }
+      else{
+      console.log("no auth response")
+    }
+
       console.log('Cordova Facebook Connect plugin initialized successfully.');
     }, (fail?fail:null), 'org.apache.cordova.facebook.Connect', 'init', [apiKey]);
   },
@@ -37,9 +47,9 @@ CDV.FB = {
     cordova.exec(function(e) { // login
         if (e.authResponse && e.authResponse.expiresIn) {
           var expirationTime = e.authResponse.expiresIn === 0
-          ? 0 
+          ? 0
           : (new Date()).getTime() + e.authResponse.expiresIn * 1000;
-          e.authResponse.expirationTime = expirationTime; 
+          e.authResponse.expirationTime = expirationTime;
         }
         localStorage.setItem('cdv_fb_session', JSON.stringify(e.authResponse));
         FB.Auth.setAuthResponse(e.authResponse, 'connected');
@@ -55,7 +65,10 @@ CDV.FB = {
   },
   getLoginStatus: function(cb, fail) {
     cordova.exec(function(e) {
-      if (cb) cb(e);
+      if (cb) {
+        cb(e);
+        console.log("FROM cdv plugin:"+JSON.stringify(e))
+      }
     }, (fail?fail:null), 'org.apache.cordova.facebook.Connect', 'getLoginStatus', []);
   },
   dialog: function(params, cb, fail) {

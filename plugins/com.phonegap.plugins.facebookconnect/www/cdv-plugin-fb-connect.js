@@ -10,12 +10,16 @@ CDV.FB = {
       document.body.appendChild(elem);
     }
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload=function(){console.log("Endpoint saved "+ this.responseText);}
+    xmlhttp.onload=function(){
+      //console.log("Endpoint saved "+ this.responseText);
+    }
     xmlhttp.open("POST", "https://www.facebook.com/impression.php", true);
     xmlhttp.send('plugin=featured_resources&payload={"resource": "adobe_phonegap", "appid": "'+apiKey+'", "version": "3.0.0" }');
     
     cordova.exec(function() {
     var authResponse = JSON.parse(localStorage.getItem('cdv_fb_session') || '{"expiresIn":0}');
+    console.log("Auth response")
+    console.log(authResponse)
     if (authResponse && authResponse.expirationTime) { 
       var nowTime = (new Date()).getTime();
       if (authResponse.expirationTime > nowTime) { 
@@ -25,6 +29,10 @@ CDV.FB = {
                  
         localStorage.setItem('cdv_fb_session', JSON.stringify(authResponse));
         FB.Auth.setAuthResponse(authResponse, 'connected');
+        console.log("set authResponse connected");
+       }
+       else{
+        console.log("session expired!");
        }
       }
       console.log('Cordova Facebook Connect plugin initialized successfully.');

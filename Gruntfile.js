@@ -17,6 +17,8 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-bower-install');
 
+  grunt.loadNpmTasks("grunt-strip");
+
   // Define the configuration for all the tasks
   grunt.initConfig({
     'heroku-deploy' : {
@@ -45,6 +47,16 @@ module.exports = function (grunt) {
               css: '<link rel="stylesheet" href="/{{filePath}}" />'
             }
           }
+        }
+      }
+    },
+
+    strip: {
+      maon: {
+        src: '.tmp/concat/scripts/*.js',
+        options : {
+          nodes : ['console.log', 'debug'],
+          inline : true
         }
       }
     },
@@ -388,6 +400,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
+    'strip',
     'ngmin',
     'copy:dist',
     'cdnify',
