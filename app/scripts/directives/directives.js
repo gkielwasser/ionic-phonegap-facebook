@@ -82,6 +82,7 @@ angular.module('starter.directives', [])
             });
         };
       }
-    ]);
+    ])
+
 
 

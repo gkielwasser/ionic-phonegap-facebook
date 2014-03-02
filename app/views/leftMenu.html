@@ -1,10 +1,15 @@
 <div ng-controller="leftMenuCtrl">
     <ion-header class="bar bar-header bar-assertive">
-        <img ng-src="{{user.me.picture.data.url}}">
+        <img style="height:34px;" ng-src="{{user.me.picture.data.url}}">
         <div class="title">{{user.me.username}}</div>
     </ion-header>
     <ion-content has-header="true">
         <ul class="list selectable">
+            <a class="item item-icon-left" ng-click="closeMenu('menu.home')">
+                <i class="icon ion-home"></i>
+                Accueil
+            </a>
+
             <a ng-hide="user.logged" class="item item-icon-left" ng-click="login()">
                 <i class="icon ion-locked"></i>
                 Connexion
@@ -12,21 +17,25 @@
 
             <a ng-show="user.logged" class="item item-icon-left" ng-click="closeMenu('menu.friends')">
                 <i class="icon ion-person-stalker"></i>
-                Mes amis
+                <ng-pluralize count="user.friends.length"
+                              when="{'0': 'Aucun amis',
+                     'one': 'Mon ami',
+                     'other': 'Mes {} amis'}">
+                </ng-pluralize>
             </a>
 
             <a ng-show="user.logged" class="item item-icon-left" ng-click="closeMenu('menu.subscribedFriends')">
                 <i class="icon ion-heart"></i>
-                Membres
+                Amis membres
                 <span class="badge badge-balanced">{{(user.friends | filter:{installed:true}).length }}</span>
             </a>
 
             <a class="item item-icon-left" ng-click="closeMenu('menu.about')">
-                <i class="icon ion-help-buoy"></i>
+                <i class="icon ion-help"></i>
                 À propos
             </a>
 
-            <a ng-show="user.logged" class="item item-icon-left" href="#" ng-click="logout()">
+            <a ng-show="user.logged" class="item item-icon-left" href="#" ng-click="closeMenu('menu.about');logout()">
                 <i class="icon ion-power"></i>
                 Déconnexion
             </a>

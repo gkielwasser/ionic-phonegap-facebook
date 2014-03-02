@@ -1,6 +1,6 @@
 {
   "name": "ionic",
-  "codename": "rabbit",
+  "codename": "salamander",
   "dependencies": {
     "angular": "1.2.12",
     "angular-animate": "1.2.12",
@@ -8,11 +8,11 @@
     "angular-ui-router": "0.2.7"
   },
   "homepage": "https://github.com/driftyco/ionic-bower",
-  "_release": "6e4208ea65",
+  "_release": "1d70d02790",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "6e4208ea65a7b34de9a3006570faddf3e6ffc4ee"
+    "commit": "1d70d027909f8c5004c136a91406eb30160df3bc"
   },
   "_source": "git://github.com/driftyco/ionic-bower.git",
   "_target": "master",

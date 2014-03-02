@@ -2,7 +2,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v0.9.26-alpha-962
+ * Ionic, v0.10.0-alpha-1003
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -16,6 +16,7 @@
  * Create a wrapping module to ease having to include too many
  * modules.
  */
+
 angular.module('ionic.service', [
   'ionic.service.bind',
   'ionic.service.platform',
@@ -1331,22 +1332,6 @@ angular.module('ionic.service.view', ['ui.router', 'ionic.service.platform'])
 
 }]);
 ;
-angular.module('ionic.ui.navAnimation', [])
-.directive('ionNavAnimation', function() {
-  return {
-    restrict: 'A',
-    require: '^?ionNavView',
-    link: function($scope, $element, $attrs, navViewCtrl) {
-      if (!navViewCtrl) {
-        return;
-      }
-      ionic.on('tap', function() {
-        navViewCtrl.setNextAnimation($attrs.ionNavAnimation);
-      }, $element[0]);
-    }
-  };
-});
-;
 (function() {
 'use strict';
 
@@ -1450,12 +1435,12 @@ angular.module('ionic.ui.header', ['ngAnimate', 'ngSanitize'])
 
       $scope.headerBarView = hb;
 
-      $scope.$watch('leftButtons', function(val) {
+      $scope.$watchCollection('leftButtons', function(val) {
         // Resize the title since the buttons have changed
         hb.align();
       });
 
-      $scope.$watch('rightButtons', function(val) {
+      $scope.$watchCollection('rightButtons', function(val) {
         // Resize the title since the buttons have changed
         hb.align();
       });
@@ -1545,8 +1530,33 @@ angular.module('ionic.ui.content', ['ionic.ui.service', 'ionic.ui.scroll'])
   };
 })
 
-// The content directive is a core scrollable content area
-// that is part of many View hierarchies
+/*
+ * @ngdoc directive
+ * @name ionContent
+ *
+ * @description
+ * The ionContent directive provides an easy to use content area that can be configured to use
+ * Ionic's custom Scroll View, or the built in overflow scorlling of the browser.
+ *
+ * While we recommend using the custom Scroll features in Ionic in most cases, sometimes (for performance reasons) only the browser's native overflow scrolling will suffice, and so we've made it easy to toggle between the Ionic scroll implementation and overflow scrolling.
+ *
+ * When using the Ionic scroll features, you'll get pull-to-refresh, customizable scroll mechanics (like bounce easing, momentum acceleration, etc.) which aligns Ionic with native SDKs that give you access to scroll behavior. You'll also get events while in a momentum scroll, which -webkit-overflow-scrolling: touch will not, making it of limited use in real applications.
+ *
+ * Also, we are working on virtual list rendering which will only work when using Ionic's scroll view. That is on the upcoming roadmap.
+ *
+ * @restrict E
+ * @param {boolean=} scroll Whether to allow scrolling of content.  Defaults to true.
+ * @param {boolean=} overflow-scroll Whether to use overflow-scrolling instead of Ionic scroll.
+ * @param {boolean=} padding Whether to add padding to the content.
+ * @param {boolean=} has-header Whether to offset the content for a header bar.
+ * @param {boolean=} has-subheader Whether to offset the content for a subheader bar.
+ * @param {boolean=} has-footer Whether to offset the content for a footer bar.
+ * @param {boolean=} has-bouncing Whether to allow scrolling to bounce past the edges of the content.  Defaults to true on iOS, false on Android.
+ * @param {expression=} on-refresh Expression to evaluate on refresh completion.
+ * @param {expression=} on-refresh-opening Expression to evaluate on refresh opening.
+ * @param {expression=} on-scroll Expression to evaluate when the content is scrolled.
+ * @param {expression=} on-scroll-complete Expression to evaluate when a scroll action completes.
+ */
 .directive('ionContent', [
   '$parse',
   '$timeout',
@@ -1591,8 +1601,8 @@ function($parse, $timeout, $ionicScrollDelegate, $controller, $ionicBind) {
           $onRefreshOpening: '&onRefreshOpening',
           $onScroll: '&onScroll',
           $onScrollComplete: '&onScrollComplete',
+          $onInfiniteScroll: '&onInfiniteScroll',
           refreshComplete: '=',
-          onInfiniteScroll: '&',
           infiniteScrollDistance: '@',
           hasBouncing: '@',
           scroll: '@',
@@ -1664,40 +1674,6 @@ function($parse, $timeout, $ionicScrollDelegate, $controller, $ionicBind) {
             }
           };
         }
-
-        // Check if this supports infinite scrolling and listen for scroll events
-        // to trigger the infinite scrolling
-        // TODO(ajoslin): move functionality out of this function and make testable
-        var infiniteScroll = $element.find('ion-infinite-scroll');
-        var infiniteStarted = false;
-        if(infiniteScroll) {
-          // Parse infinite scroll distance
-          var distance = attr.infiniteScrollDistance || '1%';
-          var maxScroll;
-          if(distance.indexOf('%')) {
-            // It's a multiplier
-            maxScroll = function() {
-              return scrollView.getScrollMax().top * ( 1 - parseInt(distance, 10) / 100 );
-            };
-          } else {
-            // It's a pixel value
-            maxScroll = function() {
-              return scrollView.getScrollMax().top - parseInt(distance, 10);
-            };
-          }
-          $element.bind('scroll', function(e) {
-            if( scrollView && !infiniteStarted && (scrollView.getValues().top > maxScroll() ) ) {
-              infiniteStarted = true;
-              infiniteScroll.addClass('active');
-              var cb = function() {
-                scrollView.resize();
-                infiniteStarted = false;
-                infiniteScroll.removeClass('active');
-              };
-              $scope.$apply(angular.bind($scope, $scope.onInfiniteScroll, cb));
-            }
-          });
-        }
       }
     }
   };
@@ -1722,13 +1698,51 @@ function($parse, $timeout, $ionicScrollDelegate, $controller, $ionicBind) {
   };
 })
 
-.directive('ionInfiniteScroll', function() {
+.directive('ionInfiniteScroll', ['$ionicBind', function($ionicBind) {
   return {
     restrict: 'E',
-    replace: false,
-    template: '<div class="scroll-infinite"><div class="scroll-infinite-content"><i class="icon ion-loading-d icon-refreshing"></i></div></div>'
+    require: '^?$ionicScroll',
+    template:
+    '<div class="scroll-infinite">' +
+      '<div class="scroll-infinite-content">' +
+        '<i class="icon ion-loading-d icon-refreshing"></i>' +
+      '</div>' +
+    '</div>',
+    link: function($scope, $element, $attrs, scrollCtrl) {
+      setTimeout(function() {
+        var scrollCtrl = $element.controller('$ionicScroll');
+        var scrollView = scrollCtrl.scrollView;
+
+        $ionicBind($scope, $attrs, {
+          distance: '@infiniteScrollDistance'
+        });
+        function maxScroll() {
+          var dist = $scope.distance || '1%';
+          return dist.indexOf('%') > -1 ?
+            scrollView.getScrollMax().top * (1 - parseInt(dist,10) / 100) :
+            scrollView.getScrollMax().top - parseInt(dist, 10);
+        }
+
+        var infiniteScrolling = false;
+        $scope.$on('scroll.infiniteScrollComplete', function() {
+          $element[0].classList.remove('active');
+          setTimeout(function() {
+            scrollView.resize();
+          });
+          infiniteScrolling = false;
+        });
+
+        scrollCtrl.$element.on('scroll', ionic.animationFrameThrottle(function() {
+          if (!infiniteScrolling && scrollView.getValues().top >= maxScroll()) {
+            $element[0].classList.add('active');
+            infiniteScrolling = true;
+            $scope.$apply(angular.bind($scope, $scope.$onInfiniteScroll));
+          }
+        }));
+      });
+    }
   };
-});
+}]);
 
 })();
 ;
@@ -1916,6 +1930,22 @@ angular.module('ionic.ui.loading', [])
 });
 
 })();
+;
+angular.module('ionic.ui.navAnimation', [])
+.directive('ionNavAnimation', function() {
+  return {
+    restrict: 'A',
+    require: '^?ionNavView',
+    link: function($scope, $element, $attrs, navViewCtrl) {
+      if (!navViewCtrl) {
+        return;
+      }
+      ionic.on('tap', function() {
+        navViewCtrl.setNextAnimation($attrs.ionNavAnimation);
+      }, $element[0]);
+    }
+  };
+});
 ;
 (function(ionic) {
 'use strict';
@@ -2172,11 +2202,13 @@ angular.module('ionic.ui.sideMenu', ['ionic.service.gesture', 'ionic.service.vie
         var isDragging = false;
 
         // Listen for taps on the content to close the menu
-        /*
-        ionic.on('tap', function(e) {
-          sideMenuCtrl.close();
-        }, $element[0]);
-        */
+        function contentTap(e) {
+          if(sideMenuCtrl.getOpenAmount() !== 0) {
+            sideMenuCtrl.close();
+            e.gesture.srcEvent.preventDefault();
+          }
+        }
+        ionic.on('tap', contentTap, $element[0]);
 
         var dragFn = function(e) {
           if($scope.dragContent) {
@@ -2246,6 +2278,7 @@ angular.module('ionic.ui.sideMenu', ['ionic.service.gesture', 'ionic.service.vie
           $ionicGesture.off(dragUpGesture, 'dragup', dragFn);
           $ionicGesture.off(dragDownGesture, 'dragdown', dragFn);
           $ionicGesture.off(releaseGesture, 'release', dragReleaseFn);
+          ionic.off('tap', contentTap, $element[0]);
         });
       };
     }
@@ -2687,8 +2720,8 @@ function($scope, $ionicViewService, $rootScope, $element) {
     '<a ng-class="{active: isTabActive(), \'has-badge\':badge}" ' +
       'ng-click="selectTab($event)" class="tab-item">' +
       '<span class="badge {{badgeStyle}}" ng-if="badge">{{badge}}</span>' +
-      '<i class="icon {{iconOn}}" ng-if="iconOn && isTabActive()"></i>' +
-      '<i class="icon {{iconOff}}" ng-if="iconOff && !isTabActive()"></i>' +
+      '<i class="icon {{getIconOn()}}" ng-if="getIconOn() && isTabActive()"></i>' +
+      '<i class="icon {{getIconOff()}}" ng-if="getIconOff() && !isTabActive()"></i>' +
       '<span class="tab-title" ng-bind-html="title"></span>' +
     '</a>',
     scope: {
@@ -2700,13 +2733,16 @@ function($scope, $ionicViewService, $rootScope, $element) {
       badgeStyle: '@'
     },
     compile: function(element, attr, transclude) {
-      if (attr.icon) {
-        attr.$set('iconOn', attr.icon);
-        attr.$set('iconOff', attr.icon);
-      }
       return function link($scope, $element, $attrs, ctrls) {
         var tabsCtrl = ctrls[0],
           tabCtrl = ctrls[1];
+
+        $scope.getIconOn = function() {
+          return $scope.iconOn || $scope.icon;
+        };
+        $scope.getIconOff = function() {
+          return $scope.iconOff || $scope.icon;
+        };
 
         $scope.isTabActive = function() {
           return tabsCtrl.selectedTab === tabCtrl.$scope;
@@ -2892,8 +2928,8 @@ angular.module('ionic.ui.viewState', ['ionic.service.view', 'ionic.service.gestu
     template:
     '<header class="bar bar-header nav-bar{{navBarClass()}}">' +
       '<ion-nav-back-button ng-if="(backType || backLabel || backIcon)" ' +
-        'type="backType" label="backLabel" icon="backIcon" class="opacity-hide" ' +
-        'ng-class="{\'opacity-hide\': !backButtonEnabled}">' +
+        'type="backType" label="backLabel" icon="backIcon" class="hide" ' +
+        'ng-class="{\'hide\': !backButtonEnabled}">' +
       '</ion-nav-back-button>' +
       '<div class="buttons left-buttons"> ' +
         '<button ng-click="button.tap($event)" ng-repeat="button in leftButtons" ' +

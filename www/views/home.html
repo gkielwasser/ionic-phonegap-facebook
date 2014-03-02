@@ -1,0 +1,25 @@
+<ion-view title="'Accueil'" left-buttons="leftButtons">
+    <ion-content has-header="true" has-tabs="true" padding="true">
+        <div class="row">
+            <div class="col text-center">
+                <h2 ng-click="paceStart()">Bienvenue sur cette application d'aucune utilité.</h2>
+            </div>
+        </div>
+        <br>
+
+        <div ng-cloack="" class="row" ng-if="!user.logged">
+            <div class="col text-center">
+                <h3>Pour commencer à l'utiliser, connectez-vous avec votre compte Facebook.</h3>
+                <button class="button button-calm" ng-click="login()">
+                    <i class="ion ion-locked"></i> Se connecter
+                </button>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="tabs tabs-icon-left">
+        <a class="tab-item selectable" ng-click="toIntro()">
+            <i class="ion-help-buoy"></i> Relancer le tutorial
+        </a>
+    </div>
+</ion-view>

@@ -1,33 +1,34 @@
-<ion-view data-title="'Amis: ' + friends.length" left-buttons="leftButtons" right-buttons="rightButtons">
-    <div class="bar bar-subheader" style="top:45;padding:0">
-        <div class="item item-input-inset" style="padding:6px">
-            <label class="item item-input item-input-wrapper" style="padding-top:0;padding-bottom: 0">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching()" style="line-height: 24px;height:34px">
-                <button class="button button-clear" ng-click="search=''">X</button>
-            </label>
-           <!-- <button class="button button-clear" ng-click="reset()">Annuler</button>-->
-        </div>
-    </div>
-    <ion-content has-header="true" has-tabs="true" style="top:92px" overflow-scroll="{{application_conf.general.overflowScroll}}">
-        <ul class="list fade-in-not-out">
+<ion-view title="'Amis: ' + friends.length" left-buttons="leftButtons" right-buttons="rightButtons">
+    <!--<div class="bar bar-subheader" style="top:45;padding:0;">
 
+    </div>-->
+    <!--style="top:92px;"-->
+    <ion-content has-header="true" has-tabs="true" overflow-scroll="{{application_conf.general.overflowScroll}}">
+        <ul class="list fade-in-not-out">
+            <div class="item item-input-inset" style="padding:6px">
+                <label class="item item-input item-input-wrapper" style="padding-top:0;padding-bottom: 0">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching(search)" style="line-height: 24px;height:34px">
+                    <button class="button button-clear" ng-click="search=''">X</button>
+                </label>
+                <!-- <button class="button button-clear" ng-click="reset()">Annuler</button>-->
+            </div>
             <!-- <mlz-ui-table-view list="friends" row-height="100" view-buffer="20" style="height: 455px; ">
                  <label id="{{item.$$position}}" ng-repeat="item in items track by item.$$position">
                      <dt ng-bind="item.name"></dt>
                  </label>-->
 
-                   <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in friends | filter: {name:search}| startFrom: currentPage * pageSize  | limitTo:pageSize">
-                       <img ng-src="{{friend.picture.data.url}}">
-                       <h2>{{friend.first_name}}</h2>
-                       <h4>{{friend.name}}</h4>
-                       <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
+             <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in filteredFriends">
+               <img ng-src="{{friend.picture.data.url}}">
+               <h2>{{friend.first_name}}</h2>
+               <h4>{{friend.last_name}}</h4>
+               <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
 
-                       <label class="checkbox icon">
-                           <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
-                           <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
-                   </label>
-                </li>
+               <label class="checkbox icon">
+               <input type="checkbox" name="{{friend.id}}" ng-model="friend.enabled">
+               <!--<input type="checkbox" name="{{friend.id}}" checklist-model="selectedFriends" checklist-value="friend">-->
+               </label>
+            </li>
 
             <!--    </mlz-ui-table-view> -->
         </ul>
@@ -40,16 +41,15 @@
             Inviter <span style="position:relative;top:0;right:0" class="badge badge-balanced">{{(friends|filter:{enabled:true}).length}}</span>
         </a>
 
-        <a class="tab-item" ng-show="numberOfPages() > 1 && currentPage != 0" style="max-width: 52px" ng-click="previousPage()">
+        <a class="tab-item" ng-show="numberOfPages > 1 && currentPage != 0" style="max-width: 52px" ng-click="previousPage()">
             <i class="ion-chevron-left button" style="border-top:0;border-bottom: 0"></i>
         </a>
 
-        <i ng-show="numberOfPages() > 1" style="color:#f0b840;min-width: inherit" class="button button-energized button-clear">{{currentPage+1}}</i>
-        <i ng-show="numberOfPages() > 1">/</i>
-        <i ng-show="numberOfPages() > 1" style="color:#f0b840;min-width: inherit" class="button button-energized button-clear">{{numberOfPages()}}</i>
+        <i ng-show="numberOfPages > 1" style="color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px">{{currentPage+1}}</i>
+        <i ng-show="numberOfPages > 1" style="color: grey">/</i>
+        <i ng-show="numberOfPages > 1" style="color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px">{{numberOfPages}}</i>
 
-
-        <a ng-hide="currentPage +1== numberOfPages()" class="tab-item" ng-show="numberOfPages() > 1" style="max-width: 52px" ng-click="nextPage()">
+        <a class="tab-item" ng-show="numberOfPages > 1 && (currentPage +1!= numberOfPages)" style="max-width: 52px" ng-click="nextPage()">
             <i class="ion-chevron-right button" style="border-top:0;border-bottom: 0"></i>
         </a>
 

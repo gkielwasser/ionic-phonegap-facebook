@@ -3,7 +3,7 @@ angular.module('starter')
 .value('application_conf', {
     facebook : {
       permissions: "basic_info",
-      friends_fields: "id,name,first_name,last_name,picture,installed",
+      friends_fields: "id,last_name,first_name,last_name,picture,installed",
       me_fields: "username,picture"
     },
     general:{
@@ -13,7 +13,7 @@ angular.module('starter')
 .constant('application_conf_web', {
     general: {
       overflowScroll : true,
-      application_path : "192.168.0.45:9000/"
+      application_path : "192.168.0.42:9000/"
     },
     facebook: {
       init: {
