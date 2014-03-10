@@ -72,6 +72,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/styles/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="132" column="16" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.94551283" vertical-offset="1359" max-vertical-offset="2363">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="friends.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/friends.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,22 +92,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friendsConfirmationModal.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="friendsConfirmationModal.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
+            <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="663">
               <folding>
                 <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/bootstrap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="28" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1581">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -167,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/controllers/HomeCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/app_Config.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/config.js" />
@@ -183,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/views/friends.html" />
         <option value="$PROJECT_DIR$/app/views/friendsConfirmationModal.html" />
+        <option value="$PROJECT_DIR$/app/styles/main.css" />
       </list>
     </option>
   </component>
@@ -302,7 +302,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
+              <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,11 +450,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/.jshintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="896" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/runner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="9" selection-start="198" selection-end="198" vertical-scroll-proportion="0.11724138" vertical-offset="0" max-vertical-offset="870" />
@@ -531,6 +526,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="663">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="59" selection-start="1143" selection-end="1143" vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="1921">
@@ -547,12 +551,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
+    <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="132" column="16" selection-start="2173" selection-end="2173" vertical-scroll-proportion="0.94551283" vertical-offset="1359" max-vertical-offset="2363">
+          <folding />
         </state>
       </provider>
     </entry>
