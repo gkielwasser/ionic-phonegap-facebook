@@ -86,7 +86,7 @@
       <file leaf-file-name="friendsConfirmationModal.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="173" selection-start="653" selection-end="653" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+            <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
               <folding>
                 <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -549,7 +549,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="173" selection-start="653" selection-end="653" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+        <state line="13" column="96" selection-start="750" selection-end="750" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
           <folding>
             <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
           </folding>
