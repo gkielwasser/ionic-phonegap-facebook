@@ -9,7 +9,7 @@ angular.module('starter.services')
 
   var lastTask = function(defered){
       console.log("lastTask")
-      //$rootScope.hideLoading();
+      $rootScope.hideLoading();
       user.logged = true;
       initiated = true;
       //$state.go("menu.friends");
@@ -22,7 +22,7 @@ angular.module('starter.services')
     if(!force && !initiated){
       console.log("*********INIT**********", initiated, location)
       var defered = $q.defer();
-      //$rootScope.showLoading("Chargement de vos amis");
+      $rootScope.showLoading("Chargement de vos amis");
       var promises = [];
 
       promises.push(me());
