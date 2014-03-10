@@ -2,7 +2,7 @@
 
 angular.module('starter.controllers')
 
-.controller('HomeCtrl',['$scope','UserService','$state', 'PaceService',function($scope, UserService,$state,PaceService){
+.controller('HomeCtrl',['$scope','UserService','$state', 'PaceService','$rootScope',function($scope, UserService,$state,PaceService,$rootScope){
   $scope.paceStart = function(){
     PaceService.start()
   }
@@ -12,7 +12,7 @@ angular.module('starter.controllers')
 
   $scope.toIntro = function(){
     window.localStorage['didTutorial'] = 'false';
-    $scope.$broadcast('closeSideMenu');
+    $rootScope.$broadcast('closeSideMenu');
     $state.go('menu.intro');
   }
 }])

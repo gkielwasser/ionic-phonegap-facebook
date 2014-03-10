@@ -7,25 +7,28 @@ angular.module('starter.services')
   var user = {};
   var initFB = false;
 
-  var init = function(location,force){
-    function lastTask(){
-      $rootScope.hideLoading();
+  var lastTask = function(defered){
+      console.log("lastTask")
+      //$rootScope.hideLoading();
       user.logged = true;
       initiated = true;
-      $state.go("menu.friends");
+      //$state.go("menu.friends");
       defered.resolve()
     }
+
+  var init = function(location,force){
+
 
     if(!force && !initiated){
       console.log("*********INIT**********", initiated, location)
       var defered = $q.defer();
-      $rootScope.showLoading("Chargement de vos amis");
+      //$rootScope.showLoading("Chargement de vos amis");
       var promises = [];
 
       promises.push(me());
       promises.push(friends());
 
-      $q.all(promises).then(lastTask);
+      $q.all(promises).then(lastTask(defered));
 
       return defered;
     }
@@ -69,6 +72,7 @@ angular.module('starter.services')
   }
 
   var reset = function(){
+    console.log("RESET")
     $rootScope.$apply(function(){
       user = {};
       initFB = false;
@@ -154,9 +158,10 @@ angular.module('starter.services')
     });
 
     $rootScope.$on('Facebook:login', function(e,data){
+
       /*
        $rootScope.$apply(function() {
-       console.log("Facebook:login",data);
+
        if (data.status == 'connected' && !initFB) {
        console.log('Connexion de',data)
        //init("Facebook:login");
@@ -195,7 +200,7 @@ angular.module('starter.services')
     })
     $rootScope.$on('Facebook:authResponseChange', function(e,data){
       console.log("Facebook:authResponseChange");
-      //handleStatusChange(data,"authResponseChange");
+      handleStatusChange(data,"authResponseChange");
       /*
        if(data.status == 'connected') {
        $rootScope.$apply(function() {
@@ -211,7 +216,7 @@ angular.module('starter.services')
        */
     })
 
-  getLoginStatus();
+  //getLoginStatus();
 
   return {
 

@@ -3,6 +3,13 @@
 angular.module('starter')
 .controller('MainCtrl', ['$scope','UserService','application_conf','$rootScope','$ionicLoading',
   function($scope,UserService,application_conf,$rootScope,$ionicLoading) {
+    var digests = 0;
+    $scope.$watch(function() {
+      digests++;
+      //console.log(digests + " calls");
+    });
+
+
     $scope.application_conf = application_conf;
     console.log("CONFIGURATION",application_conf)
 
@@ -23,6 +30,7 @@ angular.module('starter')
       $scope.user = data;
     },true)
 
+    $scope.user = UserService.user;
     // Show the loading indicator
     $rootScope.showLoading = function(message) {
       message = message || "Chargement";

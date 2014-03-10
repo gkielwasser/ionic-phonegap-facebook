@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-table-view",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "authors": [
     "Jamie Sutherland <jamie@mallzee.com>"
   ],
@@ -26,14 +26,13 @@
     "lodash": "~2.4.1"
   },
   "homepage": "https://github.com/mallzee/angular-ui-table-view",
-  "_release": "0.0.2",
+  "_release": "0.0.4",
   "_resolution": {
     "type": "version",
-    "tag": "0.0.2",
-    "commit": "bdc13f2928f71d95f469d9697ed30fad49e10410"
+    "tag": "0.0.4",
+    "commit": "79cff5c05d65c596d6bae98984ff9225040f3cee"
   },
   "_source": "git://github.com/mallzee/angular-ui-table-view.git",
   "_target": "~0.0.2",
-  "_originalSource": "angular-ui-table-view",
-  "_direct": true
+  "_originalSource": "angular-ui-table-view"
 }

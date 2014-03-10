@@ -17,7 +17,15 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-bower-install');
 
+  //Delete console.log
   grunt.loadNpmTasks("grunt-strip");
+
+  //HTML templates to JS
+  grunt.loadNpmTasks('grunt-html2js');
+
+  //grunt.loadNpmTasks('grunt-selenium-webdriver');
+
+  grunt.loadNpmTasks('grunt-protractor-runner');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -51,6 +59,15 @@ module.exports = function (grunt) {
       }
     },
 
+    protractor: {
+      options: {
+        configFile: "protractor.conf.js",
+        keepAlive: true // If false, the grunt process stops when the test fails.
+
+      },
+      run:{}
+    },
+
     strip: {
       maon: {
         src: '.tmp/concat/scripts/*.js',
@@ -58,6 +75,16 @@ module.exports = function (grunt) {
           nodes : ['console.log', 'debug'],
           inline : true
         }
+      }
+    },
+
+    html2js: {
+      options: {
+        base: '../phonegap/app/'
+      },
+      main: {
+        src: ['app/views/*.html'],
+        dest: 'app/scripts/templates.js'
       }
     },
 
@@ -155,7 +182,14 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: {
+        files : [{
+          src:[
+            '.tmp'
+          ]
+        }]
+
+      }
     },
 
     // Add vendor prefixed styles
@@ -388,11 +422,14 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
-    'clean:server',
-    'concurrent:test',
-    'autoprefixer',
+    //'clean:server',
+    //'concurrent:test',
+    //'autoprefixer',
     'connect:test',
-    'karma'
+    //'karma'
+    //'selenium_start',
+    'protractor:run',
+    //'selenium_stop'
   ]);
 
   grunt.registerTask('build', [
@@ -400,14 +437,17 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'html2js',
     'concat',
-    'strip',
+    'strip', //Suppression console.log
+
     'ngmin',
+
     'copy:dist',
     'cdnify',
     'cssmin',
     'uglify',
-    'rev',
+    'rev', // Renames files for browser caching purposes
     'usemin'
   ]);
 

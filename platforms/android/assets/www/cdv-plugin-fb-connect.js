@@ -17,8 +17,7 @@ CDV.FB = {
 
     cordova.exec(function() {
     var authResponse = JSON.parse(localStorage.getItem('cdv_fb_session') || '{"expiresIn":0}');
-      console.log("Auth response")
-      console.log(JSON.stringify(authResponse))
+    console.log("Auth response:" + JSON.stringify(authResponse))
     if (authResponse && authResponse.expirationTime) {
       var nowTime = (new Date()).getTime();
       if (authResponse.expirationTime > nowTime) {
@@ -67,7 +66,7 @@ CDV.FB = {
   getLoginStatus: function(cb, fail) {
     cordova.exec(function(e) {
       if (cb) {
-        cb({"muahahahah":true});
+        cb(e);
         console.log("FROM cdv plugin:"+JSON.stringify(e))
       }
     }, (fail?fail:null), 'org.apache.cordova.facebook.Connect', 'getLoginStatus', []);

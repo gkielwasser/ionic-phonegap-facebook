@@ -1,3 +1,8 @@
+var nativeInterface;
+if(typeof CDV !== "undefined"){
+  CDV.FB;
+}
+
 angular.module('starter')
 
 .value('application_conf', {
@@ -12,7 +17,7 @@ angular.module('starter')
   })
 .constant('application_conf_web', {
     general: {
-      overflowScroll : true,
+      overflowScroll : false,
       application_path : "192.168.0.42:9000/"
     },
     facebook: {
@@ -25,14 +30,14 @@ angular.module('starter')
 })
 .constant('application_conf_mobile', {
     general: {
-      overflowScroll : true
+      overflowScroll : false
     },
     facebook:{
       init: {
         appId: "711009162272801",
        oauth: true,
         'localSDK': 'facebook-js-sdk.js',
-        'nativeInterface': CDV.FB,
+        'nativeInterface': nativeInterface,
         status: false,
        frictionlessRequests: true,
         useCachedDialogs: false,

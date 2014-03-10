@@ -9,7 +9,9 @@ angular.module('starter',
       'starter.directives',
       'starter.filters',
       'facebook',
-      'mallzee.ui-table-view'
+     // 'mallzee.ui-table-view',
+      'templates-main', //Templates JS
+     // 'pasvaz.bindonce'
     ])
 
 

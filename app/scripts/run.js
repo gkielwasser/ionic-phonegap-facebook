@@ -34,7 +34,7 @@ angular.module('starter')
     });
 
 
-    if (cordova ) {
+    if (typeof cordova !== "undefined" ) {
       angular.extend(application_conf.facebook,application_conf_mobile.facebook);
       angular.extend(application_conf.general,application_conf_mobile.general);
     }

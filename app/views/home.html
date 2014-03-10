@@ -7,7 +7,7 @@
         </div>
         <br/>
 
-        <div ng-cloack class="row" ng-if="!user.logged">
+        <div ng-cloack class="row homeDisconnected" ng-if="!user.logged">
             <div class="col text-center">
                 <h3>Pour commencer à l'utiliser, connectez-vous avec votre compte Facebook.</h3>
                 <button class="button button-calm" ng-click="login()">
@@ -17,9 +17,12 @@
         </div>
     </ion-content>
 
-    <div class="tabs tabs-icon-left" >
+    <div class="tabs tabs-icon-top" >
         <a class="tab-item selectable" ng-click="toIntro()">
-            <i class="ion-help-buoy"></i> Relancer le tutorial
+            <i class="icon ion-help-buoy"></i> Relancer le tutorial
+        </a>
+        <a class="tab-item selectable" href="#/inputs">
+            <i class="icon ion-beaker"></i> Test features
         </a>
     </div>
 </ion-view>

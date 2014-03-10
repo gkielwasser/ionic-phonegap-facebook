@@ -52,6 +52,15 @@ angular.module('starter')
         }
       })
 
+      .state('menu.inputs', {
+        url: '/inputs',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/inputs-test.html'
+          }
+        }
+      })
+
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
@@ -75,7 +84,7 @@ angular.module('starter')
 
 
 
-    if (cordova ) {
+    if (typeof cordova !== "undefined" ) {
       console.log("CORDOVA ENABLED");
       FacebookProvider.init(application_conf_mobile.facebook.init,false);
       /*

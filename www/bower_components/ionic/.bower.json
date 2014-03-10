@@ -1,21 +1,64 @@
 {
   "name": "ionic",
-  "codename": "salamander",
+  "version": "0.9.26",
+  "homepage": "https://github.com/driftyco/ionic",
+  "authors": [
+    "Max Lynch <max@drifty.com>",
+    "Adam Bradley <adam@drifty.com>",
+    "Ben Sperry <ben@drifty.com>"
+  ],
+  "description": "Advanced HTML5 hybrid mobile app development framework.",
+  "main": [
+    "release/css/ionic.css",
+    "release/fonts/*",
+    "release/js/ionic.js",
+    "release/js/ionic-angular.js"
+  ],
+  "keywords": [
+    "mobile",
+    "html5",
+    "ionic",
+    "cordova",
+    "phonegap",
+    "trigger",
+    "triggerio",
+    "angularjs",
+    "angular"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "component.json",
+    "config",
+    "examples",
+    "package.json",
+    "release/js/angular",
+    "release/js/angular-ui",
+    "scripts",
+    "test",
+    "js/controllers",
+    "js/ext",
+    "js/utils",
+    "js/views",
+    "js/_license.js",
+    "js/ionic.js"
+  ],
   "dependencies": {
     "angular": "1.2.12",
     "angular-animate": "1.2.12",
     "angular-sanitize": "1.2.12",
     "angular-ui-router": "0.2.7"
   },
-  "homepage": "https://github.com/driftyco/ionic-bower",
-  "_release": "1d70d02790",
+  "_release": "0.9.26",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "1d70d027909f8c5004c136a91406eb30160df3bc"
+    "type": "version",
+    "tag": "v0.9.26",
+    "commit": "295e78c353dc288546953750c49bbd056c5734de"
   },
-  "_source": "git://github.com/driftyco/ionic-bower.git",
-  "_target": "master",
-  "_originalSource": "driftyco/ionic-bower",
-  "_direct": true
+  "_source": "git://github.com/driftyco/ionic.git",
+  "_target": "~0.9.24",
+  "_originalSource": "ionic"
 }

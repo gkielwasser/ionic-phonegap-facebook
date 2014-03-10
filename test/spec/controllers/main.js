@@ -1,22 +1,25 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: HomeCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('phonegapApp'));
+  beforeEach(module('starter'));
 
-  var MainCtrl,
+  var HomeCtrl,
     scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope,UserService) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    HomeCtrl = $controller('HomeCtrl', {
       $scope: scope
     });
+
+
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should idsplay homeDisconnected if user is not connected', function () {
+    expect(angular.element('.homeDisconnected').count()).toEqual(1);
+    //expect(element('#myModal').css('display')).toBe('none');
   });
 });

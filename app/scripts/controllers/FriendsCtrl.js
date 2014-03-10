@@ -3,7 +3,10 @@
 angular.module('starter.controllers')
 
 .controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
-  $scope.initFriendsCtrl = function(friends){
+    $scope.currentPage = 0;
+    $scope.pageSize = 15;
+
+    $scope.initFriendsCtrl = function(friends){
     $scope.initFriendsPartial(friends);
 
     /*
@@ -20,12 +23,14 @@ angular.module('starter.controllers')
   }
 
   $scope.initFriendsPartial = function(friends){
-    $scope.friends = friends;
+    /*Performance: travailler sur une copie locale du tableau : on ne veut pas travailler directement sur l'objet user.friends*/
+    $scope.friends = angular.copy(friends);
+    //$scope.friends = friends;
+
     // Pagination in controller
-    $scope.currentPage = 0;
-    $scope.pageSize = 15;
-    $scope.filterFriends();
-    $scope.updateNumberOfPages();
+
+    //$scope.filterFriends();
+    //$scope.updateNumberOfPages();
   }
 
   var rightButtons = [
@@ -45,15 +50,45 @@ angular.module('starter.controllers')
       delete $scope.rightButtons;
     }
   }
+    var count = 0;
+    $scope.loadMore = function() {
+
+      console.log("Load more:", count,"page:",$scope.currentPage,"limit",$scope.currentPage  * $scope.pageSize)
+      $scope.nextPage();
+  $scope.filterFriends();
+      //$scope.filteredFriends = $filter('limitTo')($scope.friends,$scope.currentPage +1 * $scope.pageSize);
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+      count++;
+      if($scope.friends && ($scope.filteredFriends == $scope.friends.length)){
+        console.log("No more scroll!!!");
+        $scope.noMoreScroll = true;
+      }
+    };
 
   $scope.filterFriends = function(){
-    $scope.filteredFriends = $filter('startFrom')(
-      $filter('limitTo')(
-        $filter('friendsSearch')(
-          $scope.friends, $scope.search),
-          $scope.currentPage +1 * $scope.pageSize),
-          $scope.currentPage);
+    console.log("before",$scope.friends,$scope.currentPage  * $scope.pageSize)
+    $scope.filteredFriends = $filter('limitTo')($scope.friends,$scope.currentPage +1  * $scope.pageSize);
+    console.log("filteredFriends",$scope.filteredFriends);
+    /*
+        $scope.filteredFriends = $filter('startFrom')(
+          $filter('limitTo')(
+            $filter('friendsSearch')(
+              $scope.friends, $scope.search),
+              $scope.currentPage  * $scope.pageSize),
+              $scope.pageSize);
+              */
   }
+
+    $scope.$watch("currentPage", function(page){
+      console.log("currentPage:",$scope.currentPage)
+      /*
+      if(page)  {
+        console.log("update filter");
+        $scope.filterFriends();
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+      }
+      */
+    })
 
   $scope.updateNumberOfPages = function(length){
     $scope.numberOfPages = Math.ceil($filter('friendsSearch')($scope.friends,$scope.search).length/ $scope.pageSize);
@@ -63,14 +98,19 @@ angular.module('starter.controllers')
     $scope.currentPage = currentPage;
   }
   $scope.nextPage = function(){
-    $scope.currentPage ++;
-    $scope.filterFriends();
-    $scope.$broadcast('scroll.scrollTop');
+    if($scope.pageSize && ($scope.pageSize > $scope.currentPage +1)) {
+      console.log("Page suivante")
+      $scope.currentPage ++;
+    }
+    //$scope.filterFriends();
+    //$scope.$broadcast('scroll.refreshComplete');
+    //$scope.$broadcast('scroll.scrollTop');
   }
   $scope.previousPage = function(){
-    $scope.currentPage --;
-    $scope.filterFriends();
-    $scope.$broadcast('scroll.scrollTop');
+    if($scope.currentPage > 0)  $scope.currentPage --;
+    //$scope.filterFriends();
+    //$scope.$broadcast('scroll.refreshComplete');
+    //$scope.$broadcast('scroll.scrollTop');
   }
 
   $scope.searching = function(search){
@@ -96,9 +136,6 @@ angular.module('starter.controllers')
         friend.enabled = true;
       }
     }
-    else{
-      console.log("ignore")
-    }
   }
 
   $scope.getSelectedFriend = function(){
@@ -112,6 +149,7 @@ angular.module('starter.controllers')
 
   /* WATCHERS */
   $scope.$watch(UserService.friends, function(friends){
+    console.log("watch friends")
     if(friends){
       $scope.initFriendsCtrl(friends);
     }

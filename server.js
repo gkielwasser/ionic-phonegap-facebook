@@ -2,7 +2,8 @@
 
 // Module dependencies.
 var express = require('express'),
-    path = require('path');
+    path = require('path'),
+  gzippo = require('gzippo');
 
 // Controllers
 var controllers = require('./lib/controllers');
@@ -12,7 +13,8 @@ var app = express();
 app.configure('production', function(){
   app.set('views', __dirname + '/www/views');
   app.use(express.favicon(path.join(__dirname, 'www', 'favicon.ico')));
-  app.use(express.static(path.join(__dirname, 'www')));
+  //app.use(express.static(path.join(__dirname, 'www')));
+  app.use(gzippo.staticGzip("" + __dirname + "www"));
 
   // Angular Routes
   app.get('/views/*', controllers.partials);
