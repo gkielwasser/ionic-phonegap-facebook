@@ -95,7 +95,7 @@ angular.module("views/friends.html", []).run(["$templateCache", function($templa
     "                 </label>-->\n" +
     "\n" +
     "             <li post-repeat-directive class=\"item item-thumbnail-left selectable item-icon-right\" ng-click=\"addFriend(friend,$event)\" ng-repeat=\"friend in filteredFriends\">\n" +
-    "               <img ng-src=\"{{friend.picture.data.url}}\" width=\"50\" height=\"50\">\n" +
+    "               <img ng-src=\"{{friend.picture.data.url}}\" style=\"width: 50px; height: 50px\">\n" +
     "               <h2>{{friend.first_name}}</h2>\n" +
     "               <h4>{{friend.last_name}}</h4>\n" +
     "               <h4 style=\"color:#66cc33\" ng-if=\"friend.installed\">membre</h4>\n" +
@@ -150,7 +150,7 @@ angular.module("views/friendsConfirmationModal.html", []).run(["$templateCache",
     "\n" +
     "            <ul class=\"list\" >\n" +
     "                <li class=\"item item item-thumbnail-left selectable item-icon-right\" ng-repeat=\"friend in friends|filter:{enabled:true}\" ng-click=\"addFriend(friend,$event)\">\n" +
-    "                    <img ng-src=\"{{friend.picture.data.url}}\" width=\"50\" height=\"50\">\n" +
+    "                    <img ng-src=\"{{friend.picture.data.url}}\" style=\"width: 50px; height: 50px\">\n" +
     "                    <h2>{{friend.first_name}}</h2>\n" +
     "                    <h4>{{friend.last_name}}</h4>\n" +
     "                    <label class=\"checkbox icon\">\n" +

@@ -75,8 +75,10 @@
       <file leaf-file-name="friends.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/friends.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="79" selection-start="1595" selection-end="1617" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1105">
-              <folding />
+            <state line="22" column="15" selection-start="1553" selection-end="1629" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1105">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,8 +86,10 @@
       <file leaf-file-name="friendsConfirmationModal.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="84" selection-start="738" selection-end="738" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
-              <folding />
+            <state line="12" column="173" selection-start="653" selection-end="653" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+              <folding>
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -405,7 +409,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.7952183" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.7952183" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20478171" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -536,15 +540,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/friends.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="79" selection-start="1595" selection-end="1617" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1105">
-          <folding />
+        <state line="22" column="15" selection-start="1553" selection-end="1629" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1105">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/friendsConfirmationModal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="84" selection-start="738" selection-end="738" vertical-scroll-proportion="0.24637681" vertical-offset="0" max-vertical-offset="897">
-          <folding />
+        <state line="12" column="173" selection-start="653" selection-end="653" vertical-scroll-proportion="0.22742476" vertical-offset="0" max-vertical-offset="897">
+          <folding>
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#ion-content#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
