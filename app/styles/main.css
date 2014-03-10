@@ -128,7 +128,7 @@ body {
 
 }
 
-/* fix minheight list thumbnails*/
+/* fix minheight list thumbnails
 .item-thumbnail-left, .item-thumbnail-left .item-content {
     min-height: 70px;
-}
+}*/

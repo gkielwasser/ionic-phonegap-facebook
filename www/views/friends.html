@@ -20,7 +20,7 @@
                  </label>-->
 
              <li post-repeat-directive="" class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in filteredFriends">
-               <img ng-src="{{friend.picture.data.url}}" style="width: 50px; height: 50px">
+                 <img ng-src="{{friend.picture.data.url}}" style="width: 80px; height: 80px" width="80">
                <h2>{{friend.first_name}}</h2>
                <h4>{{friend.last_name}}</h4>
                <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
