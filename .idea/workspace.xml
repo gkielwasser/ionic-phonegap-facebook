@@ -63,10 +63,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="21" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1921">
+            <state line="28" column="59" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.53065777" vertical-offset="0" max-vertical-offset="1921">
               <folding />
             </state>
           </provider>
@@ -126,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="19" selection-start="513" selection-end="513" vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="936">
+            <state line="18" column="19" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
               <folding />
             </state>
           </provider>
@@ -163,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/templates.js" />
         <option value="$PROJECT_DIR$/app/views/friends.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/FriendsCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/HomeCtrl.js" />
@@ -179,6 +178,7 @@
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/test/e2e/home.index.spec.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -474,13 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="21" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="28" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1581">
@@ -525,7 +518,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="19" selection-start="513" selection-end="513" vertical-scroll-proportion="0.32692307" vertical-offset="0" max-vertical-offset="936">
+        <state line="18" column="19" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="59" selection-start="1143" selection-end="1143" vertical-scroll-proportion="0.53065777" vertical-offset="0" max-vertical-offset="1921">
           <folding />
         </state>
       </provider>
