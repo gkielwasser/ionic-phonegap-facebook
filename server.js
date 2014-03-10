@@ -14,7 +14,7 @@ app.configure('production', function(){
   app.set('views', __dirname + '/www/views');
   app.use(express.favicon(path.join(__dirname, 'www', 'favicon.ico')));
   //app.use(express.static(path.join(__dirname, 'www')));
-  app.use(gzippo.staticGzip("" + __dirname + "www"));
+  app.use(gzippo.staticGzip(path.join(__dirname, 'www')));
 
   // Angular Routes
   app.get('/views/*', controllers.partials);
