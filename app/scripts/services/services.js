@@ -3,7 +3,7 @@ angular.module('starter.services', [])
 
 
   .service('PaceService',['$window', function($window){
-
+/*
     $window.Pace.on('start', function(){
       console.log("Pace start")
     })
@@ -11,7 +11,7 @@ angular.module('starter.services', [])
       console.log("Pace hidden")
 
     })
-
+*/
     return{
       start: function(){
         console.log("pace")

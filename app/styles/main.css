@@ -132,3 +132,13 @@ body {
 .item-thumbnail-left, .item-thumbnail-left .item-content {
     min-height: 70px;
 }*/
+
+.ng-click-active{
+    /*transform: scale(.96,0.96);*/
+    -webkit-transform: scale3d(.96,0.96, 1);
+    -moz-transform: scale3d(.96,0.96, 1);
+    -o-transform: scale3d(.96,0.96, 1);
+    -ms-transform: scale3d(.96,0.96, 1);
+    transform: scale3d(.96,0.96, 1);
+    background-color:#eee;
+}
