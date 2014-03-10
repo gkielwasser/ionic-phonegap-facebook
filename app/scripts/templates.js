@@ -80,11 +80,7 @@ angular.module("views/friends.html", []).run(["$templateCache", function($templa
     "    <!--style=\"top:92px;\"-->\n" +
     "    <ion-content has-header=\"true\" has-tabs=\"true\"  overflow-scroll=\"{{application_conf.general.overflowScroll}}\" on-infinite-scroll=\"loadMore()\" infinite-scroll-distance=\"10%\">\n" +
     "\n" +
-    "        <ul style=\"-webkit-perspective: 200px;\n" +
-    "-moz-transform-style: preserve-3d;\n" +
-    "-ms-transform-style: preserve-3d;\n" +
-    "-o-transform-style: preserve-3d;\n" +
-    "-webkit-transform-style: preserve-3d;background-color:black;\" class=\"list fade-in-not-out\">\n" +
+    "        <ul style=\"background-color:black;\" class=\"list fade-in-not-out\">\n" +
     "            <div class=\"item item-input-inset\" style=\"padding:6px;\">\n" +
     "                <label class=\"item item-input item-input-wrapper\" style=\"padding-top:0;padding-bottom: 0;\">\n" +
     "                    <i class=\"icon ion-search placeholder-icon\"></i>\n" +
@@ -98,7 +94,7 @@ angular.module("views/friends.html", []).run(["$templateCache", function($templa
     "                     <dt ng-bind=\"item.name\"></dt>\n" +
     "                 </label>-->\n" +
     "\n" +
-    "             <li  post-repeat-directive class=\"item item-thumbnail-left selectable item-icon-right\" ng-click=\"addFriend(friend,$event)\" ng-repeat=\"friend in filteredFriends\">\n" +
+    "             <li post-repeat-directive class=\"item item-thumbnail-left selectable item-icon-right\" ng-click=\"addFriend(friend,$event)\" ng-repeat=\"friend in filteredFriends\">\n" +
     "\n" +
     "                 <img ng-src=\"{{friend.picture.data.url}}\" style=\"width: 80px; height: 80px\"  width=\"50\" height=\"50\">\n" +
     "               <h2>{{friend.first_name}}</h2>\n" +
