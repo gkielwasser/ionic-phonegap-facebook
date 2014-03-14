@@ -1,4 +1,4 @@
-angular.module('templates-main', ['views/404.html', 'views/about.html', 'views/friends.html', 'views/friendsConfirmationModal.html', 'views/home.html', 'views/inputs-test.html', 'views/intro.html', 'views/leftMenu.html', 'views/login.html', 'views/menu.html', 'views/subscribedFriends.html']);
+angular.module('templates-main', ['views/404.html', 'views/about.html', 'views/friends.html', 'views/friendsConfirmationModal.html', 'views/home.html', 'views/inputs-test.html', 'views/intro.html', 'views/jaugeDirective.html', 'views/leftMenu.html', 'views/login.html', 'views/menu.html', 'views/subscribedFriends.html']);
 
 angular.module("views/404.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/404.html",
@@ -73,30 +73,42 @@ angular.module("views/about.html", []).run(["$templateCache", function($template
 
 angular.module("views/friends.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/friends.html",
-    "<ion-view title=\"'Amis: ' + friends.length\" left-buttons='leftButtons' right-buttons=\"rightButtons\">\n" +
-    "    <!--<div class=\"bar bar-subheader\" style=\"top:45;padding:0;\">\n" +
+    "<ion-view title=\"Amis: {{ friends.length}}\" left-buttons='leftButtons' right-buttons=\"rightButtons\">\n" +
+    "    <div class=\"bar bar-subheader\" style=\"padding:0;\" ng-class=\"{'search-bar-header-down':down,'search-bar-header-up':!down}\">\n" +
+    "        <div class=\"item item-input-inset\" style=\"padding:6px;\">\n" +
+    "            <label class=\"item item-input item-input-wrapper\" style=\"padding-top:0;padding-bottom: 0;\">\n" +
+    "                <i class=\"icon ion-search placeholder-icon\"></i>\n" +
+    "                <input type=\"text\" placeholder=\"Search\" ng-model=\"filter.value\" class=\"searchBar\" ng-change=\"searching()\" style=\"line-height: 24px;height:34px;\">\n" +
+    "                <button class=\"button button-clear\" ng-click=\"resetSearch()\">X</button>\n" +
+    "            </label>\n" +
     "\n" +
-    "    </div>-->\n" +
-    "    <!--style=\"top:92px;\"-->\n" +
-    "    <ion-content has-header=\"true\" has-tabs=\"true\"  overflow-scroll=\"{{application_conf.general.overflowScroll}}\" on-infinite-scroll=\"loadMore()\" infinite-scroll-distance=\"10%\">\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "    <!---->\n" +
+    "    <ion-content style=\"\"\n" +
+    "                 ng-class=\"{'search-bar-down':down,'search-bar-up':!down}\"\n" +
+    "                 has-bouncing=\"{{application_conf.general.has_bouncing}}\"\n" +
+    "                 has-header=\"!down\"\n" +
+    "                 has-subheader=\"true\"\n" +
+    "                 has-tabs=\"true\"\n" +
+    "                 when-scrolled=\"\"\n" +
+    "                 overflow-scroll=\"{{application_conf.general.overflowScroll}}\">\n" +
     "\n" +
-    "        <ul style=\"background-color:black;\" class=\"list fade-in-not-out\">\n" +
-    "            <div class=\"item item-input-inset\" style=\"padding:6px;\">\n" +
-    "                <label class=\"item item-input item-input-wrapper\" style=\"padding-top:0;padding-bottom: 0;\">\n" +
-    "                    <i class=\"icon ion-search placeholder-icon\"></i>\n" +
-    "                    <input type=\"text\" placeholder=\"Search\" ng-model=\"search\" class=\"searchBar\" ng-change=\"searching(search)\" style=\"line-height: 24px;height:34px;\">\n" +
-    "                    <button class=\"button button-clear\" ng-click=\"search=''\">X</button>\n" +
-    "                </label>\n" +
-    "                <!-- <button class=\"button button-clear\" ng-click=\"reset()\">Annuler</button>-->\n" +
-    "            </div>\n" +
+    "        <ul  class=\"list fade-in-not-out\">\n" +
+    "            <!-- Aucun contact -->\n" +
+    "            <li class=\"item item-thumbnail-left\" ng-show=\"virtualFriends.length == 0\" style=\"min-height: 72px;\">\n" +
+    "                <span style=\"position: absolute;top: 10px;left: 10px;\"><i class=\"ion-person\" style=\"font-size:54px\"></i>\n" +
+    "                <i class=\"ion-help\" style=\"font-size:54px\"></i></span>\n" +
+    "                <h2 style=\"white-space: normal;\">la personne n'a pas été trouvé</h2>\n" +
+    "            </li>\n" +
     "            <!-- <mlz-ui-table-view list=\"friends\" row-height=\"100\" view-buffer=\"20\" style=\"height: 455px; \">\n" +
     "                 <label id=\"{{item.$$position}}\" ng-repeat=\"item in items track by item.$$position\">\n" +
     "                     <dt ng-bind=\"item.name\"></dt>\n" +
     "                 </label>-->\n" +
     "\n" +
-    "             <li post-repeat-directive class=\"item item-thumbnail-left selectable item-icon-right\" ng-click=\"addFriend(friend,$event)\" ng-repeat=\"friend in filteredFriends\">\n" +
+    "             <li class=\"item item-thumbnail-left selectable item-icon-right\" ng-click=\"addFriend(friend,$event)\" ng-repeat=\"friend in virtualFriends\">\n" +
     "\n" +
-    "                 <img ng-src=\"{{friend.picture.data.url}}\" style=\"width: 80px; height: 80px\"  width=\"50\" height=\"50\">\n" +
+    "               <img ng-src=\"{{friend.picture.data.url}}\" style=\"width: 80px; height: 80px\"  width=\"50\" height=\"50\">\n" +
     "               <h2>{{friend.first_name}}</h2>\n" +
     "               <h4>{{friend.last_name}}</h4>\n" +
     "               <h4 style=\"color:#66cc33\" ng-if=\"friend.installed\">membre</h4>\n" +
@@ -109,29 +121,27 @@ angular.module("views/friends.html", []).run(["$templateCache", function($templa
     "\n" +
     "            <!--    </mlz-ui-table-view> -->\n" +
     "        </ul>\n" +
-    "        <ion-infinite-scroll ng-if=\"!noMoreScroll\"></ion-infinite-scroll>\n" +
+    "\n" +
+    "        <ion-infinite-scroll ng-if=\"!noMoreScroll\" on-infinite=\"loadMore()\" distance=\"10%\"></ion-infinite-scroll>\n" +
     "    </ion-content>\n" +
     "\n" +
-    "    <div class=\"tabs tabs-icon-left\" >\n" +
+    "    <div class=\"tabs tabs-icon-left\" ng-if=\"filteredFriends.length > 0\" >\n" +
     "\n" +
     "        <a  ng-controller=\"ModalCtrl\" class=\"tab-item selectable\" data-ng-click=\"openModal()\" ng-show=\"getSelectedFriend().length > 0 \">\n" +
     "            <i class=\"icon ion-email\" ></i>\n" +
     "            Inviter <span style=\"position:relative;top:0;right:0 \" class=\"badge badge-balanced\">{{(friends|filter:{enabled:true}).length}}</span>\n" +
     "        </a>\n" +
-    "\n" +
+    "<!--\n" +
     "        <a class=\"tab-item\" ng-show=\"numberOfPages > 1 && currentPage != 0\" style=\"max-width: 52px\" ng-click=\"previousPage()\">\n" +
     "            <i class=\"ion-chevron-left button\" style=\"border-top:0;border-bottom: 0\" ></i>\n" +
-    "        </a>\n" +
+    "        </a>-->\n" +
     "\n" +
-    "        <i ng-show=\"numberOfPages > 1\" style=\"color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px;\" >{{currentPage+1}}</i>\n" +
-    "        <i ng-show=\"numberOfPages > 1\" style=\"color: grey;\">/</i>\n" +
-    "        <i ng-show=\"numberOfPages > 1\" style=\"color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px;\" >{{numberOfPages}}</i>\n" +
-    "\n" +
+    "        <jauge max=\"filteredFriends.length\" current=\"virtualFriends.length\"></jauge>\n" +
+    "<!--\n" +
     "        <a  class=\"tab-item\" ng-show=\"numberOfPages > 1 && (currentPage +1!= numberOfPages)\" style=\"max-width: 52px\" ng-click=\"nextPage()\">\n" +
     "            <i class=\"ion-chevron-right button\" style=\"border-top:0;border-bottom: 0\" ></i>\n" +
-    "        </a>\n" +
+    "        </a>-->\n" +
     "\n" +
-    "        {{filteredFriends.length}}\n" +
     "\n" +
     "    </div>\n" +
     "</ion-view>");
@@ -177,7 +187,7 @@ angular.module("views/friendsConfirmationModal.html", []).run(["$templateCache",
 
 angular.module("views/home.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/home.html",
-    "<ion-view title=\"'Accueil'\" left-buttons='leftButtons' >\n" +
+    "<ion-view title=\"Accueil\" left-buttons='leftButtons' >\n" +
     "    <ion-content has-header=\"true\" has-tabs=\"true\" padding=\"true\">\n" +
     "        <div class=\"row\">\n" +
     "            <div class=\"col text-center\">\n" +
@@ -209,7 +219,7 @@ angular.module("views/home.html", []).run(["$templateCache", function($templateC
 
 angular.module("views/inputs-test.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/inputs-test.html",
-    "<ion-view title=\"'Différents inputs'\">\n" +
+    "<ion-view title=\"Différents inputs\">\n" +
     "    <ion-content has-header=\"true\"  padding=\"true\">\n" +
     "        <label class=\"item item-input\">\n" +
     "            <span class=\"input-label\">Email</span>\n" +
@@ -287,6 +297,23 @@ angular.module("views/intro.html", []).run(["$templateCache", function($template
     "</ion-view>");
 }]);
 
+angular.module("views/jaugeDirective.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("views/jaugeDirective.html",
+    "<div id=\"jauge-progress\">\n" +
+    "    <div>\n" +
+    "        <div class=\"nums\">\n" +
+    "            <h4>{{current}}</h4>\n" +
+    "            <span>\n" +
+    "                <span>of</span>\n" +
+    "                <h4>{{max}}</h4>\n" +
+    "            </span>\n" +
+    "        </div>\n" +
+    "        <div class=\"bg\" style=\"transition: width 1s;width:{{prc}}%\"></div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "</div>");
+}]);
+
 angular.module("views/leftMenu.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/leftMenu.html",
     "<div ng-controller=\"leftMenuCtrl\">\n" +
@@ -337,7 +364,7 @@ angular.module("views/leftMenu.html", []).run(["$templateCache", function($templ
 
 angular.module("views/login.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("views/login.html",
-    "<ion-view title=\"'Login'\">\n" +
+    "<ion-view title=\"Login\">\n" +
     "    <ion-content has-header=\"true\" has-tabs=\"true\" padding=\"true\">\n" +
     "\n" +
     "        <div ng-show=\"!user.logged()\">\n" +

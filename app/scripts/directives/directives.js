@@ -1,26 +1,81 @@
 angular.module('starter.directives', [])
+  .directive('jauge', function(){
+    return {
+      scope:{
+        max:"=",
+        current:"="
+      },
+      restrict:"EA",
+      templateUrl:"views/jaugeDirective.html",
+      link: function(scope, elm, attr) {
+        var update = function(){
+          if(scope.current && scope.max)  scope.prc = scope.current/scope.max*100;
+        }
+        console.log("linking jauge.......")
+        scope.$watch("max", function(){
+          update();
+        })
+        scope.$watch("current",function(){
+          update();
+        })
 
+
+      }
+    }
+  })
  .directive('whenScrolled', ['$timeout', function($timeout) {
   return function(scope, elm, attr) {
     var raw = elm[0];
+    var scrollCtrl = elm.controller('$ionicScroll');
+   var scrollView = scrollCtrl.scrollView;
+    scrollCtrl.$element.on('scroll',function(){
+      //console.log("scroll",scrollView.getValues().top)
+    });
+
     var previousPosition;
     $timeout(function() {
       raw.scrollTop = raw.scrollHeight;
       console.log("init",raw)
     });
 
-    elm.bind('scroll', function() {
-      console.log(previousPosition,raw.scrollTop)
-      if(previousPosition > raw.scrollTop){
-        console.log("montée")
+    var infiniteScroll = elm.find('ion-infinite-scroll');
+    var infiniteStarted = false;
+
+    //test
+    var lastPosition;
+
+    if(infiniteScroll) {
+      // Parse infinite scroll distance
+      var distance = attr.infiniteScrollDistance || '1%';
+      var maxScroll;
+      if(distance.indexOf('%')) {
+        // It's a multiplier
+        maxScroll = function() {
+          return scrollView.getScrollMax().top * ( 1 - parseInt(distance, 10) / 100 );
+        };
+      } else {
+        // It's a pixel value
+        maxScroll = function() {
+          return scrollView.getScrollMax().top - parseInt(distance, 10);
+        };
       }
-      else{
-        console.log("descente")
-      }
-      previousPosition = raw.scrollTop;
-    });
-  };
-}]).directive('connectivity', ["$window","$parse", function($window, $parse) {
+      elm.bind('scroll', function(e) {
+        if(lastPosition <scrollView.getValues().top ){
+          scope.$emit("scroll-down",true);
+        }
+        else if(lastPosition >scrollView.getValues().top){
+          scope.$emit("scroll-down",false);
+        }
+
+          //$scope.$apply(angular.bind($scope, $scope.onInfiniteScroll, cb));
+
+        lastPosition = scrollView.getValues().top;
+      });
+    };
+  }
+}])
+
+    .directive('connectivity', ["$window","$parse", function($window, $parse) {
   return function($scope, element, $attrs) {
 
     //Parse attribute value into JSON

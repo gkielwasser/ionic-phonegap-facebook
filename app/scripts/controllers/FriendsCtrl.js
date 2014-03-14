@@ -2,9 +2,14 @@
 
 angular.module('starter.controllers')
 
-.controller('FriendsCtrl', ['$scope','UserService','$timeout','$q','$filter',function($scope,UserService,$timeout,$q,$filter) {
-    $scope.currentPage = 0;
+.controller('FriendsCtrl', ['$scope','UserService','$filter','$timeout','application_conf',function($scope,UserService,$filter,$timeout,application_conf) {
+    $scope.initiated = false;
     $scope.pageSize = 15;
+    $scope.filter = {
+      value: "",
+      limit: application_conf.general.scroll.items_preloaded
+    }
+
 
     $scope.initFriendsCtrl = function(friends){
     $scope.initFriendsPartial(friends);
@@ -23,14 +28,11 @@ angular.module('starter.controllers')
   }
 
   $scope.initFriendsPartial = function(friends){
+    console.log("INIT FRIENDS PARTIAL")
     /*Performance: travailler sur une copie locale du tableau : on ne veut pas travailler directement sur l'objet user.friends*/
     $scope.friends = angular.copy(friends);
     //$scope.friends = friends;
-
-    // Pagination in controller
-
-    //$scope.filterFriends();
-    //$scope.updateNumberOfPages();
+    $scope.down = false;
   }
 
   var rightButtons = [
@@ -50,75 +52,90 @@ angular.module('starter.controllers')
       delete $scope.rightButtons;
     }
   }
-    var count = 0;
-    $scope.loadMore = function() {
 
-      console.log("Load more:", count,"page:",$scope.currentPage,"limit",$scope.currentPage  * $scope.pageSize)
+    $scope.loadMore = function() {
+      console.log("loadmore")
       $scope.nextPage();
-  $scope.filterFriends();
-      //$scope.filteredFriends = $filter('limitTo')($scope.friends,$scope.currentPage +1 * $scope.pageSize);
-      $scope.$broadcast('scroll.infiniteScrollComplete');
-      count++;
-      if($scope.friends && ($scope.filteredFriends == $scope.friends.length)){
-        console.log("No more scroll!!!");
-        $scope.noMoreScroll = true;
-      }
     };
 
-  $scope.filterFriends = function(){
-    console.log("before",$scope.friends,$scope.currentPage  * $scope.pageSize)
-    $scope.filteredFriends = $filter('limitTo')($scope.friends,$scope.currentPage +1  * $scope.pageSize);
-    console.log("filteredFriends",$scope.filteredFriends);
+  $scope.checkMoreScroll = function(){
+    console.log($scope.filteredFriends,$scope.virtualFriends)
+    if($scope.filteredFriends && ($scope.virtualFriends.length == $scope.filteredFriends.length)){
+      console.log("No more scroll!!!");
+      $scope.noMoreScroll = true;
+    }
+    else{
+      console.log("Content to scroll !!!")
+      $scope.noMoreScroll = false;
+    }
+  }
+
+    $scope.resetSearch = function(){
+      $scope.filter.value ='';
+      $scope.filter.limit = application_conf.general.scroll.items_preloaded;
+      $scope.searching();
+    }
+
+  $scope.filterFriends = function(type){
+    console.log("**FILTER**",type)
+    if(type === "bySearch"){
+      $scope.filteredFriends =  $filter('friendsSearch')($scope.friends,$scope.filter.value);
+      $scope.virtualFriends = $filter('limitTo')($scope.filteredFriends,($scope.filter.limit) );
+    }
+    else if(type === "byLimit"){
+      $scope.virtualFriends = $filter('limitTo')($scope.filteredFriends,($scope.filter.limit) );
+    }
+    else{
+      $scope.filteredFriends =  $filter('friendsSearch')($scope.friends,$scope.filter.value);
+      $scope.virtualFriends = $filter('limitTo')($scope.filteredFriends,($scope.filter.limit) );
+    }
+    $scope.checkMoreScroll();
+
+    $scope.$broadcast('scroll.infiniteScrollComplete');
     /*
-        $scope.filteredFriends = $filter('startFrom')(
+        $scope.virtualFriends = $filter('startFrom')(
           $filter('limitTo')(
             $filter('friendsSearch')(
-              $scope.friends, $scope.search),
+              $scope.friends, $scope.filter.value),
               $scope.currentPage  * $scope.pageSize),
               $scope.pageSize);
               */
   }
 
-    $scope.$watch("currentPage", function(page){
-      console.log("currentPage:",$scope.currentPage)
-      /*
-      if(page)  {
-        console.log("update filter");
-        $scope.filterFriends();
-        $scope.$broadcast('scroll.infiniteScrollComplete');
-      }
-      */
+  $scope.$watch("filter.limit", function(limit){
+    console.log("limit:",limit,$scope);
+    if(limit)  {
+      $scope.filterFriends("byLimit");
+    }
+    else{
+      console.log("no limit")
+    }
+  })
+
+    $scope.$on('scroll-down', function(a,value){
+      console.log("initiated",$scope.initiated,value)
+      $timeout(function(){
+        $scope.down = value;
+      })
     })
 
-  $scope.updateNumberOfPages = function(length){
-    $scope.numberOfPages = Math.ceil($filter('friendsSearch')($scope.friends,$scope.search).length/ $scope.pageSize);
-  }
-
-  $scope.setCurrentPage = function(currentPage) {
-    $scope.currentPage = currentPage;
-  }
   $scope.nextPage = function(){
-    if($scope.pageSize && ($scope.pageSize > $scope.currentPage +1)) {
+    if($scope.friends && ($scope.friends.length > $scope.filter.limit)) {
       console.log("Page suivante")
-      $scope.currentPage ++;
+      $scope.filter.limit += application_conf.general.scroll.items_to_load;
     }
-    //$scope.filterFriends();
-    //$scope.$broadcast('scroll.refreshComplete');
-    //$scope.$broadcast('scroll.scrollTop');
+    else{
+      console.log("ignore")
+    }
   }
   $scope.previousPage = function(){
-    if($scope.currentPage > 0)  $scope.currentPage --;
-    //$scope.filterFriends();
-    //$scope.$broadcast('scroll.refreshComplete');
-    //$scope.$broadcast('scroll.scrollTop');
+    if($scope.filter.limit > application_conf.general.scroll.items_to_load)  $scope.filter.limit -= application_conf.general.scroll.items_to_load;
   }
 
-  $scope.searching = function(search){
-    $scope.search = search;
+  $scope.searching = function(){
     $scope.$broadcast('scroll.scrollTop');
-    $scope.currentPage = 0;
-    $scope.filterFriends();
-    $scope.updateNumberOfPages();
+    $scope.filter.limit = application_conf.general.scroll.items_preloaded;
+    $scope.filterFriends("bySearch");
   }
 
   $scope.reset= function(){
@@ -146,21 +163,22 @@ angular.module('starter.controllers')
     UserService.sendFriendsInvitation($scope.getSelectedFriend(),message);
   }
 
-
   /* WATCHERS */
   $scope.$watch(UserService.friends, function(friends){
-    console.log("watch friends")
+    console.log("watch friends");
     if(friends){
       $scope.initFriendsCtrl(friends);
     }
   })
 
   $scope.$watch("friends",function(value){
-    $scope.filterFriends();
-    //Masquer bouton Annuler
-    if($scope.getSelectedFriend() && $scope.getSelectedFriend().length == 0){
-      enableCancelButton(false);
+    if(value){
+      $scope.filterFriends();
+      //Masquer bouton Annuler
+      if($scope.getSelectedFriend() && $scope.getSelectedFriend().length == 0){
+        enableCancelButton(false);
+      }
+      else if (!$scope.rightButtons && $scope.getSelectedFriend() && $scope.getSelectedFriend().length > 0)  enableCancelButton(true);
     }
-    else if (!$scope.rightButtons && $scope.getSelectedFriend() && $scope.getSelectedFriend().length > 0)  enableCancelButton(true);
   },true)
 }])

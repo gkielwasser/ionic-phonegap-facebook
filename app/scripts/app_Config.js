@@ -18,7 +18,12 @@ angular.module('starter')
 .constant('application_conf_web', {
     general: {
       overflowScroll : false,
-      application_path : "192.168.0.42:9000/"
+      has_bouncing : false,
+      application_path : "192.168.0.42:9000/",
+      scroll : {
+        items_preloaded : 15,
+        items_to_load: 10
+      }
     },
     facebook: {
       init: {
@@ -30,8 +35,14 @@ angular.module('starter')
 })
 .constant('application_conf_mobile', {
     general: {
-      overflowScroll : false
+      overflowScroll : false,
+      has_bouncing : false,
+      scroll : {
+        items_preloaded : 15,
+          items_to_load: 10
+      }
     },
+
     facebook:{
       init: {
         appId: "711009162272801",

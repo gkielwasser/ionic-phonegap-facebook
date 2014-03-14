@@ -134,12 +134,81 @@ body {
 }*/
 
 .ng-click-active{
-    /*transform: scale(.97,0.97);*/
+    /*
     -webkit-transform: scale3d(.97,0.97, 1);
     -moz-transform: scale3d(.97,0.97, 1);
     -o-transform: scale3d(.97,0.97, 1);
     -ms-transform: scale3d(.97,0.97, 1);
     transform: scale3d(.97,0.97, 1);
-    transition: all 0.1s ease-in-out;
+  transition: all 0.5s ease-in-out;
     background-color:#eee;
+    */
+
 }
+
+/* checkbox avant*/
+.checkbox input:before {
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+}
+
+/* the checkmark within the box */
+.checkbox input:after {
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+}
+
+/*jauge*/
+#jauge-progress {
+    position: relative;
+    border: none;
+    background-color: #e3e3e3;
+    width: 130px;
+}
+#jauge-progress .bg {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 0px;
+    border: none;
+    background-color: #7EAEFF;
+}
+#jauge-progress .nums {
+    position: relative;
+    top: 2px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    color:#FFF;
+}
+
+
+#jauge-progress h4{
+    display: inline;
+    font-size: 18px;
+    line-height: 15px;
+    color:#FFF;
+}
+
+.search-bar-down{
+    top:45px;
+    transition: top 1s;
+}
+
+.search-bar-up{
+    top:92px;
+    transition: top 1s;
+}
+.search-bar-header-up{
+    top:44px;
+    transition: top 1s;
+}
+.search-bar-header-down{
+    top:-60px;
+    transition: top 1s;
+}
+

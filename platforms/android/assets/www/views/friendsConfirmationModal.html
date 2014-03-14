@@ -11,7 +11,7 @@
 
             <ul class="list">
                 <li class="item item item-thumbnail-left selectable item-icon-right" ng-repeat="friend in friends|filter:{enabled:true}" ng-click="addFriend(friend,$event)">
-                    <img ng-src="{{friend.picture.data.url}}">
+                    <img ng-src="{{friend.picture.data.url}}" style="width: 80px; height: 80px" width="50" height="50">
                     <h2>{{friend.first_name}}</h2>
                     <h4>{{friend.last_name}}</h4>
                     <label class="checkbox icon">

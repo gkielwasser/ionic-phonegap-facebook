@@ -1,27 +1,39 @@
-<ion-view title="'Amis: ' + friends.length" left-buttons='leftButtons' right-buttons="rightButtons">
-    <!--<div class="bar bar-subheader" style="top:45;padding:0;">
+<ion-view title="Amis: {{ friends.length}}" left-buttons='leftButtons' right-buttons="rightButtons">
+    <div class="bar bar-subheader" style="padding:0;" ng-class="{'search-bar-header-down':down,'search-bar-header-up':!down}">
+        <div class="item item-input-inset" style="padding:6px;">
+            <label class="item item-input item-input-wrapper" style="padding-top:0;padding-bottom: 0;">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="filter.value" class="searchBar" ng-change="searching()" style="line-height: 24px;height:34px;">
+                <button class="button button-clear" ng-click="resetSearch()">X</button>
+            </label>
 
-    </div>-->
-    <!--style="top:92px;"-->
-    <ion-content has-header="true" has-tabs="true"  overflow-scroll="{{application_conf.general.overflowScroll}}" on-infinite-scroll="loadMore()" infinite-scroll-distance="10%">
+        </div>
+    </div>
+    <!---->
+    <ion-content style=""
+                 ng-class="{'search-bar-down':down,'search-bar-up':!down}"
+                 has-bouncing="{{application_conf.general.has_bouncing}}"
+                 has-header="!down"
+                 has-subheader="true"
+                 has-tabs="true"
+                 when-scrolled=""
+                 overflow-scroll="{{application_conf.general.overflowScroll}}">
 
-        <ul style="background-color:black;" class="list fade-in-not-out">
-            <div class="item item-input-inset" style="padding:6px;">
-                <label class="item item-input item-input-wrapper" style="padding-top:0;padding-bottom: 0;">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search" ng-model="search" class="searchBar" ng-change="searching(search)" style="line-height: 24px;height:34px;">
-                    <button class="button button-clear" ng-click="search=''">X</button>
-                </label>
-                <!-- <button class="button button-clear" ng-click="reset()">Annuler</button>-->
-            </div>
+        <ul  class="list fade-in-not-out">
+            <!-- Aucun contact -->
+            <li class="item item-thumbnail-left" ng-show="virtualFriends.length == 0" style="min-height: 72px;">
+                <span style="position: absolute;top: 10px;left: 10px;"><i class="ion-person" style="font-size:54px"></i>
+                <i class="ion-help" style="font-size:54px"></i></span>
+                <h2 style="white-space: normal;">la personne n'a pas été trouvé</h2>
+            </li>
             <!-- <mlz-ui-table-view list="friends" row-height="100" view-buffer="20" style="height: 455px; ">
                  <label id="{{item.$$position}}" ng-repeat="item in items track by item.$$position">
                      <dt ng-bind="item.name"></dt>
                  </label>-->
 
-             <li post-repeat-directive class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in filteredFriends">
+             <li class="item item-thumbnail-left selectable item-icon-right" ng-click="addFriend(friend,$event)" ng-repeat="friend in virtualFriends">
 
-                 <img ng-src="{{friend.picture.data.url}}" style="width: 80px; height: 80px"  width="50" height="50">
+               <img ng-src="{{friend.picture.data.url}}" style="width: 80px; height: 80px"  width="50" height="50">
                <h2>{{friend.first_name}}</h2>
                <h4>{{friend.last_name}}</h4>
                <h4 style="color:#66cc33" ng-if="friend.installed">membre</h4>
@@ -34,29 +46,27 @@
 
             <!--    </mlz-ui-table-view> -->
         </ul>
-        <ion-infinite-scroll ng-if="!noMoreScroll"></ion-infinite-scroll>
+
+        <ion-infinite-scroll ng-if="!noMoreScroll" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
     </ion-content>
 
-    <div class="tabs tabs-icon-left" >
+    <div class="tabs tabs-icon-left" ng-if="filteredFriends.length > 0" >
 
         <a  ng-controller="ModalCtrl" class="tab-item selectable" data-ng-click="openModal()" ng-show="getSelectedFriend().length > 0 ">
             <i class="icon ion-email" ></i>
             Inviter <span style="position:relative;top:0;right:0 " class="badge badge-balanced">{{(friends|filter:{enabled:true}).length}}</span>
         </a>
-
+<!--
         <a class="tab-item" ng-show="numberOfPages > 1 && currentPage != 0" style="max-width: 52px" ng-click="previousPage()">
             <i class="ion-chevron-left button" style="border-top:0;border-bottom: 0" ></i>
-        </a>
+        </a>-->
 
-        <i ng-show="numberOfPages > 1" style="color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px;" >{{currentPage+1}}</i>
-        <i ng-show="numberOfPages > 1" style="color: grey;">/</i>
-        <i ng-show="numberOfPages > 1" style="color:#f0b840;min-width: inherit;font-size: 15px;padding: 0px 5px 0px 5px;" >{{numberOfPages}}</i>
-
+        <jauge max="filteredFriends.length" current="virtualFriends.length"></jauge>
+<!--
         <a  class="tab-item" ng-show="numberOfPages > 1 && (currentPage +1!= numberOfPages)" style="max-width: 52px" ng-click="nextPage()">
             <i class="ion-chevron-right button" style="border-top:0;border-bottom: 0" ></i>
-        </a>
+        </a>-->
 
-        {{filteredFriends.length}}
 
     </div>
 </ion-view>

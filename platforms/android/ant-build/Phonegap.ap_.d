@@ -356,8 +356,8 @@ C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-ldpi\c
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-ldpi\facebook_icon.png \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\res\drawable-xhdpi\close.png \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\0cb06d58.vendor.js \
-C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\30b4fec8.scripts.js \
-C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\styles\f2bd0ceb.main.css \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\scripts\dfa2ca21.scripts.js \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\styles\2e62d3f9.main.css \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\404.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\about.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\friends.html \
@@ -365,6 +365,7 @@ C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\friendsConfir
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\home.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\inputs-test.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\intro.html \
+C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\jaugeDirective.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\leftMenu.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\login.html \
 C:\Users\Gab\workspace\phonegap\platforms\android\assets\www\views\menu.html \

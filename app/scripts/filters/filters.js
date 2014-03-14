@@ -15,9 +15,14 @@ angular.module('starter.filters', [])
       var filtered = [];
       if(friends && search ){
         angular.forEach(friends, function(friend){
-          (friend.first_name.toLowerCase().indexOf(search.toLowerCase()) != -1
-            || friend.last_name.toLowerCase().indexOf(search.toLowerCase()) != -1) ? filtered.push(friend):false;
+
+
+            (friend.first_name.toLowerCase().indexOf(search.toLowerCase()) != -1
+              || friend.last_name.toLowerCase().indexOf(search.toLowerCase()) != -1 ) ? filtered.push(friend):false;
+
         })
+        //Mise en avant des sélectionner
+        //filtered.concat()
       }
       else if(friends && !search){
         return friends;
