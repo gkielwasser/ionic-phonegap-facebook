@@ -89,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="60" selection-start="5949" selection-end="5949" vertical-scroll-proportion="0.8364435" vertical-offset="4372" max-vertical-offset="7667">
+            <state line="270" column="23" selection-start="5282" selection-end="5282" vertical-scroll-proportion="-8.72" vertical-offset="4372" max-vertical-offset="7667">
               <folding />
             </state>
           </provider>
@@ -125,6 +125,15 @@
               <folding>
                 <element signature="e#73#591#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="441" column="4" selection-start="10220" selection-end="10220" vertical-scroll-proportion="0.71260685" vertical-offset="6830" max-vertical-offset="7922">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/intro.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/styles/app.css" />
         <option value="$PROJECT_DIR$/app/scripts/app_Config.js" />
@@ -184,6 +192,7 @@
         <option value="$PROJECT_DIR$/app/views/home.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/MainCtrl.js" />
         <option value="$PROJECT_DIR$/app/styles/main.css" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -501,15 +510,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/bower_components/ionic/js/dist/js/ionic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6557" column="37" selection-start="197467" selection-end="197467" vertical-scroll-proportion="0.33260155" vertical-offset="111166" max-vertical-offset="118439">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/ionic/js/ionic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6971" column="54" selection-start="210262" selection-end="210263" vertical-scroll-proportion="0.35126236" vertical-offset="118187" max-vertical-offset="125749">
@@ -569,13 +569,6 @@
           <folding>
             <marker date="1395146137187" expanded="true" signature="74:7064" placeholder="[...]" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="323">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +639,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="60" selection-start="5949" selection-end="5949" vertical-scroll-proportion="0.8364435" vertical-offset="4372" max-vertical-offset="7667">
+        <state line="270" column="23" selection-start="5282" selection-end="5282" vertical-scroll-proportion="-8.72" vertical-offset="4372" max-vertical-offset="7667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="441" column="4" selection-start="10220" selection-end="10220" vertical-scroll-proportion="0.71260685" vertical-offset="6830" max-vertical-offset="7922">
           <folding />
         </state>
       </provider>

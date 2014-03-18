@@ -439,7 +439,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     //'html2js',
     'concat',
-    //'strip', //Suppression console.log
+    'strip', //Suppression console.log
 
     'ngmin',
 
