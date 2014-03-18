@@ -1,6 +1,6 @@
 {
   "name": "ionic",
-  "version": "0.9.27-nightly-1240",
+  "version": "0.9.27",
   "codename": "salamander",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
@@ -10,10 +10,10 @@
   ],
   "description": "Advanced HTML5 hybrid mobile app development framework.",
   "main": [
-    "css/ionic.css",
-    "fonts/*",
-    "js/ionic.js",
-    "js/ionic-angular.js"
+    "release/css/ionic.css",
+    "release/fonts/*",
+    "release/js/ionic.js",
+    "release/js/ionic-angular.js"
   ],
   "keywords": [
     "mobile",
@@ -28,6 +28,25 @@
   ],
   "license": "MIT",
   "private": false,
+  "ignore": [
+    "**/.*",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "component.json",
+    "config",
+    "examples",
+    "package.json",
+    "release/js/angular",
+    "release/js/angular-ui",
+    "scripts",
+    "test",
+    "js/controllers",
+    "js/ext",
+    "js/utils",
+    "js/views",
+    "js/_license.js",
+    "js/ionic.js"
+  ],
   "dependencies": {
     "angular": "1.2.12",
     "angular-animate": "1.2.12",
