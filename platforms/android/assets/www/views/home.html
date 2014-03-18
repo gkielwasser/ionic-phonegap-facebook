@@ -1,11 +1,10 @@
-<ion-view title="'Accueil'" left-buttons="leftButtons">
+<ion-view title="Accueil" left-buttons="leftButtons">
     <ion-content has-header="true" has-tabs="true" padding="true">
         <div class="row">
             <div class="col text-center">
                 <h2 ng-click="paceStart()">Bienvenue sur cette application d'aucune utilité.</h2>
             </div>
         </div>
-        <br>
 
         <div ng-cloack="" class="row homeDisconnected" ng-if="!user.logged">
             <div class="col text-center">
@@ -15,6 +14,27 @@
                 </button>
             </div>
         </div>
+        <div class="row" ng-if="user.logged">
+            <div class="col text-center">
+                <img style="height:34px" ng-src="{{user.me.picture.data.url}}" class="rounded">
+                <div class="title">{{user.me.username}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <div class="monsieurX">
+                    <div class="click-anim">
+                        <figure class="">
+                            <div class="eye"></div>
+                            <div class="eye"></div>
+                            <div class="mouth teeth"></div>
+                        </figure>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </div>
+
     </ion-content>
 
     <div class="tabs tabs-icon-top">

@@ -1,6 +1,6 @@
 {
   "name": "ionic",
-  "version": "0.9.26",
+  "codename": "salamander",
   "homepage": "https://github.com/driftyco/ionic",
   "authors": [
     "Max Lynch <max@drifty.com>",
@@ -9,10 +9,10 @@
   ],
   "description": "Advanced HTML5 hybrid mobile app development framework.",
   "main": [
-    "release/css/ionic.css",
-    "release/fonts/*",
-    "release/js/ionic.js",
-    "release/js/ionic-angular.js"
+    "css/ionic.css",
+    "fonts/*",
+    "js/ionic.js",
+    "js/ionic-angular.js"
   ],
   "keywords": [
     "mobile",
@@ -27,38 +27,20 @@
   ],
   "license": "MIT",
   "private": false,
-  "ignore": [
-    "**/.*",
-    "CONTRIBUTING.md",
-    "Gruntfile.js",
-    "component.json",
-    "config",
-    "examples",
-    "package.json",
-    "release/js/angular",
-    "release/js/angular-ui",
-    "scripts",
-    "test",
-    "js/controllers",
-    "js/ext",
-    "js/utils",
-    "js/views",
-    "js/_license.js",
-    "js/ionic.js"
-  ],
   "dependencies": {
     "angular": "1.2.12",
     "angular-animate": "1.2.12",
     "angular-sanitize": "1.2.12",
     "angular-ui-router": "0.2.7"
   },
-  "_release": "0.9.26",
+  "_release": "b9d3c9897f",
   "_resolution": {
-    "type": "version",
-    "tag": "v0.9.26",
-    "commit": "295e78c353dc288546953750c49bbd056c5734de"
+    "type": "branch",
+    "branch": "master",
+    "commit": "b9d3c9897fe9d9c7ff5c1ffa9e81c088a2fdf429"
   },
-  "_source": "git://github.com/driftyco/ionic.git",
-  "_target": "~0.9.24",
-  "_originalSource": "ionic"
+  "_source": "git://github.com/driftyco/ionic-bower.git",
+  "_target": "master",
+  "_originalSource": "driftyco/ionic-bower",
+  "_direct": true
 }

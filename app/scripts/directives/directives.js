@@ -25,26 +25,30 @@ angular.module('starter.directives', [])
   })
  .directive('whenScrolled', ['$timeout', function($timeout) {
   return function(scope, elm, attr) {
-    var raw = elm[0];
     var scrollCtrl = elm.controller('$ionicScroll');
-   var scrollView = scrollCtrl.scrollView;
+    var infiniteScroll = elm.find('ion-infinite-scroll');
+    var scrollView = scrollCtrl.scrollView;
+    var lastPosition;
+    /*
+     var raw = elm[0];
     scrollCtrl.$element.on('scroll',function(){
       //console.log("scroll",scrollView.getValues().top)
     });
 
-    var previousPosition;
+
     $timeout(function() {
       raw.scrollTop = raw.scrollHeight;
       console.log("init",raw)
     });
 
-    var infiniteScroll = elm.find('ion-infinite-scroll');
-    var infiniteStarted = false;
 
-    //test
-    var lastPosition;
+    var infiniteStarted = false;
+     */
+
+
 
     if(infiniteScroll) {
+      /*
       // Parse infinite scroll distance
       var distance = attr.infiniteScrollDistance || '1%';
       var maxScroll;
@@ -59,6 +63,7 @@ angular.module('starter.directives', [])
           return scrollView.getScrollMax().top - parseInt(distance, 10);
         };
       }
+      */
       elm.bind('scroll', function(e) {
         if(lastPosition <scrollView.getValues().top ){
           scope.$emit("scroll-down",true);
@@ -125,8 +130,7 @@ angular.module('starter.directives', [])
 
 
 
-  .directive('postRepeatDirective',
-    ['$timeout',
+  .directive('postRepeatDirective',['$timeout',
       function($timeout) {
         return function(scope) {
           if (scope.$first)

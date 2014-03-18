@@ -2,7 +2,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v0.10.0-alpha-nightly-1144
+ * Ionic, v0.9.27-nightly-1240
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -16,7 +16,7 @@
  * Copyright 2014 Drifty Co.
  * http://drifty.com/
  *
- * Ionic, v0.10.0-alpha-nightly-1144
+ * Ionic, v0.9.27-nightly-1240
  * A powerful HTML5 mobile app framework.
  * http://ionicframework.com/
  *
@@ -26,7 +26,7 @@
  *
  */
 /*!
-  Ionicons, v#{$ionicons-version}
+  Ionicons, v1.4.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
   https://twitter.com/benjsperry  https://twitter.com/ionicframework
   MIT License: https://github.com/driftyco/ionicons
@@ -2398,7 +2398,7 @@ a.subdued {
   .action-sheet-group .button {
     border-width: 1px 0px 0px 0px;
     border-radius: 0; }
-    .action-sheet-group .button.active, .action-sheet-group .button:active {
+    .action-sheet-group .button.active {
       background-color: transparent;
       color: inherit; }
   .action-sheet-group .button:first-child:last-child {
@@ -2573,7 +2573,7 @@ a.subdued {
       .bar .button.button-clear .icon:before, .bar .button.button-clear.icon:before, .bar .button.button-clear.icon-left:before, .bar .button.button-clear.icon-right:before {
         font-size: 32px;
         line-height: 32px; }
-    .bar .button.back-button:active, .bar .button.back-button.active {
+    .bar .button.back-button.active {
       opacity: 1; }
   .bar .button-bar > .button, .bar .buttons > .button {
     min-height: 31px;
@@ -2593,7 +2593,7 @@ a.subdued {
   .bar-light .button:hover {
     color: #444;
     text-decoration: none; }
-  .bar-light .button.active, .bar-light .button:active {
+  .bar-light .button.active {
     background-color: #fafafa;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #ccc; }
@@ -2614,7 +2614,7 @@ a.subdued {
   .bar-stable .button:hover {
     color: #444;
     text-decoration: none; }
-  .bar-stable .button.active, .bar-stable .button:active {
+  .bar-stable .button.active {
     background-color: #e5e5e5;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #a2a2a2; }
@@ -2635,7 +2635,7 @@ a.subdued {
   .bar-positive .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-positive .button.active, .bar-positive .button:active {
+  .bar-positive .button.active {
     background-color: #145fd7;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #145fd7; }
@@ -2656,7 +2656,7 @@ a.subdued {
   .bar-calm .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-calm .button.active, .bar-calm .button:active {
+  .bar-calm .button.active {
     background-color: #1aacc3;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #1aacc3; }
@@ -2677,7 +2677,7 @@ a.subdued {
   .bar-assertive .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-assertive .button.active, .bar-assertive .button:active {
+  .bar-assertive .button.active {
     background-color: #cc2311;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #cc2311; }
@@ -2698,7 +2698,7 @@ a.subdued {
   .bar-balanced .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-balanced .button.active, .bar-balanced .button:active {
+  .bar-balanced .button.active {
     background-color: #498f24;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #498f24; }
@@ -2719,7 +2719,7 @@ a.subdued {
   .bar-energized .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-energized .button.active, .bar-energized .button:active {
+  .bar-energized .button.active {
     background-color: #d39211;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #d39211; }
@@ -2740,7 +2740,7 @@ a.subdued {
   .bar-royal .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-royal .button.active, .bar-royal .button:active {
+  .bar-royal .button.active {
     background-color: #552bdf;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #552bdf; }
@@ -2761,7 +2761,7 @@ a.subdued {
   .bar-dark .button:hover {
     color: #fff;
     text-decoration: none; }
-  .bar-dark .button.active, .bar-dark .button:active {
+  .bar-dark .button.active {
     background-color: #262626;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #000; }
@@ -2992,25 +2992,25 @@ a.subdued {
 
 /* Navigational tab */
 /* Active state for tab */
-.tab-item.active, .tab-item:active {
+.tab-item.active {
   opacity: 1; }
-  .tab-item.active.tab-item-light, .tab-item:active.tab-item-light {
+  .tab-item.active.tab-item-light {
     color: #fff; }
-  .tab-item.active.tab-item-stable, .tab-item:active.tab-item-stable {
+  .tab-item.active.tab-item-stable {
     color: #f8f8f8; }
-  .tab-item.active.tab-item-positive, .tab-item:active.tab-item-positive {
+  .tab-item.active.tab-item-positive {
     color: #4a87ee; }
-  .tab-item.active.tab-item-calm, .tab-item:active.tab-item-calm {
+  .tab-item.active.tab-item-calm {
     color: #43cee6; }
-  .tab-item.active.tab-item-assertive, .tab-item:active.tab-item-assertive {
+  .tab-item.active.tab-item-assertive {
     color: #ef4e3a; }
-  .tab-item.active.tab-item-balanced, .tab-item:active.tab-item-balanced {
+  .tab-item.active.tab-item-balanced {
     color: #66cc33; }
-  .tab-item.active.tab-item-energized, .tab-item:active.tab-item-energized {
+  .tab-item.active.tab-item-energized {
     color: #f0b840; }
-  .tab-item.active.tab-item-royal, .tab-item:active.tab-item-royal {
+  .tab-item.active.tab-item-royal {
     color: #8a6de9; }
-  .tab-item.active.tab-item-dark, .tab-item:active.tab-item-dark {
+  .tab-item.active.tab-item-dark {
     color: #444; }
 
 .item.tabs {
@@ -3072,6 +3072,20 @@ a.subdued {
  * --------------------------------------------------
  * Modals are independent windows that slide in from off-screen.
  */
+.modal-backdrop {
+  -webkit-transition: background-color 300ms ease-in-out;
+  -moz-transition: background-color 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); }
+  .modal-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.5); }
+
 .modal {
   position: absolute;
   top: 0;
@@ -3080,8 +3094,19 @@ a.subdued {
   min-height: 100%;
   width: 100%;
   background-color: #fff; }
-  .modal.active {
-    height: 100%; }
+
+@media (min-width: 680px) {
+  .modal {
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+    overflow: visible;
+    min-height: 240px;
+    max-width: 768px;
+    width: 60%; }
+  .modal.ng-leave-active {
+    bottom: 0; } }
 
 .modal-open {
   pointer-events: none; }
@@ -3093,15 +3118,96 @@ a.subdued {
  * --------------------------------------------------
  */
 .popup {
-  position: fixed; }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  visibility: hidden;
+  width: 250px;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.9); }
+  .popup.popup-hidden {
+    -webkit-animation-name: scaleOut;
+    -moz-animation-name: scaleOut;
+    animation-name: scaleOut;
+    -webkit-animation-duration: 0.1s;
+    -moz-animation-duration: 0.1s;
+    animation-duration: 0.1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
+  .popup.popup-showing {
+    visibility: visible; }
+  .popup.active {
+    -webkit-animation-name: superScaleIn;
+    -moz-animation-name: superScaleIn;
+    animation-name: superScaleIn;
+    -webkit-animation-duration: 0.2s;
+    -moz-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both; }
 
-.popup-content {
+.popup-head {
+  padding: 15px 0px;
+  border-bottom: 1px solid #eee;
+  text-align: center; }
+
+.popup-title {
+  margin: 0;
+  padding: 0;
+  font-size: 15px; }
+
+.popup-sub-title {
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 11px; }
+
+.popup-body {
   padding: 10px; }
 
+.popup-buttons.row {
+  padding: 10px 10px; }
+.popup-buttons .button {
+  margin: 0px 5px;
+  min-height: 45px;
+  border-radius: 2px;
+  line-height: 20px; }
+  .popup-buttons .button:first-child {
+    margin-left: 0px; }
+  .popup-buttons .button:last-child {
+    margin-right: 0px; }
+
+.popup-backdrop {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.1s;
+  -moz-animation-duration: 0.1s;
+  animation-duration: 0.1s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+
 .loading-backdrop {
-  -webkit-transition: visibility 0s linear 0.3s;
-  -moz-transition: visibility 0s linear 0.3s;
-  transition: visibility 0s linear 0.3s;
   position: fixed;
   top: 0;
   left: 0;
@@ -3109,13 +3215,18 @@ a.subdued {
   visibility: hidden;
   width: 100%;
   height: 100%; }
-  .loading-backdrop.enabled {
-    background-color: rgba(0, 0, 0, 0.7); }
   .loading-backdrop.active {
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
     transition-delay: 0s;
     visibility: visible; }
+
+.loading-backdrop {
+  -webkit-transition: visibility 0s linear 0.3s;
+  -moz-transition: visibility 0s linear 0.3s;
+  transition: visibility 0s linear 0.3s; }
+  .loading-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.7); }
 
 .loading {
   position: fixed;
@@ -3218,34 +3329,34 @@ a.subdued {
     background-color: #444;
     border-color: #111; }
 
-.item.active, .ionic-pseudo .item:active, .item-complex.active .item-content {
+.item.active:not(.item-divider):not(.item-input):not(.item-input-inset), .item-complex.active .item-content {
   background-color: #D9D9D9;
   border-color: #ccc; }
-  .item.active.item-light, .ionic-pseudo .item:active.item-light, .item-complex.active .item-content.item-light {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-light, .item-complex.active .item-content.item-light {
     background-color: #fafafa;
     border-color: #ccc; }
-  .item.active.item-stable, .ionic-pseudo .item:active.item-stable, .item-complex.active .item-content.item-stable {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-stable, .item-complex.active .item-content.item-stable {
     background-color: #e5e5e5;
     border-color: #a2a2a2; }
-  .item.active.item-positive, .ionic-pseudo .item:active.item-positive, .item-complex.active .item-content.item-positive {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-positive, .item-complex.active .item-content.item-positive {
     background-color: #145fd7;
     border-color: #145fd7; }
-  .item.active.item-calm, .ionic-pseudo .item:active.item-calm, .item-complex.active .item-content.item-calm {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-calm, .item-complex.active .item-content.item-calm {
     background-color: #1aacc3;
     border-color: #1aacc3; }
-  .item.active.item-assertive, .ionic-pseudo .item:active.item-assertive, .item-complex.active .item-content.item-assertive {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-assertive, .item-complex.active .item-content.item-assertive {
     background-color: #cc2311;
     border-color: #cc2311; }
-  .item.active.item-balanced, .ionic-pseudo .item:active.item-balanced, .item-complex.active .item-content.item-balanced {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-balanced, .item-complex.active .item-content.item-balanced {
     background-color: #498f24;
     border-color: #498f24; }
-  .item.active.item-energized, .ionic-pseudo .item:active.item-energized, .item-complex.active .item-content.item-energized {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-energized, .item-complex.active .item-content.item-energized {
     background-color: #d39211;
     border-color: #d39211; }
-  .item.active.item-royal, .ionic-pseudo .item:active.item-royal, .item-complex.active .item-content.item-royal {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-royal, .item-complex.active .item-content.item-royal {
     background-color: #552bdf;
     border-color: #552bdf; }
-  .item.active.item-dark, .ionic-pseudo .item:active.item-dark, .item-complex.active .item-content.item-dark {
+  .item.active:not(.item-divider):not(.item-input):not(.item-input-inset).item-dark, .item-complex.active .item-content.item-dark {
     background-color: #262626;
     border-color: #000; }
 
@@ -3946,9 +4057,6 @@ input, button, select, textarea {
     height: auto;
     text-align: center;
     font-size: 16px; }
-  .item-input.item.active, .ionic-pseudo .item-input.item:active {
-    border-color: #ddd;
-    background-color: transparent; }
   .item-input .button-bar {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -3962,6 +4070,8 @@ input, button, select, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none; }
+  .item-input .icon {
+    min-width: 14px; }
 
 .item-input-inset {
   display: -webkit-box;
@@ -4023,7 +4133,8 @@ input, button, select, textarea {
   padding: 7px 10px 7px 3px;
   max-width: 200px;
   color: #444;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 14px; }
 
 .placeholder-icon {
   color: #aaa; }
@@ -4055,11 +4166,12 @@ input, button, select, textarea {
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
   display: block;
+  padding-top: 2px;
   height: 34px;
   color: #111;
   vertical-align: middle;
   font-size: 14px;
-  line-height: 20px; }
+  line-height: 16px; }
 
 input, textarea {
   width: 100%; }
@@ -4106,7 +4218,6 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
  * --------------------------------------------------
  */
 .checkbox {
-  /* what the background looks like when its checked */
   position: relative;
   display: inline-block;
   padding: 7px 7px;
@@ -4115,60 +4226,42 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
     border: 1px solid #4a87ee; }
   .checkbox input:checked:before {
     background: #4a87ee; }
-  .checkbox.checkbox-light {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-light input:before {
-      border: 1px solid #ddd; }
-    .checkbox.checkbox-light input:checked:before {
-      background: #ddd; }
-  .checkbox.checkbox-stable {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-stable input:before {
-      border: 1px solid #b2b2b2; }
-    .checkbox.checkbox-stable input:checked:before {
-      background: #b2b2b2; }
-  .checkbox.checkbox-positive {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-positive input:before {
-      border: 1px solid #4a87ee; }
-    .checkbox.checkbox-positive input:checked:before {
-      background: #4a87ee; }
-  .checkbox.checkbox-calm {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-calm input:before {
-      border: 1px solid #43cee6; }
-    .checkbox.checkbox-calm input:checked:before {
-      background: #43cee6; }
-  .checkbox.checkbox-assertive {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-assertive input:before {
-      border: 1px solid #ef4e3a; }
-    .checkbox.checkbox-assertive input:checked:before {
-      background: #ef4e3a; }
-  .checkbox.checkbox-balanced {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-balanced input:before {
-      border: 1px solid #66cc33; }
-    .checkbox.checkbox-balanced input:checked:before {
-      background: #66cc33; }
-  .checkbox.checkbox-energized {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-energized input:before {
-      border: 1px solid #f0b840; }
-    .checkbox.checkbox-energized input:checked:before {
-      background: #f0b840; }
-  .checkbox.checkbox-royal {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-royal input:before {
-      border: 1px solid #8a6de9; }
-    .checkbox.checkbox-royal input:checked:before {
-      background: #8a6de9; }
-  .checkbox.checkbox-dark {
-    /* what the background looks like when its checked */ }
-    .checkbox.checkbox-dark input:before {
-      border: 1px solid #444; }
-    .checkbox.checkbox-dark input:checked:before {
-      background: #444; }
+  .checkbox.checkbox-light input:before {
+    border: 1px solid #ddd; }
+  .checkbox.checkbox-light input:checked:before {
+    background: #ddd; }
+  .checkbox.checkbox-stable input:before {
+    border: 1px solid #b2b2b2; }
+  .checkbox.checkbox-stable input:checked:before {
+    background: #b2b2b2; }
+  .checkbox.checkbox-positive input:before {
+    border: 1px solid #4a87ee; }
+  .checkbox.checkbox-positive input:checked:before {
+    background: #4a87ee; }
+  .checkbox.checkbox-calm input:before {
+    border: 1px solid #43cee6; }
+  .checkbox.checkbox-calm input:checked:before {
+    background: #43cee6; }
+  .checkbox.checkbox-assertive input:before {
+    border: 1px solid #ef4e3a; }
+  .checkbox.checkbox-assertive input:checked:before {
+    background: #ef4e3a; }
+  .checkbox.checkbox-balanced input:before {
+    border: 1px solid #66cc33; }
+  .checkbox.checkbox-balanced input:checked:before {
+    background: #66cc33; }
+  .checkbox.checkbox-energized input:before {
+    border: 1px solid #f0b840; }
+  .checkbox.checkbox-energized input:checked:before {
+    background: #f0b840; }
+  .checkbox.checkbox-royal input:before {
+    border: 1px solid #8a6de9; }
+  .checkbox.checkbox-royal input:checked:before {
+    background: #8a6de9; }
+  .checkbox.checkbox-dark input:before {
+    border: 1px solid #444; }
+  .checkbox.checkbox-dark input:checked:before {
+    background: #444; }
 
 .checkbox input {
   position: relative;
@@ -4227,7 +4320,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
 /* make sure item content have enough padding on left to fit the checkbox */
 .item-checkbox {
   padding-left: 58px; }
-  .item-checkbox.active, .item-checkbox:active {
+  .item-checkbox.active {
     box-shadow: none; }
 
 /* position the checkbox to the left within an item */
@@ -4255,7 +4348,6 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
  */
 /* the overall container of the toggle */
 .toggle {
-  /* the track when the toggle is "on" */
   position: relative;
   display: inline-block;
   margin: -5px;
@@ -4265,51 +4357,33 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
     background-color: #4a87ee; }
   .toggle.dragging .handle {
     background-color: #f2f2f2 !important; }
-  .toggle.toggle-light {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-light input:checked + .track {
-      border-color: #ddd;
-      background-color: #ddd; }
-  .toggle.toggle-stable {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-stable input:checked + .track {
-      border-color: #b2b2b2;
-      background-color: #b2b2b2; }
-  .toggle.toggle-positive {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-positive input:checked + .track {
-      border-color: #4a87ee;
-      background-color: #4a87ee; }
-  .toggle.toggle-calm {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-calm input:checked + .track {
-      border-color: #43cee6;
-      background-color: #43cee6; }
-  .toggle.toggle-assertive {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-assertive input:checked + .track {
-      border-color: #ef4e3a;
-      background-color: #ef4e3a; }
-  .toggle.toggle-balanced {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-balanced input:checked + .track {
-      border-color: #66cc33;
-      background-color: #66cc33; }
-  .toggle.toggle-energized {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-energized input:checked + .track {
-      border-color: #f0b840;
-      background-color: #f0b840; }
-  .toggle.toggle-royal {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-royal input:checked + .track {
-      border-color: #8a6de9;
-      background-color: #8a6de9; }
-  .toggle.toggle-dark {
-    /* the track when the toggle is "on" */ }
-    .toggle.toggle-dark input:checked + .track {
-      border-color: #444;
-      background-color: #444; }
+  .toggle.toggle-light input:checked + .track {
+    border-color: #ddd;
+    background-color: #ddd; }
+  .toggle.toggle-stable input:checked + .track {
+    border-color: #b2b2b2;
+    background-color: #b2b2b2; }
+  .toggle.toggle-positive input:checked + .track {
+    border-color: #4a87ee;
+    background-color: #4a87ee; }
+  .toggle.toggle-calm input:checked + .track {
+    border-color: #43cee6;
+    background-color: #43cee6; }
+  .toggle.toggle-assertive input:checked + .track {
+    border-color: #ef4e3a;
+    background-color: #ef4e3a; }
+  .toggle.toggle-balanced input:checked + .track {
+    border-color: #66cc33;
+    background-color: #66cc33; }
+  .toggle.toggle-energized input:checked + .track {
+    border-color: #f0b840;
+    background-color: #f0b840; }
+  .toggle.toggle-royal input:checked + .track {
+    border-color: #8a6de9;
+    background-color: #8a6de9; }
+  .toggle.toggle-dark input:checked + .track {
+    border-color: #444;
+    background-color: #444; }
 
 /* hide the actual input checkbox */
 .toggle input {
@@ -4368,7 +4442,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
 /* make sure list item content have enough padding on right to fit the toggle */
 .item-toggle {
   padding-right: 99px; }
-  .item-toggle.active, .item-toggle:active {
+  .item-toggle.active {
     box-shadow: none; }
 
 /* position the toggle to the right within a list item */
@@ -4570,7 +4644,7 @@ input[type="range"] {
   .button:hover {
     color: #444;
     text-decoration: none; }
-  .button.active, .button:active {
+  .button.active {
     background-color: #e5e5e5;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
     border-color: #a2a2a2; }
@@ -4607,7 +4681,7 @@ input[type="range"] {
     .button.button-light:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-light.active, .button.button-light:active {
+    .button.button-light.active {
       background-color: #fafafa;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #ccc; }
@@ -4623,7 +4697,7 @@ input[type="range"] {
       background: transparent;
       border-color: #ddd;
       color: #ddd; }
-      .button.button-light.button-outline.active, .button.button-light.button-outline:active {
+      .button.button-light.button-outline.active {
         background-color: #ddd;
         color: #fff;
         box-shadow: none; }
@@ -4634,7 +4708,7 @@ input[type="range"] {
     .button.button-stable:hover {
       color: #444;
       text-decoration: none; }
-    .button.button-stable.active, .button.button-stable:active {
+    .button.button-stable.active {
       background-color: #e5e5e5;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #a2a2a2; }
@@ -4650,7 +4724,7 @@ input[type="range"] {
       background: transparent;
       border-color: #b2b2b2;
       color: #b2b2b2; }
-      .button.button-stable.button-outline.active, .button.button-stable.button-outline:active {
+      .button.button-stable.button-outline.active {
         background-color: #b2b2b2;
         color: #fff;
         box-shadow: none; }
@@ -4661,7 +4735,7 @@ input[type="range"] {
     .button.button-positive:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-positive.active, .button.button-positive:active {
+    .button.button-positive.active {
       background-color: #145fd7;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #145fd7; }
@@ -4677,7 +4751,7 @@ input[type="range"] {
       background: transparent;
       border-color: #4a87ee;
       color: #4a87ee; }
-      .button.button-positive.button-outline.active, .button.button-positive.button-outline:active {
+      .button.button-positive.button-outline.active {
         background-color: #4a87ee;
         color: #fff;
         box-shadow: none; }
@@ -4688,7 +4762,7 @@ input[type="range"] {
     .button.button-calm:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-calm.active, .button.button-calm:active {
+    .button.button-calm.active {
       background-color: #1aacc3;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #1aacc3; }
@@ -4704,7 +4778,7 @@ input[type="range"] {
       background: transparent;
       border-color: #43cee6;
       color: #43cee6; }
-      .button.button-calm.button-outline.active, .button.button-calm.button-outline:active {
+      .button.button-calm.button-outline.active {
         background-color: #43cee6;
         color: #fff;
         box-shadow: none; }
@@ -4715,7 +4789,7 @@ input[type="range"] {
     .button.button-assertive:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-assertive.active, .button.button-assertive:active {
+    .button.button-assertive.active {
       background-color: #cc2311;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #cc2311; }
@@ -4731,7 +4805,7 @@ input[type="range"] {
       background: transparent;
       border-color: #ef4e3a;
       color: #ef4e3a; }
-      .button.button-assertive.button-outline.active, .button.button-assertive.button-outline:active {
+      .button.button-assertive.button-outline.active {
         background-color: #ef4e3a;
         color: #fff;
         box-shadow: none; }
@@ -4742,7 +4816,7 @@ input[type="range"] {
     .button.button-balanced:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-balanced.active, .button.button-balanced:active {
+    .button.button-balanced.active {
       background-color: #498f24;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #498f24; }
@@ -4758,7 +4832,7 @@ input[type="range"] {
       background: transparent;
       border-color: #66cc33;
       color: #66cc33; }
-      .button.button-balanced.button-outline.active, .button.button-balanced.button-outline:active {
+      .button.button-balanced.button-outline.active {
         background-color: #66cc33;
         color: #fff;
         box-shadow: none; }
@@ -4769,7 +4843,7 @@ input[type="range"] {
     .button.button-energized:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-energized.active, .button.button-energized:active {
+    .button.button-energized.active {
       background-color: #d39211;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #d39211; }
@@ -4785,7 +4859,7 @@ input[type="range"] {
       background: transparent;
       border-color: #f0b840;
       color: #f0b840; }
-      .button.button-energized.button-outline.active, .button.button-energized.button-outline:active {
+      .button.button-energized.button-outline.active {
         background-color: #f0b840;
         color: #fff;
         box-shadow: none; }
@@ -4796,7 +4870,7 @@ input[type="range"] {
     .button.button-royal:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-royal.active, .button.button-royal:active {
+    .button.button-royal.active {
       background-color: #552bdf;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #552bdf; }
@@ -4812,7 +4886,7 @@ input[type="range"] {
       background: transparent;
       border-color: #8a6de9;
       color: #8a6de9; }
-      .button.button-royal.button-outline.active, .button.button-royal.button-outline:active {
+      .button.button-royal.button-outline.active {
         background-color: #8a6de9;
         color: #fff;
         box-shadow: none; }
@@ -4823,7 +4897,7 @@ input[type="range"] {
     .button.button-dark:hover {
       color: #fff;
       text-decoration: none; }
-    .button.button-dark.active, .button.button-dark:active {
+    .button.button-dark.active {
       background-color: #262626;
       box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
       border-color: #000; }
@@ -4839,7 +4913,7 @@ input[type="range"] {
       background: transparent;
       border-color: #444;
       color: #444; }
-      .button.button-dark.button-outline.active, .button.button-dark.button-outline:active {
+      .button.button-dark.button-outline.active {
         background-color: #444;
         color: #fff;
         box-shadow: none; }
@@ -4873,7 +4947,7 @@ input[type="range"] {
   min-width: initial;
   border-color: transparent;
   background: none; }
-  .button-icon.button:active, .button-icon.button.active {
+  .button-icon.button.active {
     border-color: transparent;
     background: none;
     box-shadow: none;
@@ -4898,7 +4972,7 @@ input[type="range"] {
   .button-clear.button-icon {
     background: none;
     border-color: transparent; }
-  .button-clear:active, .button-clear.active {
+  .button-clear.active {
     opacity: 0.3; }
 
 .button-outline {
@@ -4911,7 +4985,7 @@ input[type="range"] {
     background: transparent;
     border-color: #b2b2b2;
     color: #b2b2b2; }
-    .button-outline.button-outline.active, .button-outline.button-outline:active {
+    .button-outline.button-outline.active {
       background-color: #b2b2b2;
       color: #fff;
       box-shadow: none; }
@@ -5222,6 +5296,81 @@ a.button {
   to {
     background-color: rgba(0, 0, 0, 0); } }
 
+@-webkit-keyframes scaleOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(0.8);
+    opacity: 0; } }
+
+@-moz-keyframes scaleOut {
+  from {
+    -moz-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -moz-transform: scale(0.8);
+    opacity: 0; } }
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+
+  to {
+    transform: scale(0.8);
+    opacity: 0; } }
+
+@-webkit-keyframes scaleIn {
+  from {
+    -webkit-transform: scale(0); }
+
+  to {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes scaleIn {
+  from {
+    -moz-transform: scale(0); }
+
+  to {
+    -moz-transform: scale(1); } }
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0); }
+
+  to {
+    transform: scale(1); } }
+
+@-webkit-keyframes superScaleIn {
+  from {
+    -webkit-transform: scale(1.2);
+    opacity: 0; }
+
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-moz-keyframes superScaleIn {
+  from {
+    -moz-transform: scale(1.2);
+    opacity: 0; }
+
+  to {
+    -moz-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes superScaleIn {
+  from {
+    transform: scale(1.2);
+    opacity: 0; }
+
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg); } }
@@ -5253,12 +5402,12 @@ a.button {
   position: absolute; }
 
 /**
- * Slide Left-Right
+ * Slide Left-Right, and Right-Left, each with the reserve
  * --------------------------------------------------
  * NEW content slides IN from the RIGHT, OLD slides OUT to the LEFT
  * Reverse: NEW content slides IN from the LEFT, OLD slides OUT to the RIGHT
  */
-.slide-left-right > .ng-enter, .slide-left-right.ng-enter, .slide-left-right > .ng-leave, .slide-left-right.ng-leave {
+.slide-left-right > .ng-enter, .slide-left-right.ng-enter, .slide-left-right > .ng-leave, .slide-left-right.ng-leave, .slide-right-left.reverse > .ng-enter, .slide-right-left.reverse.ng-enter, .slide-right-left.reverse > .ng-leave, .slide-right-left.reverse.ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   -moz-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms;
@@ -5267,22 +5416,23 @@ a.button {
   right: 0;
   bottom: 0;
   left: 0; }
-.slide-left-right > .ng-enter, .slide-left-right.ng-enter {
+.slide-left-right > .ng-enter, .slide-left-right.ng-enter, .slide-right-left.reverse > .ng-enter, .slide-right-left.reverse.ng-enter {
   /* NEW content placed far RIGHT BEFORE it slides IN from the RIGHT */
   -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0); }
-.slide-left-right > .ng-enter.ng-enter-active, .slide-left-right.ng-enter.ng-enter-active {
+.slide-left-right > .ng-enter.ng-enter-active, .slide-left-right.ng-enter.ng-enter-active, .slide-right-left.reverse > .ng-enter.ng-enter-active, .slide-right-left.reverse.ng-enter.ng-enter-active {
   /* NEW content ACTIVELY sliding IN from the RIGHT */
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
-.slide-left-right > .ng-leave.ng-leave-active, .slide-left-right.ng-leave.ng-leave-active {
+.slide-left-right > .ng-leave.ng-leave-active, .slide-left-right.ng-leave.ng-leave-active, .slide-right-left.reverse > .ng-leave.ng-leave-active, .slide-right-left.reverse.ng-leave.ng-leave-active {
   /* OLD content ACTIVELY sliding OUT to the LEFT */
   -webkit-transform: translate3d(-100%, 0, 0);
   -moz-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
-.slide-left-right.reverse > .ng-enter, .slide-left-right.reverse.ng-enter, .slide-left-right.reverse > .ng-leave, .slide-left-right.reverse.ng-leave {
+
+.slide-left-right.reverse > .ng-enter, .slide-left-right.reverse.ng-enter, .slide-left-right.reverse > .ng-leave, .slide-left-right.reverse.ng-leave, .slide-right-left > .ng-enter, .slide-right-left.ng-enter, .slide-right-left > .ng-leave, .slide-right-left.ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   -moz-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms;
@@ -5291,17 +5441,17 @@ a.button {
   right: 0;
   bottom: 0;
   left: 0; }
-.slide-left-right.reverse > .ng-enter, .slide-left-right.reverse.ng-enter {
+.slide-left-right.reverse > .ng-enter, .slide-left-right.reverse.ng-enter, .slide-right-left > .ng-enter, .slide-right-left.ng-enter {
   /* NEW content placed far LEFT BEFORE it slides IN from the LEFT */
   -webkit-transform: translate3d(-100%, 0, 0);
   -moz-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
-.slide-left-right.reverse > .ng-enter.ng-enter-active, .slide-left-right.reverse.ng-enter.ng-enter-active {
+.slide-left-right.reverse > .ng-enter.ng-enter-active, .slide-left-right.reverse.ng-enter.ng-enter-active, .slide-right-left > .ng-enter.ng-enter-active, .slide-right-left.ng-enter.ng-enter-active {
   /* NEW content ACTIVELY sliding IN from the LEFT */
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
-.slide-left-right.reverse > .ng-leave.ng-leave-active, .slide-left-right.reverse.ng-leave.ng-leave-active {
+.slide-left-right.reverse > .ng-leave.ng-leave-active, .slide-left-right.reverse.ng-leave.ng-leave-active, .slide-right-left > .ng-leave.ng-leave-active, .slide-right-left.ng-leave.ng-leave-active {
   /* OLD content ACTIVELY sliding OUT to the RIGHT */
   -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
@@ -5311,7 +5461,7 @@ a.button {
  * iOS7 style slide left to right
  * --------------------------------------------------
  */
-.slide-left-right-ios7 > .ng-enter, .slide-left-right-ios7.ng-enter, .slide-left-right-ios7 > .ng-leave, .slide-left-right-ios7.ng-leave {
+.slide-left-right-ios7 > .ng-enter, .slide-left-right-ios7.ng-enter, .slide-left-right-ios7 > .ng-leave, .slide-left-right-ios7.ng-leave, .slide-right-left-ios7.reverse > .ng-enter, .slide-right-left-ios7.reverse.ng-enter, .slide-right-left-ios7.reverse > .ng-leave, .slide-right-left-ios7.reverse.ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   -moz-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms;
@@ -5323,22 +5473,23 @@ a.button {
   width: auto;
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd; }
-.slide-left-right-ios7 > .ng-enter, .slide-left-right-ios7.ng-enter {
+.slide-left-right-ios7 > .ng-enter, .slide-left-right-ios7.ng-enter, .slide-right-left-ios7.reverse > .ng-enter, .slide-right-left-ios7.reverse.ng-enter {
   /* NEW content placed far RIGHT BEFORE it slides IN from the RIGHT */
   -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0); }
-.slide-left-right-ios7 > .ng-enter.ng-enter-active, .slide-left-right-ios7.ng-enter.ng-enter-active {
+.slide-left-right-ios7 > .ng-enter.ng-enter-active, .slide-left-right-ios7.ng-enter.ng-enter-active, .slide-right-left-ios7.reverse > .ng-enter.ng-enter-active, .slide-right-left-ios7.reverse.ng-enter.ng-enter-active {
   /* NEW content ACTIVELY sliding IN from the RIGHT */
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
-.slide-left-right-ios7 > .ng-leave.ng-leave-active, .slide-left-right-ios7.ng-leave.ng-leave-active {
+.slide-left-right-ios7 > .ng-leave.ng-leave-active, .slide-left-right-ios7.ng-leave.ng-leave-active, .slide-right-left-ios7.reverse > .ng-leave.ng-leave-active, .slide-right-left-ios7.reverse.ng-leave.ng-leave-active {
   /* OLD content ACTIVELY sliding OUT to the LEFT */
   -webkit-transform: translate3d(-15%, 0, 0);
   -moz-transform: translate3d(-15%, 0, 0);
   transform: translate3d(-15%, 0, 0); }
-.slide-left-right-ios7.reverse > .ng-enter, .slide-left-right-ios7.reverse.ng-enter, .slide-left-right-ios7.reverse > .ng-leave, .slide-left-right-ios7.reverse.ng-leave {
+
+.slide-left-right-ios7.reverse > .ng-enter, .slide-left-right-ios7.reverse.ng-enter, .slide-left-right-ios7.reverse > .ng-leave, .slide-left-right-ios7.reverse.ng-leave, .slide-right-left-ios7 > .ng-enter, .slide-right-left-ios7.ng-enter, .slide-right-left-ios7 > .ng-leave, .slide-right-left-ios7.ng-leave {
   -webkit-transition: all ease-in-out 250ms;
   -moz-transition: all ease-in-out 250ms;
   transition: all ease-in-out 250ms;
@@ -5350,17 +5501,17 @@ a.button {
   width: auto;
   border-right: 1px solid #ddd;
   border-left: 1px solid #ddd; }
-.slide-left-right-ios7.reverse > .ng-enter, .slide-left-right-ios7.reverse.ng-enter {
+.slide-left-right-ios7.reverse > .ng-enter, .slide-left-right-ios7.reverse.ng-enter, .slide-right-left-ios7 > .ng-enter, .slide-right-left-ios7.ng-enter {
   /* NEW content placed far LEFT BEFORE it slides IN from the LEFT */
   -webkit-transform: translate3d(-100%, 0, 0);
   -moz-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0); }
-.slide-left-right-ios7.reverse > .ng-enter.ng-enter-active, .slide-left-right-ios7.reverse.ng-enter.ng-enter-active {
+.slide-left-right-ios7.reverse > .ng-enter.ng-enter-active, .slide-left-right-ios7.reverse.ng-enter.ng-enter-active, .slide-right-left-ios7 > .ng-enter.ng-enter-active, .slide-right-left-ios7.ng-enter.ng-enter-active {
   /* NEW content ACTIVELY sliding IN from the LEFT */
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
-.slide-left-right-ios7.reverse > .ng-leave.ng-leave-active, .slide-left-right-ios7.reverse.ng-leave.ng-leave-active {
+.slide-left-right-ios7.reverse > .ng-leave.ng-leave-active, .slide-left-right-ios7.reverse.ng-leave.ng-leave-active, .slide-right-left-ios7 > .ng-leave.ng-leave-active, .slide-right-left-ios7.ng-leave.ng-leave-active {
   /* OLD content ACTIVELY sliding OUT to the RIGHT */
   -webkit-transform: translate3d(15%, 0, 0);
   -moz-transform: translate3d(15%, 0, 0);
@@ -5858,9 +6009,16 @@ a.button {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .responsive-sm .col {
-      width: 100%;
-      margin-bottom: 15px; } }
+    .responsive-sm .col, .responsive-sm .col-10, .responsive-sm .col-20, .responsive-sm .col-25, .responsive-sm .col-33, .responsive-sm .col-34, .responsive-sm .col-50, .responsive-sm .col-66, .responsive-sm .col-67, .responsive-sm .col-75, .responsive-sm .col-80, .responsive-sm .col-90 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin-bottom: 15px;
+      max-width: 100%;
+      width: 100%; } }
 
 @media (max-width: 767px) {
   .responsive-md {
@@ -5871,9 +6029,16 @@ a.button {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .responsive-md .col {
-      width: 100%;
-      margin-bottom: 15px; } }
+    .responsive-md .col, .responsive-md .col-10, .responsive-md .col-20, .responsive-md .col-25, .responsive-md .col-33, .responsive-md .col-34, .responsive-md .col-50, .responsive-md .col-66, .responsive-md .col-67, .responsive-md .col-75, .responsive-md .col-80, .responsive-md .col-90 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin-bottom: 15px;
+      max-width: 100%;
+      width: 100%; } }
 
 @media (max-width: 1023px) {
   .responsive-lg {
@@ -5884,9 +6049,16 @@ a.button {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .responsive-lg .col {
-      width: 100%;
-      margin-bottom: 15px; } }
+    .responsive-lg .col, .responsive-lg .col-10, .responsive-lg .col-20, .responsive-lg .col-25, .responsive-lg .col-33, .responsive-lg .col-34, .responsive-lg .col-50, .responsive-lg .col-66, .responsive-lg .col-67, .responsive-lg .col-75, .responsive-lg .col-80, .responsive-lg .col-90 {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin-bottom: 15px;
+      max-width: 100%;
+      width: 100%; } }
 
 /**
  * Utility Classes

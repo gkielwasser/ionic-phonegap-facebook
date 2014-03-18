@@ -20,7 +20,8 @@ angular.module('starter')
             templateUrl: 'views/friends.html',
             controller: 'FriendsCtrl'
           }
-        }
+        },
+        access:1
       })
 
       .state('menu.subscribedFriends', {
@@ -30,7 +31,8 @@ angular.module('starter')
             templateUrl: 'views/subscribedFriends.html',
             controller: 'SubscribedFriendsCtrl'
           }
-        }
+        },
+        access:1
       })
 
       .state('menu.home', {
@@ -40,7 +42,8 @@ angular.module('starter')
             templateUrl: 'views/home.html',
             controller: 'HomeCtrl'
           }
-        }
+        },
+        access:0
       })
 
       .state('menu.about', {
@@ -49,7 +52,8 @@ angular.module('starter')
           'menuContent': {
             templateUrl: 'views/about.html'
           }
-        }
+        },
+        access:0
       })
 
       .state('menu.inputs', {
@@ -58,13 +62,15 @@ angular.module('starter')
           'menuContent': {
             templateUrl: 'views/inputs-test.html'
           }
-        }
+        },
+        access:0
       })
 
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        access:0
       })
 
       .state('menu.intro', {
@@ -74,7 +80,8 @@ angular.module('starter')
             templateUrl: 'views/intro.html',
             controller: 'IntroCtrl'
           }
-        }
+        },
+        access:0
       })
 
 

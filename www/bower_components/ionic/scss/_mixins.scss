@@ -12,7 +12,7 @@
     color: $color;
     text-decoration: none;
   }
-  &.active, &:active {
+  &.active {
     background-color: $active-bg-color;
     box-shadow: inset 0px 1px 3px rgba(0,0,0,0.15);
     border-color: $active-border-color;
@@ -42,9 +42,9 @@
     border-color: $color;
     @if $text-color == "" {
       $text-color: $color;
-    } 
+    }
     color: $text-color;
-    &.active, &:active {
+    &.active {
       background-color: $color;
       color: #fff;
       box-shadow: none;
@@ -129,7 +129,7 @@
     border: $checkbox-border-width solid $off-border-color;
   }
 
-  /* what the background looks like when its checked */
+  // what the background looks like when its checked
   & input:checked:before {
     background: $on-bg-color;
   }
@@ -140,7 +140,7 @@
 // --------------------------------------------------
 
 @mixin toggle-style($on-border-color, $on-bg-color) {
-  /* the track when the toggle is "on" */
+  // the track when the toggle is "on"
   & input:checked + .track {
     border-color: $on-border-color;
     background-color: $on-bg-color;
@@ -187,9 +187,9 @@
 // --------------------------------------------------
 
 @mixin text-size-adjust($value: none) {
-  -webkit-text-size-adjust: $value; 
+  -webkit-text-size-adjust: $value;
      -moz-text-size-adjust: $value;
-          text-size-adjust: $value; 
+          text-size-adjust: $value;
 }
 @mixin tap-highlight-transparent() {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -229,7 +229,7 @@
   @include font-family-monospace();
   @include font-shorthand($size, $weight, $line-height);
 }
-@mixin font-smoothing($font-smoothing) { 
+@mixin font-smoothing($font-smoothing) {
   -webkit-font-smoothing: $font-smoothing;
           font-smoothing: $font-smoothing;
 }
@@ -524,8 +524,8 @@
   -moz-flex-wrap: $value;
   @if $value == nowrap {
       -ms-flex-wrap: none;
-  } @else { 
-      -ms-flex-wrap: $value; 
+  } @else {
+      -ms-flex-wrap: $value;
   }
   flex-wrap: $value;
 }
@@ -619,9 +619,11 @@
       -ms-flex-direction: column;
       flex-direction: column;
 
-      .col {
-        width: 100%;
+      .col, .col-10, .col-20, .col-25, .col-33, .col-34, .col-50, .col-66, .col-67, .col-75, .col-80, .col-90 {
+        @include flex(1);
         margin-bottom: ($grid-padding-width * 3) / 2;
+        max-width: 100%;
+        width: 100%;
       }
     }
   }

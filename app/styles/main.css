@@ -1,9 +1,3 @@
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -124,45 +118,54 @@ body {
     padding-left: 5px;
 }
 
-.menu{
+.ng-click-active{
+
+
+}
+/*
+.anim-item{
+    transition: all 1s ease-in-out;
+}
+
+
+.anim-item:hover{
 
 }
 
-/* fix minheight list thumbnails
-.item-thumbnail-left, .item-thumbnail-left .item-content {
-    min-height: 70px;
-}*/
 
-.ng-click-active{
-    /*
+.anim-item:active, .anim-item:focus,.anim-item.active{
+    background-color: rgba(74, 135, 238, 0.2)!important;
     -webkit-transform: scale3d(.97,0.97, 1);
     -moz-transform: scale3d(.97,0.97, 1);
     -o-transform: scale3d(.97,0.97, 1);
     -ms-transform: scale3d(.97,0.97, 1);
     transform: scale3d(.97,0.97, 1);
-  transition: all 0.5s ease-in-out;
-    background-color:#eee;
-    */
+    transition: all 0.5s ease-in-out;
+}*/
 
+
+.item.active:not(.item-divider):not(.item-input):not(.item-input-inset), .item-complex.active .item-content {
+    background-color: inherit;
 }
+
 
 /* checkbox avant*/
 .checkbox input:before {
-    -moz-transition-property: none;
-    -webkit-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none;
+    -moz-transition-property:  all 0.5s ease-in-out;
+    -webkit-transition-property:  all 0.5s ease-in-out;
+    -o-transition-property:  all 0.5s ease-in-out;
+    transition-property:  all 0.5s ease-in-out;
 }
 
 /* the checkmark within the box */
 .checkbox input:after {
-    -moz-transition-property: none;
-    -webkit-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none;
+    -moz-transition-property:  all 0.5s ease-in-out;
+    -webkit-transition-property:  all 0.5s ease-in-out;
+    -o-transition-property:  all 0.5s ease-in-out;
+    transition-property:  all 0.5s ease-in-out;
 }
 
-/*jauge*/
+/******** JAUGE *******/
 #jauge-progress {
     position: relative;
     border: none;
@@ -194,21 +197,249 @@ body {
     color:#FFF;
 }
 
+/***** barre de recherche ********/
 .search-bar-down{
-    top:45px;
-    transition: top 1s;
+    /*top:45px;*/
+    transition:  0.5s;
+    -webkit-transform: translate3d(0px, 45px, 0px);
 }
 
 .search-bar-up{
-    top:92px;
-    transition: top 1s;
+    /*top:92px;*/
+    transition:  0.5s;
+    -webkit-transform: translate3d(0px, 92px, 0px);
 }
 .search-bar-header-up{
-    top:44px;
-    transition: top 1s;
+   /* top:44px;*/
+    transition:  0.5s;
+    -webkit-transform: translate3d(0px, 0px, 0px);
 }
 .search-bar-header-down{
-    top:-60px;
-    transition: top 1s;
+    /*top:-60px;*/
+    transition:  0.5s;
+    -webkit-transform: translate3d(0px, -60px, 0px);
 }
+
+
+/**bohomme*/
+.click-anim {
+    -webkit-transition: .3s cubic-bezier(.15,.60,.30,1.9);
+    transition: .3s cubic-bezier(.15,.60,.30,1.9);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+
+figure{
+    -webkit-animation-delay: -.2.5s;
+    animation-delay: -.2.5s;
+    width: 200px;
+    height: 200px;
+    padding: 40px;
+    box-shadow: inset -10px -30px rgba(0,0,0,.06);
+    border-radius: 50%;
+    -webkit-animation: bobble 5s ease-in-out infinite;
+    animation: bobble 5s ease-in-out infinite;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transition: padding .3s, bottom .3s,background-color 1s;
+    transition: padding .3s, bottom .3s,background-color 1s;
+    text-align: center;
+    background-color:#FFBF00;
+
+}
+
+@-webkit-keyframes bobble {
+    33% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+
+    66% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes bobble {
+    33% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+
+    66% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+}
+.monsieurX{
+    width:260px;
+    margin:auto;
+    z-index: 9999;
+    padding-left: 30px;
+}
+.monsieurX figure{
+    -webkit-animation-delay: -4s;
+    animation-delay: -4s;
+}
+.monsieurX:hover figure{
+    background-color: rgb(50, 205, 50);
+    padding: 30px 40px;
+}
+.monsieurX:hover .eye{
+    width: 30px;
+    height: 8px;
+}
+.monsieurX:active figure,.monsieurX:focus figure,.monsieurX.ng-click-active figure{
+    background-color:coral;
+}
+
+
+.monsieurX:hover .click-anim {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+}
+
+.monsieurX:active .click-anim,.monsieurX:focus .click-anim,.monsieurX.ng-click-active .click-anim {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+/* Shadow ======================================================= */
+.shadow {
+    height: 20px;
+    background: rgba(0,0,0,.1);
+    width: 60%;
+    border-radius: 100%;
+    margin: -15px 0 0 30%;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+.monsieurX:hover .shadow {
+    background: rgba(0,0,0,.05);
+}
+
+
+.monsieurX:active .shadow,.monsieurX:focus .shadow,.monsieurX.ng-click-active .shadow {
+    background: rgba(0,0,0,.08);
+    width: 70%;
+
+}
+/* Eyes ======================================================== */
+.eye {
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    margin: 0 5px 5px;
+    background: rgba(0,0,0,.9);
+    border-radius: 10px;
+    border-radius: 50%;
+    -webkit-animation: blink 4s ease-in-out infinite;
+    animation: blink 4s ease-in-out infinite;-webkit-transition: 2s;
+    transition:2s;
+}
+
+.monsieurX:active .eye,.monsieurX:focus .eye,.monsieurX.ng-click-active .eye {
+    background-color:#FFBF00;
+    width:28px;
+    height: 12px;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* clignotement yeux */
+@-webkit-keyframes blink {
+    90% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    95% {
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+    }
+}
+
+@keyframes blink {
+    90% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    95% {
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+    }
+}
+
+.mouth {
+    display: block;
+    width: 100%;
+    height: 20px;
+    margin: 5px auto 0;
+    background: rgba(0,0,0,.9);
+    border-radius: 10px 10px 100px 100px;
+    border-radius: 10px 10px 50% 50%;
+    -webkit-transition: border-radius .5s, height .5s cubic-bezier(.15,.60,.30,1.9);
+    transition: border-radius .5s, height .5s cubic-bezier(.15,.60,.30,1.9);
+    overflow: hidden;
+    line-height: 0;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+}
+
+.monsieurX:active .mouth, .monsieurX:focus .mouth, .monsieurX.ng-click-active .mouth {
+    -webkit-animation: hungry .5s infinite;
+    animation: hungry .5s infinite;
+    border-radius: 30px 30px 50% 50%;
+    height: 80px;
+}
+
+.monsieurX:hover {
+    cursor: pointer;
+}
+
+@-webkit-keyframes hungry {
+    40% {
+        height: 40px;
+    }
+}
+
+@keyframes hungry {
+    40% {
+        height: 40px;
+    }
+}
+
+
+.teeth:after,
+.teeth:before,
+.tooth:after {
+    display: inline-block;
+    content: "";
+    margin: 0 2px;
+    width: 15px;
+    height: 15px;
+    background: #eee;
+}
+.shadow {
+    height: 20px;
+    background: rgba(0,0,0,.1);
+    width: 60%;
+    border-radius: 100%;
+    margin: -15px 0 0 30%;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+.shadow:hover {
+    background: rgba(0,0,0,.05);
+}
+
+.creatures {
+    -webkit-animation: enter .7s .2s both;
+    animation: enter .7s .2s both;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+}
+
+
 

@@ -3,7 +3,7 @@
 angular.module('starter.controllers')
 
 .controller('IntroCtrl', function($scope, $state) {
-
+console.log("INIT INTROCTRL")
   // Called to navigate to the main app
   var startApp = function() {
     $state.go('menu.home');

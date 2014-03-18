@@ -1,6 +1,10 @@
 var nativeInterface;
 if(typeof CDV !== "undefined"){
-  CDV.FB;
+  console.log("Cordova is defined **!")
+  nativeInterface = CDV.FB;
+}
+else{
+  console.log("Cordova is defined **!")
 }
 
 angular.module('starter')
@@ -21,7 +25,7 @@ angular.module('starter')
       has_bouncing : false,
       application_path : "192.168.0.42:9000/",
       scroll : {
-        items_preloaded : 15,
+        items_preloaded : 30,
         items_to_load: 10
       }
     },
@@ -38,7 +42,7 @@ angular.module('starter')
       overflowScroll : false,
       has_bouncing : false,
       scroll : {
-        items_preloaded : 15,
+        items_preloaded : 30,
           items_to_load: 10
       }
     },
@@ -47,8 +51,8 @@ angular.module('starter')
       init: {
         appId: "711009162272801",
        oauth: true,
-        'localSDK': 'facebook-js-sdk.js',
-        'nativeInterface': nativeInterface,
+        localSDK: 'facebook-js-sdk.js',
+        nativeInterface: nativeInterface,
         status: false,
        frictionlessRequests: true,
         useCachedDialogs: false,

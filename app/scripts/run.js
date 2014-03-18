@@ -2,11 +2,12 @@
 
 angular.module('starter')
 
-.run(["$rootScope","$state","$urlRouter","application_conf","application_conf_web","application_conf_mobile",
-  function($rootScope,$state,$urlRouter,application_conf,application_conf_web,application_conf_mobile) {
+.run(["$rootScope","$state","$urlRouter","application_conf","application_conf_web","application_conf_mobile","UserService",
+  function($rootScope,$state,$urlRouter,application_conf,application_conf_web,application_conf_mobile,UserService) {
 
     //Start Fastclick
     FastClick.attach(document.body);
+
 
 
     $rootScope.$on('$stateChangeSuccess', function(evt,toSate) {
@@ -14,24 +15,27 @@ angular.module('starter')
       // Halt state change from even starting
       evt.preventDefault();
 
-      // Perform custom logic
-      var meetsRequirement;
-
       if(window.localStorage['didTutorial'] === "true") {
         console.log('Skip intro',toSate);
-        meetsRequirement = true;
+
         $rootScope.enableSideMenu = true;
+/*
+        //Utilisateur non connecté arrive sur page
+        if(!UserService.logged() && toSate.access != 0){
+          $state.go("menu.home");
+        }
+        else{
+          $urlRouter.sync();
+        }
+        */
+        $urlRouter.sync();
       }
       else{
-        console.log('Do intro',toSate);
-        meetsRequirement = false;
+        //console.log('Do intro',toSate);
+        $state.go('menu.intro');
         $rootScope.enableSideMenu = false;
       }
-
-      // Continue with the update and state transition if logic allows
-      if (meetsRequirement) $urlRouter.sync();
-      else $state.go('menu.intro');
-    });
+});
 
 
     if (typeof cordova !== "undefined" ) {

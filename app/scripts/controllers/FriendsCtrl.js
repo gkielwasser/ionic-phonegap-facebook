@@ -3,6 +3,7 @@
 angular.module('starter.controllers')
 
 .controller('FriendsCtrl', ['$scope','UserService','$filter','$timeout','application_conf',function($scope,UserService,$filter,$timeout,application_conf) {
+
     $scope.initiated = false;
     $scope.pageSize = 15;
     $scope.filter = {
@@ -90,7 +91,7 @@ angular.module('starter.controllers')
       $scope.virtualFriends = $filter('limitTo')($scope.filteredFriends,($scope.filter.limit) );
     }
     $scope.checkMoreScroll();
-
+    console.log("BROADCAST:scroll.infiniteScrollComplete")
     $scope.$broadcast('scroll.infiniteScrollComplete');
     /*
         $scope.virtualFriends = $filter('startFrom')(
@@ -113,10 +114,15 @@ angular.module('starter.controllers')
   })
 
     $scope.$on('scroll-down', function(a,value){
-      console.log("initiated",$scope.initiated,value)
-      $timeout(function(){
-        $scope.down = value;
-      })
+      //console.log("initiated",$scope.initiated,value)
+      if($scope.down != value){
+        $timeout(function(){
+          $scope.down = value;
+          //$scope.$broadcast('scroll.resize')
+          //$scope.$broadcast('resize')
+        })
+      }
+
     })
 
   $scope.nextPage = function(){
@@ -133,6 +139,7 @@ angular.module('starter.controllers')
   }
 
   $scope.searching = function(){
+    console.log("BROADCAST:scroll.scrollTop")
     $scope.$broadcast('scroll.scrollTop');
     $scope.filter.limit = application_conf.general.scroll.items_preloaded;
     $scope.filterFriends("bySearch");

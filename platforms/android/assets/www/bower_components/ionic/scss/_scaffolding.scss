@@ -10,18 +10,6 @@
   @include box-sizing(border-box);
 }
 
-a {
-  -webkit-user-drag: none;
-  -webkit-tap-highlight-color: transparent;
-
-  &[href]:hover {
-    cursor: pointer;
-  }
-}
-img {
-  -webkit-user-drag: none;
-}
-
 body, .ionic-body {
   @include touch-callout(none);
   @include font-smoothing(antialiased);
@@ -92,7 +80,6 @@ body.grade-c {
   @include user-select(none);
   @include touch-callout(none);
   @include text-size-adjust(none);
-  @include translateZ(0);
   @include transform-origin(left, top);
   -webkit-backface-visibility: hidden;
 }
@@ -224,7 +211,7 @@ body.grade-c {
   }
 
   .ionic-refresher-content {
-    .icon-pulling {
+    i.icon.icon-pulling {
       @include animation-name(refresh-spin);
     }
   }
@@ -288,9 +275,13 @@ ion-infinite-scroll.active .scroll-infinite {
   bottom: $bar-height;
 }
 
-// Specify that a content area will have tabs
-.has-tabs {
-  bottom: 49px;
+.has-tabs,
+.bar-footer.has-tabs {
+  bottom: $tabs-height;
+}
+
+.has-footer.has-tabs {
+  bottom: $tabs-height + $bar-height;
 }
 
 // A full screen section with a solid background

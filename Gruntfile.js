@@ -437,9 +437,9 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'html2js',
+    //'html2js',
     'concat',
-    'strip', //Suppression console.log
+    //'strip', //Suppression console.log
 
     'ngmin',
 

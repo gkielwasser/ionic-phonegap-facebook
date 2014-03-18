@@ -2,14 +2,14 @@
 
 angular.module('starter.services')
 
-.service('UserService', ['$rootScope','Facebook','$q', 'application_conf', '$filter','$state',function($rootScope,Facebook,$q,application_conf,$filter,$state) {
+.service('UserService', ['$rootScope','Facebook','$q', 'application_conf', '$filter','$state','LoadingService',function($rootScope,Facebook,$q,application_conf,$filter,$state,LoadingService) {
+  console.log("INIT USERVICE")
+
   var initiated = false;
   var user = {};
-  var initFB = false;
 
   var lastTask = function(defered){
       console.log("lastTask")
-      $rootScope.hideLoading();
       user.logged = true;
       initiated = true;
       //$state.go("menu.friends");
@@ -17,12 +17,10 @@ angular.module('starter.services')
     }
 
   var init = function(location,force){
-
-
     if(!force && !initiated){
-      console.log("*********INIT**********", initiated, location)
+      console.log("OH*********INIT**********", initiated, location)
       var defered = $q.defer();
-      $rootScope.showLoading("Chargement de vos amis");
+      //LoadingService.showLoading("Chargement de vos amis");
       var promises = [];
 
       promises.push(me());
@@ -59,7 +57,7 @@ angular.module('starter.services')
 
   var handleStatusChange = function(session,from){
     console.log(from)
-    //console.log('Got the user\'s session: ' + JSON.stringify(session));
+    console.log('Got the user\'s session: ' + JSON.stringify(session));
 
     if (session.authResponse && session.authResponse.accessToken) {
       console.log('Got the user\'s session: ' + JSON.stringify(session.authResponse.accessToken));
@@ -72,10 +70,10 @@ angular.module('starter.services')
   }
 
   var reset = function(){
-    console.log("RESET")
+    console.log("RESET");
+    LoadingService.hideLoading();
     $rootScope.$apply(function(){
       user = {};
-      initFB = false;
       user.logged = false;
       initiated = false;
     })
@@ -121,7 +119,7 @@ angular.module('starter.services')
 
   var login = function(){
     console.log("try login")
-    $rootScope.showLoading("Connexion Facebook");
+    LoadingService.showLoading("Connexion Facebook");
     var defered = $q.defer();
     Facebook.login(function(response) {
       console.log(response)
@@ -133,7 +131,7 @@ angular.module('starter.services')
         console.log("Echec login");
       }
 
-      $rootScope.hideLoading();
+      LoadingService.hideLoading();
 
       defered.resolve();
     },{scope: application_conf.facebook.permissions});
@@ -162,7 +160,7 @@ angular.module('starter.services')
       /*
        $rootScope.$apply(function() {
 
-       if (data.status == 'connected' && !initFB) {
+       if (data.status == 'connected') {
        console.log('Connexion de',data)
        //init("Facebook:login");
        }
@@ -216,10 +214,12 @@ angular.module('starter.services')
        */
     })
 
-  //getLoginStatus();
+  getLoginStatus();
 
   return {
-
+    initiated : function(){
+      return initiated;
+    },
     getLoginStatus: function(){
       return getLoginStatus();
     },
@@ -251,7 +251,7 @@ angular.module('starter.services')
         console.log("ITEM",value)
         nonInvitedId.push(value.id);
       })
-      console.log("Try send Invitations to", nonInvitedId)
+      /*
       FB.ui({
         method: 'apprequests',
         to:nonInvitedId ,
@@ -259,7 +259,8 @@ angular.module('starter.services')
       }, function(response) {
         console.log('sendRequestInvite UI response: ', response);
       });
-
+      */
+      alert("Try send Invitations to", nonInvitedId, "service désactivé")
     }
   }
 }]);
