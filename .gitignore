@@ -23,6 +23,8 @@ npm
 
 
 
-*platforms
-!android/src
+platforms
+!platforms/android
+platforms/android/*
+!platforms/android/src
 
