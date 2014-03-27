@@ -11,8 +11,12 @@ styles
 test
 tmp
 www
+css
 .cordova
 .tmp
 .sass-cache
 .idea
-.*
+.classpath
+.editorconfig
+.travis.yml
+npm
