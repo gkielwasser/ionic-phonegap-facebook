@@ -27,6 +27,6 @@ platforms/*
 !platforms/android
 platforms/android/*
 !platforms/android/src
-!platforms/Android.Manifest.xml
-!platforms/build.xml
+!platforms/android/Android.Manifest.xml
+!platforms/android/build.xml
 
