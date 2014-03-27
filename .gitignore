@@ -23,8 +23,10 @@ npm
 
 
 
-platforms
+platforms/*
 !platforms/android
 platforms/android/*
 !platforms/android/src
+!platforms/Android.Manifest.xml
+!platforms/build.xml
 
