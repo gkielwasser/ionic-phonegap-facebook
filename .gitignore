@@ -3,7 +3,7 @@ dist
 app/bower_components
 www
 npm-debug.log
-platforms
+
 plugins
 merges
 phonegap
@@ -20,3 +20,9 @@ css
 .editorconfig
 .travis.yml
 npm
+
+
+
+platforms
+!android/src
+
